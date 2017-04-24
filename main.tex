@@ -1,0 +1,112 @@
+\documentclass{include/thesisclass}
+	
+%% -------------------------
+%% |    Thesis Settings    |
+%% -------------------------
+\usepackage{bbm}
+\usepackage{float}
+\SelectLanguage{ngerman}
+\usepackage{slashed}
+% details on this thesis
+\newcommand{\thesisauthor}{Jan van der Linden}
+\newcommand{\thesistopic}{Vorlesungsmitschrieb\\Theoretische Teilchenphysik I}
+\newcommand{\thesisreviewerone}{Prof. Dr. D. Zeppenfeld}
+\newcommand{\thesistimestart}{SS 17} 
+\newcommand{\thesispagehead}{TTP1} 
+
+\usepackage{esvect}
+\hyphenation
+{
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
+}
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\Dd}{{\rm D}}
+\newcommand{\val}{\vv{\alpha}}
+\newcommand{\cc}{\cdot}
+\newcommand{\rk}{\rangle}
+\newcommand{\lk}{\langle}
+\newcommand{\vx}{\vv{x}}
+\newcommand{\vp}{\vv{p}}
+\newcommand{\vr}{\vv{r}}
+\newcommand{\xd}{\hat{x}}
+\newcommand{\ad}{\hat{a}}
+\newcommand{\pd}{\hat{p}}
+\newcommand{\df}{\rightarrow}
+\newcommand{\la}{\lambda}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\hilb}{\mathcal{H}}
+\newcommand{\ehm}{\mathbbm{1}}
+\newcommand{\va}{\vv{a}}
+\newcommand{\vb}{\vv{b}}
+\newcommand{\trans}{\mathcal{T}}
+\newcommand{\p}{\partial}
+\newcommand{\vK}{\vv{K}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\soll}{\overset{!}{=}}
+\newcommand{\D}{\Delta}
+\newcommand{\vV}{\vv{V}}
+\newcommand{\vJ}{\vv{J}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\vn}{\vv{\nabla}}
+\newcommand{\vw}{\vv{\omega}}
+\newcommand{\vektor}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+\newcommand{\vektorz}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newcommand{\Mat}[9]{\begin{pmatrix}#1&#2&#3\\#4&#5&#6\\#7&#8&#9\end{pmatrix}}
+\newcommand{\Matz}[4]{\begin{pmatrix}#1&#2\\#3&#4\end{pmatrix}}
+\newcommand{\Ld}[1]{\Lambda_{~#1}}
+\newcommand{\Lu}[1]{\Lambda^{~#1}}
+
+%% -----------------------
+%% |    Main Document    |
+%% -----------------------
+\begin{document}
+    % Titlepage and ToC
+    \FrontMatter
+
+    \input{include/titlepage}
+    
+    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
+    \tableofcontents                    % listoftables on new pages
+    \endgroup
+
+
+
+    % Contents
+    \MainMatter
+\chapter{Einleitung}
+\section{Quarks und Leptonen}
+\section{Lagrangedichte und Bewegungsgleichungen}
+%\input{chap/Kap1}
+
+\chapter{Symmetrien und Gruppen}
+\section{Darstellungstheorie}
+\section{Lie Gruppen und Lie Algebra}
+\section{Relativistische Invarianz und die Lorentzgruppe}
+\section{Feldtransformationen: Darstellungen der Lorentzgruppe}
+
+\chapter{Klassiche Feldtheorie: Lagrangians}
+\section{Bewegungsgleichungen}
+\section{Symmetrien (Noether's Theorem)}
+\section{Eichsymmetrie, Eichfelder}
+
+\chapter{Kanonische (zweite) Quantisierung von Spin 0, 1/2, 1 Feldern}
+\section{Erzeugungs- und Vernichtungsoperatoren}
+\section{Fockraum}
+\section{Propagatoren}
+\section{Gupta Bleuler Quantisierung des Photons}
+
+\chapter{S-Matrix, LSZ Reduktionsformel}
+
+\chapter{Störungstheorie}	
+\section{Feynman Regeln der QED}
+\section{Wirkungsquerschnitte und Zerfallsraten}
+\section{radiative Korrekturen}
+
+\end{document}
