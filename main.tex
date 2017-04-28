@@ -25,6 +25,7 @@
     %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
     %Kon-troll-in-stanz
 }
+\newcommand{\LL}{\mathcal{L}}
 \newcommand{\SSS}{\mathcal{S}}
 \newcommand{\DD}{\mathcal{D}}
 \newcommand{\Dd}{{\rm D}}
@@ -63,6 +64,7 @@
 \newcommand{\Ld}[1]{\Lambda_{~#1}}
 \newcommand{\Lu}[1]{\Lambda^{~#1}}
 \newcommand{\dslash}{\slashed{\partial}}
+\newcommand{\sub}[1]{\newline\newline\textbf{#1}\\}
 
 %% -----------------------
 %% |    Main Document    |
@@ -89,27 +91,27 @@ Particles of matter:
 	\item protons and neutrons ($|p\rk = |uud\rk$, $|n\rk = |udd\rk$) are combinations of elementary quarks and gluons. The binding energy of the quarks is very large in comparison to the absolute energy of the proton and neutron ($m_pc^2 = 938~\si{MeV}$) if you compare this to the binding energies of Atoms ($\sim 1~\si{Ry}$) and their absolute energies ($\sim 10^9~\si{Ry}$).\\
 		Because the proton and the neutron are similar/symmetric in the strong interaction (not in the electroweak interaction though) one can combine them into a isospin dublett $\vektorz{p}{n}$.
 \end{itemize}
-There are many more particles/boundstates of quarks and gluons for different combination of quarks. Another example are the $\Delta$-Baryons. These are Spin-$\frac{3}{2}$ particles and have masses of $m_\Delta c^2 \approx 1230 ~\si{MeV}$:
+There are many more particles/boundstates of quarks and gluons for different combination of quarks. Another example are the $\Delta$-Baryons. These are spin-$\frac{3}{2}$ particles and have masses of $m_\Delta c^2 \approx 1230 ~\si{MeV}$:
 \begin{itemize}
 	\item $\Delta^-:~|ddd\rk$
 	\item $\Delta^0:~|ddu\rk$
 	\item $\Delta^+:~|duu\rk$
 	\item $\Delta^{++}:~|uuu\rk$
 \end{itemize}
-Because the $\Delta$-Baryons are spin-$\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$-Baryon because it consists of thrice the same quark. However, the total wavefunction of the Baryons must be antisymmetric because it is a fermion.\\
+Because the $\Delta$-baryons are spin-$\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$-baryon because it consists of thrice the same quark. However, the total wavefunction of the Baryons must be antisymmetric because it is a fermion.\\
 This is the reason a color charge was introduced to interpret the dirac statistics correctly and characterize the strong interaction with a new quantum number.\\
 Alltogether one can describe the four $\Delta$-Baryons in an isospin quartet with $I = \frac{3}{2}$.\\
 \\
-Another group of particles are the mesons, they consist of one quark and an anti quark. The lightest examples are the Pions:
+Another group of particles are the mesons, they consist of one quark and an anti quark. The lightest examples are the pions:
 \begin{itemize}
 \item $\pi^+:~|u\bar{d}\rk$
 \item $\pi^0:~\frac{1}{\sqrt{2}}\left( |u\bar{u}\rk - |d \bar{d}\rk\right)$
-\item $\pi^-:~|d\bar{d}\rk$
+\item $\pi^-:~|d\bar{u}\rk$
 \end{itemize}
 They have masses of $m_\pi c^2 \approx 140~\si{MeV}$ and are Spin-$0$ particles. Together they form the isospin triplet $I = 1$.\\
 \\
-Another group of mesons with Spin-$0$ are the kaons. These have another type of quark, the strange quark. For this new quark a new quantum number (next to isospin) was introduced, the strangeness.\\
-One can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is a $\eta$ meson in the same place as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{6}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
+Another group of mesons with spin-$0$ are the kaons. These have another type of quark, the strange quark. For this new quark a new quantum number (next to isospin) was introduced, the strangeness.\\
+One can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is a $\eta$-meson with the same strangeness and isospin as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{6}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.1]{include/mesonoctett.pdf}
@@ -125,7 +127,7 @@ In table \ref{quarks} and \ref{leptons} all quarks and leptons are summarized wi
 \begin{minipage}{80mm}
 \begin{table}[H]
 \centering
-\begin{tabular}{r|ll}
+\begin{tabular}{r|lr}
 Quark & $mc^2$ [MeV] & Q \\
 \midrule
 u & $2.2^{+0.6}_{-0.7}$ & $+\frac{2}{3}$\\
@@ -145,7 +147,7 @@ b & 4180 & $-\frac{1}{3}$\\
 \begin{minipage}{80mm}
 \begin{table}[H]
 \centering
-\begin{tabular}{r|ll}
+\begin{tabular}{r|lr}
 Lepton & $mc^2$ [MeV] & Q\\
 \midrule
 $e^-$ & 0.511 & -1\\
@@ -162,11 +164,11 @@ $\nu_\tau$ & &0\\
 \end{table}
 \end{minipage}
 
-It is important, that the down quark is slightly heavier than the up quark; because then the neutron is slightly lighter than the proton and the neutron decays more easily into a proton than the other way around. So atoms are mostly stable and remain charged.\\
+It is important, that the down quark is slightly heavier than the up quark; because then the down quark more likely decays into the up quark than vice versa and therefore the proton is much more stable than the neutron. This way also atoms remain to be stable and charged.\\
 \\
 These leptons and quarks are all known matter fields save the bosons:
 \begin{itemize}
-\item Higgs boson $H$
+\item higgs boson $H$
 \item $\gamma$, $W^\pm$, $Z$ which are carriers of the electromagnetic and weak force
 \item gluon $g$ which is the carrier of the strong force
 \end{itemize}
@@ -192,6 +194,7 @@ The unit of energy will be electron volts (eV). In table \ref{units} some import
 \centering
 \begin{tabular}{l|lll}
 quantity & MKSA units & natural units & dimension\\
+\midrule
 velocity & $\tilde{v}$ & $v \cc c$ & $[v] = 1$\\
 length & $\tilde{L}$ & $L \cc \hbar c$ & $[L] = 1/\si{MeV}$\\
 time & $\tilde{t}$ & $t\cc \hbar$ & $[t] = 1/\si{MeV}$\\
@@ -211,10 +214,113 @@ Another useful thing are translations from the normal system to the natural unit
 \item $\frac{1}{\si{GeV}^2} = \frac{3.89\cc 10^{-4}~\si{b}}{(\hbar c)^2}$ where a barn is $10^{-28}~\si{m^2}$
 \item $\tilde{e} = 1.6\cc 10^{-19} ~\si{C} ~~\df~~ e = \frac{\tilde{e}}{\sqrt{\eps_0 \hbar c}} = \sqrt{ 4 \pi \alpha} = 0.3028$
 \end{itemize}
-~\newline
+
+\subsection{Klein Gordon and Dirac Equations in Natural Units}
+The Klein-Gordon equation in SI units is given as
+\[
+\left[ \tilde{\square} + \left( \frac{mc}{\hbar}\right)^2 \right] \phi(\tilde{x}) = 0
+\]
+where $x$ is a four vector $\tilde{x}^\mu = ( x \tilde{t}, \tilde{\vx}) = \hbar c (t , \vx)$. Also the d'Alembert operator in SI units is given as
+\[ 
+\tilde{\square} = \frac{1}{c^2} \frac{\p^2}{\p \tilde{t}^2} - \tilde{\vn}^2 = \frac{1}{(\hbar c)^2} \square = \frac{1}{(\hbar c)^2} \left( \frac{\p^2}{\p t^2} - \vn^2 \right)
+\]
+So the equation simplifies to 
+\[ ( \square + m^2 ) \phi(x) = 0\]
+\newline
+Similarly the Dirac equation simplifies when using natural units
+\[
+\left( i \gamma^\mu \tilde{\p}_\mu - \frac{m c}{\hbar}\right) \psi(\tilde{x}) = 0 ~~\df~~ (i \gamma^\mu \p_\mu - m ) \psi(x) = 0
+\]
+
+\section{Lagrange Density and Equations of Motion}
+
+\subsection{Lagrangian Field Theory}
+First we take a look at a classical point particle. Its trajectory is given by $x_i(t)$ for $i = 1,2,3$.\\
+For this particle we can define an action
+\[ S( [x_i], t_1, t_2 ) = \int_{t_1}^{t_2} \dd t \left(\frac{1}{2} m \left( \sum_i \frac{\dd x_i}{\dd t} \right)^2 - V(x_i(t)) \right)
+\]
+The action is a functional of the trajectory. Now we can find an extremum of $S$ for the classical path by adding a inifinitesimal $\delta$ to the trajectory $x_i(t) + \delta x_i(t)$. Then, the extremal condition is given by $\Delta S = 0$ where $\Delta S$ is given by
+\[ \Delta S = S( [x_i + \delta x_i]) - S([x_i]) = 0\]
+where the boundary condition is set, so the infinitesimal $\delta$ vanishes at the endpoints
+\[ \delta x_i(t_1) = \delta x_i(t_2) = 0\]
+Calculating the action for the changed trajectory leads to
+\[ S( [x_i + \delta x_i]) = \int_{t_1}^{t_2} \dd t \left( \frac{1}{2} m \left( \frac{\dd x_i}{\dd t} + \frac{\dd (\delta x_i)}{\dd t} \right)^2 - V(x_i + \delta x_i) \right)
+\]
+with
+\[  \left( \frac{\dd x_i}{\dd t} + \frac{ \dd ( \delta x_i)}{\dd t} \right) = \left( \frac{ \dd x_i}{\dd t} \right)^2 + 2 \frac{ \dd x_i }{\dd t} \frac{ \dd (\delta x_i)}{\dd t} = \left( \frac{\dd x_i}{\dd t} \right)^2 + 2 \frac{\dd}{\dd t} \left( \frac{\dd x_i}{\dd t} \delta x_i \right) - 2 \frac{ \dd ^2 x_i}{\dd t^2} \delta x_i\]
+where second order terms in $\delta x_i$ were neglected. The first term also appears in the action for the original trajectory and the total derivative in the second term cancels the integral. Therefore
+\[ 
+S( [x_i + \delta x_i]) = S([x_i]) + \left[ \int_{t_1}^{t_2} \dd t \sum_i \left( -m \frac{\dd ^2 x_i}{\dd t^2} - \frac{\p V}{\p x_i} \right) \delta x_i \right] + \left. m \sum_i \frac{\dd x_i}{\dd t} \delta x_i \right|_{t_1}^{t_2}
+\]
+Because the last term vanishes due to the boundary conditions and $\delta x_i$ is chosen arbitrarily $\Delta S$ can only vanish if the term inside the integral is zero. Therefore
+\[ 
+m \frac{\dd x_i }{\dd t} = \frac{\p V}{\p x_i}
+\]
+This equation of motion is true for all $\delta x_i$.
+\newline\newline
+\textbf{Symmetries}\\
+Lets assume the system has a rotational invariance $V = V(r)$ with $r = \sqrt{ \sum_i x_i^2}$. If a transformation $O_{ij}$ orthogonal to the rotational invariance is applied to the trajectory $x_j$ the action remains the same
+\[ S[ \sum_j O_{ij} x_j (t) ] = S[x_j(t)]\]
+Also the equation of motions is invariant
+\[ m \frac{ \dd^2 ( O_{ij} x_j)}{\dd t^2} = - \frac{ O_{ij} x_j}{r} \frac{\dd V}{\dd r} \]
+
+\subsection{Field Theory Lagrangian}
+In quantum field theory the action is given by
+\[ S([\phi_r]) = \int \dd ^4 x~\mathcal{L}(\phi_r, \p_\mu \phi_r)\]
+with $\phi_r = \phi_r(\vx, t)$. $\LL$ is the lagrange density. It is not directly dependant on $x$, because it should be invariant in the whole four dimensional space.\\
+The integral here is over all four dimensions because time and space are treated equally in field theory.\\
+There are some requirements to the lagrange density:
+\begin{enumerate}
+\item $\LL$ is local - there are no connections or interactions between two arbitrary space points. Also there can not be any instantaneus interaction of two spacepoints because information travels at finite speeds.
+\item $\LL$ is real - this is necessary to conserve probability
+\item $\LL$ is lorentz invariant - $x'^\mu = \Lambda^\mu_{~\nu}x^\nu ~\df~ \dd^4 x' = (\det \Lambda) \dd^4 x = \dd ^4 x$. Therefore also the action is lorentz invariant.
+\item there is no need for derivatives higher than the first, this is implied by causality (?)
+\end{enumerate}
+In natural units the action is dimensionless (whereas in SI units it has the same unit as $\hbar$). Also $\dd^4 x$ has units of $\si{\frac{1}{GeV}^4}$ in natural units, therefore $\LL$ has to have units of $\si{GeV}^4$
+\newline\newline
+\textbf{Extremal of Action}\\
+Same as before we can calculate the extremal of the action $S$ for variations $\delta \phi_r$. Here the boundary condition has to be $\delta \phi_r(x) = 0$ for $x \in \p \Omega$ where $\p \Omega$ is the surface of the integrated space.\\
+It follows
+\[ 0 = \Delta S = \int_\Omega \dd ^4 x \sum_r \left[ \frac{\p \LL}{\p \phi_r} \delta \phi_r + \frac{ \p \LL}{\p (\p_\mu \phi_r)} \p_\mu(\delta \phi_r) \right]\]
+
+In the second term the equality of $\delta (\p _\mu \phi_r) = \p_\mu(\delta \phi_r)$ was used. Also we can rewrite the partial derivative in the second term to an absolute derivative
+\[
+\frac{\p \LL}{\p(\p_\mu \phi_r)} = \p_\mu \left( \frac{\p \LL}{\p ( \p_\mu \phi_r)} \delta\phi_r\right) - \delta \phi_r \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)}
+\]
+Therefore
+\[
+\Delta S = \int_\Omega \dd ^4 x \left[ \sum_r \delta \phi_r \left( \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)}\right) + \p_\mu \left( \sum_r \delta \phi_r \frac{\p \LL}{\p(\p_\mu \phi_r)} \right)\right]
+\]
+The last term is rewritable into a surface integral via gauss' theorem, therefore it vanishes due to the boundary conditions. Similar to the classical approach $\delta \phi_r$ can be chosen arbitrarily and therefore the action only vanishes if the first term is equal to zero
+\[ 
+\frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)} = 0
+\]
+These are the Euler Lagrange equations.
+\sub{Example}
+Consider a scalar field $\phi(x)$. The lagrange density is given by
+\[ \LL = \frac{1}{2} (\p_\alpha \phi)(\p^\alpha \phi) - V(\phi) = \frac{1}{2} \left[ (\p_0\phi)^2 - \sum_i (\p_i \phi)^2\right]\]
+So the equation of motion calculates to
+\[ \frac{\p \LL}{\p \phi} = - V'(\phi) = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \phi)}\right) = \p_0 \p_0 \phi - \vn(\vn \phi) = \square \phi\]
+\[\df \square \phi + V'(\phi) = 0\]
+Different potentials then lead to different equations of motion
+\begin{itemize}
+\item $V(\phi) = \frac{m^2}{2}\phi^2 ~\df~ V' = m^2\phi$ leads to $\square\phi + m^2 \phi = 0$
+which is the Klein Gordon equation. Its lagrange density is
+\[ \LL = \frac{1}{2} (\p_\mu \phi)(\p^\mu \phi) - \frac{m^2}{2}\phi^2\]
+\item $V(\phi) = \frac{m^2}{2}\phi^2 + \frac{\lambda}{4}\phi^4$ leads to $\square \phi + m^2 \phi + \lambda \phi^3  = 0$
+\item $V(\phi) = A \cos \frac{\phi}{M}$ leads to $\square\phi - \frac{A}{M} \sin \frac{\phi}{M}$
+which is called the sine Gordon equation.
+\end{itemize}
+
+\subsection{Dirac Lagrangian}
+For spin-$\frac{1}{2}$ particles the lagrangian is connected to the Dirac equation. It is given by
+\[ \LL = \bar{\psi}(x)(i \dslash - m) \psi(x),~~~\bar{\psi} = \psi^\dagger \gamma^0 = (\psi^*)^T \gamma^0\]
+where $\psi$ has four complex and eight real components.\\
+The components of $\psi$ and $\bar{\psi}$ are treated as independant fields. This leads to the following equations of motion
+\[ \frac{\p \LL}{\p \bar{\psi}} = ( i \dslash - m)\psi = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \bar{\psi})}:\right) = 0~~~~\df ~~ (i \dslash - m) \psi = 0\]
+\[ \frac{\p\LL}{\p\psi} = -m \bar{\psi} = \p_\mu\left( \frac{\p\LL}{\p(\p_\mu \psi)}\right) = i \p_\mu(\bar{\psi}\gamma^\mu)~~~~\df ~~ i \p_\mu(\bar{\psi}\gamma^\mu) + m \bar{\psi} = 0\]
 
 
-\section{Lagrangedichte und Bewegungsgleichungen}
 %\input{chap/Kap1}
 
 \chapter{Symmetrien und Gruppen}
