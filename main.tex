@@ -9,10 +9,10 @@
 \usepackage{slashed}
 % details on this thesis
 \newcommand{\thesisauthor}{Jan van der Linden}
-\newcommand{\thesistopic}{Vorlesungsmitschrieb\\Theoretische Teilchenphysik I}
+\newcommand{\thesistopic}{Lecture notes\\Theoretische Teilchenphysik I}
 \newcommand{\thesisreviewerone}{Prof. Dr. D. Zeppenfeld}
 \newcommand{\thesistimestart}{SS 17} 
-\newcommand{\thesispagehead}{TTP1} 
+\newcommand{\thesispagehead}{theoretical particle physics} 
 
 \usepackage{esvect}
 \hyphenation
@@ -64,7 +64,8 @@
 \newcommand{\Ld}[1]{\Lambda_{~#1}}
 \newcommand{\Lu}[1]{\Lambda^{~#1}}
 \newcommand{\dslash}{\slashed{\partial}}
-\newcommand{\sub}[1]{\newline\newline\textbf{#1}\\}
+\newcommand{\sub}[1]{~\newline\newline\textbf{#1}\\}
+\newcommand{\tr}{{\rm tr}}
 
 %% -----------------------
 %% |    Main Document    |
@@ -89,18 +90,18 @@ Particles of matter:
 \begin{itemize}
 	\item electrons ($e^-$) and other leptons are elementary particles. 
 	\item protons and neutrons ($|p\rk = |uud\rk$, $|n\rk = |udd\rk$) are combinations of elementary quarks and gluons. The binding energy of the quarks is very large in comparison to the absolute energy of the proton and neutron ($m_pc^2 = 938~\si{MeV}$) if you compare this to the binding energies of Atoms ($\sim 1~\si{Ry}$) and their absolute energies ($\sim 10^9~\si{Ry}$).\\
-		Because the proton and the neutron are similar/symmetric in the strong interaction (not in the electroweak interaction though) one can combine them into a isospin dublett $\vektorz{p}{n}$.
+		Because the proton and the neutron are similar/symmetric in the strong interaction (not in the electroweak interaction though) we can combine them into a isospin dublett $\vektorz{p}{n}$.
 \end{itemize}
-There are many more particles/boundstates of quarks and gluons for different combination of quarks. Another example are the $\Delta$-Baryons. These are spin-$\frac{3}{2}$ particles and have masses of $m_\Delta c^2 \approx 1230 ~\si{MeV}$:
+There are many more particles/boundstates of quarks and gluons for different combination of quarks. Another example are the $\Delta$ baryons. These are spin $\frac{3}{2}$ particles and have masses of $m_\Delta c^2 \approx 1230 ~\si{MeV}$:
 \begin{itemize}
 	\item $\Delta^-:~|ddd\rk$
 	\item $\Delta^0:~|ddu\rk$
 	\item $\Delta^+:~|duu\rk$
 	\item $\Delta^{++}:~|uuu\rk$
 \end{itemize}
-Because the $\Delta$-baryons are spin-$\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$-baryon because it consists of thrice the same quark. However, the total wavefunction of the Baryons must be antisymmetric because it is a fermion.\\
-This is the reason a color charge was introduced to interpret the dirac statistics correctly and characterize the strong interaction with a new quantum number.\\
-Alltogether one can describe the four $\Delta$-Baryons in an isospin quartet with $I = \frac{3}{2}$.\\
+Because the $\Delta$ baryons are spin $\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$-baryon because it consists of thrice the same quark. However, the total wavefunction of the baryons must be antisymmetric because it is a fermion.\\
+This is the reason a color charge was introduced to interpret the Dirac statistics correctly and characterize the strong interaction with a new quantum number.\\
+Alltogether one can describe the four $\Delta$ baryons in an isospin quartet with $I = \frac{3}{2}$.\\
 \\
 Another group of particles are the mesons, they consist of one quark and an anti quark. The lightest examples are the pions:
 \begin{itemize}
@@ -108,10 +109,10 @@ Another group of particles are the mesons, they consist of one quark and an anti
 \item $\pi^0:~\frac{1}{\sqrt{2}}\left( |u\bar{u}\rk - |d \bar{d}\rk\right)$
 \item $\pi^-:~|d\bar{u}\rk$
 \end{itemize}
-They have masses of $m_\pi c^2 \approx 140~\si{MeV}$ and are Spin-$0$ particles. Together they form the isospin triplet $I = 1$.\\
+They have masses of $m_\pi c^2 \approx 140~\si{MeV}$ and are spin $0$ particles. Together they form the isospin triplet $I = 1$.\\
 \\
-Another group of mesons with spin-$0$ are the kaons. These have another type of quark, the strange quark. For this new quark a new quantum number (next to isospin) was introduced, the strangeness.\\
-One can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is a $\eta$-meson with the same strangeness and isospin as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{6}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
+Another group of mesons with spin $0$ are the kaons. These have another type of quark, the strange quark. For this new quark a new quantum number (next to isospin) was introduced, the strangeness.\\
+We can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is a $\eta$-meson with the same strangeness and isospin as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{\sqrt{6}}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.1]{include/mesonoctett.pdf}
@@ -128,7 +129,7 @@ In table \ref{quarks} and \ref{leptons} all quarks and leptons are summarized wi
 \begin{table}[H]
 \centering
 \begin{tabular}{r|lr}
-Quark & $mc^2$ [MeV] & Q \\
+quark & $mc^2$ [MeV] & Q \\
 \midrule
 u & $2.2^{+0.6}_{-0.7}$ & $+\frac{2}{3}$\\
 d & $4.7$ & $-\frac{1}{3}$\\
@@ -148,7 +149,7 @@ b & 4180 & $-\frac{1}{3}$\\
 \begin{table}[H]
 \centering
 \begin{tabular}{r|lr}
-Lepton & $mc^2$ [MeV] & Q\\
+lepton & $mc^2$ [MeV] & Q\\
 \midrule
 $e^-$ & 0.511 & -1\\
 $\mu^-$ & 105.66 & -1 \\
@@ -168,11 +169,11 @@ It is important, that the down quark is slightly heavier than the up quark; beca
 \\
 These leptons and quarks are all known matter fields save the bosons:
 \begin{itemize}
-\item higgs boson $H$
+\item Higgs boson $H$
 \item $\gamma$, $W^\pm$, $Z$ which are carriers of the electromagnetic and weak force
 \item gluon $g$ which is the carrier of the strong force
 \end{itemize}
-Additionaly it is known, from observing the higgs coupling, that there are no more generations of quarks which behave similarly to the three existing generations. Additional generations might exist but must behave fundamentally different.
+Additionaly it is known, from observing the Higgs coupling, that there are no more generations of quarks which behave similarly to the three existing generations. Additional generations might exist but must behave fundamentally different.
 
 \section{Course Contents}
 In this course of theoretical particle physics the following topics will be discussed:
@@ -184,7 +185,7 @@ $\df$ changing particle number and content\\
 $\df$ quantum field theory (QFT) which is relativistic for particle physics
 \item development of pertubation theory for QFT
 \item calculation of cross sections and decay rates
-\item symmetries: lorentz invariance and internal symmetries like isospin and color
+\item symmetries: Lorentz invariance and internal symmetries like isospin and color
 \end{itemize} 
 
 \section{Natural Units}
@@ -193,7 +194,7 @@ The unit of energy will be electron volts (eV). In table \ref{units} some import
 \begin{table}[H]
 \centering
 \begin{tabular}{l|lll}
-quantity & MKSA units & natural units & dimension\\
+quantity & SI units & natural units & dimension\\
 \midrule
 velocity & $\tilde{v}$ & $v \cc c$ & $[v] = 1$\\
 length & $\tilde{L}$ & $L \cc \hbar c$ & $[L] = 1/\si{MeV}$\\
@@ -205,7 +206,7 @@ magnetic field & $\tilde{B}$ & $\frac{1}{\sqrt{\eps_0 c^2(\hbar c)^3}} \vv{B}$ &
 \caption{natural units}
 \label{units}
 \end{table}
-An example of the simplification is the hamiltionan for radiation:
+An example of the simplification is the Hamiltionan for radiation:
 \[ H_{rad} = \frac{\eps_0}{2} \int\dd^3 \tilde{\vx} \left[ \tilde{\vE}^2 + c^2 \tilde{\vB}^2\right] \df \frac{1}{2} \int\dd^3 \vx \left[\vE^2 + \vB^2\right]\]
 
 Another useful thing are translations from the normal system to the natural units and vice versa. For example:
@@ -224,7 +225,7 @@ where $x$ is a four vector $\tilde{x}^\mu = ( x \tilde{t}, \tilde{\vx}) = \hbar 
 \[ 
 \tilde{\square} = \frac{1}{c^2} \frac{\p^2}{\p \tilde{t}^2} - \tilde{\vn}^2 = \frac{1}{(\hbar c)^2} \square = \frac{1}{(\hbar c)^2} \left( \frac{\p^2}{\p t^2} - \vn^2 \right)
 \]
-So the equation simplifies to 
+So in natural units the equation simplifies to 
 \[ ( \square + m^2 ) \phi(x) = 0\]
 \newline
 Similarly the Dirac equation simplifies when using natural units
@@ -237,22 +238,22 @@ Similarly the Dirac equation simplifies when using natural units
 \subsection{Lagrangian Field Theory}
 First we take a look at a classical point particle. Its trajectory is given by $x_i(t)$ for $i = 1,2,3$.\\
 For this particle we can define an action
-\[ S( [x_i], t_1, t_2 ) = \int_{t_1}^{t_2} \dd t \left(\frac{1}{2} m \left( \sum_i \frac{\dd x_i}{\dd t} \right)^2 - V(x_i(t)) \right)
+\[ \SSS( [x_i], t_1, t_2 ) = \int_{t_1}^{t_2} \dd t \left(\frac{1}{2} m \left( \sum_i \frac{\dd x_i}{\dd t} \right)^2 - V(x_i(t)) \right)
 \]
-The action is a functional of the trajectory. Now we can find an extremum of $S$ for the classical path by adding a inifinitesimal $\delta$ to the trajectory $x_i(t) + \delta x_i(t)$. Then, the extremal condition is given by $\Delta S = 0$ where $\Delta S$ is given by
-\[ \Delta S = S( [x_i + \delta x_i]) - S([x_i]) = 0\]
-where the boundary condition is set, so the infinitesimal $\delta$ vanishes at the endpoints
+The action is a functional of the trajectory. Now we can find an extremum of $\SSS$ for the classical path by adding a inifinitesimal variation $\delta x_i$ to the trajectory: $x_i(t) + \delta x_i(t)$. Then, the extremal condition is given by $\Delta S = 0$ where $\Delta S$ is given by
+\[ \Delta \SSS = \SSS( [x_i + \delta x_i]) - \SSS([x_i]) = 0\]
+where the boundary condition is set, so the variation $\delta x_i$ vanishes at the endpoints
 \[ \delta x_i(t_1) = \delta x_i(t_2) = 0\]
 Calculating the action for the changed trajectory leads to
-\[ S( [x_i + \delta x_i]) = \int_{t_1}^{t_2} \dd t \left( \frac{1}{2} m \left( \frac{\dd x_i}{\dd t} + \frac{\dd (\delta x_i)}{\dd t} \right)^2 - V(x_i + \delta x_i) \right)
+\[ \SSS( [x_i + \delta x_i]) = \int_{t_1}^{t_2} \dd t \left( \frac{1}{2} m \left( \frac{\dd x_i}{\dd t} + \frac{\dd (\delta x_i)}{\dd t} \right)^2 - V(x_i + \delta x_i) \right)
 \]
 with
 \[  \left( \frac{\dd x_i}{\dd t} + \frac{ \dd ( \delta x_i)}{\dd t} \right) = \left( \frac{ \dd x_i}{\dd t} \right)^2 + 2 \frac{ \dd x_i }{\dd t} \frac{ \dd (\delta x_i)}{\dd t} = \left( \frac{\dd x_i}{\dd t} \right)^2 + 2 \frac{\dd}{\dd t} \left( \frac{\dd x_i}{\dd t} \delta x_i \right) - 2 \frac{ \dd ^2 x_i}{\dd t^2} \delta x_i\]
 where second order terms in $\delta x_i$ were neglected. The first term also appears in the action for the original trajectory and the total derivative in the second term cancels the integral. Therefore
 \[ 
-S( [x_i + \delta x_i]) = S([x_i]) + \left[ \int_{t_1}^{t_2} \dd t \sum_i \left( -m \frac{\dd ^2 x_i}{\dd t^2} - \frac{\p V}{\p x_i} \right) \delta x_i \right] + \left. m \sum_i \frac{\dd x_i}{\dd t} \delta x_i \right|_{t_1}^{t_2}
+\SSS( [x_i + \delta x_i]) = S([x_i]) + \left[ \int_{t_1}^{t_2} \dd t \sum_i \left( -m \frac{\dd ^2 x_i}{\dd t^2} - \frac{\p V}{\p x_i} \right) \delta x_i \right] + \left. m \sum_i \frac{\dd x_i}{\dd t} \delta x_i \right|_{t_1}^{t_2}
 \]
-Because the last term vanishes due to the boundary conditions and $\delta x_i$ is chosen arbitrarily $\Delta S$ can only vanish if the term inside the integral is zero. Therefore
+Because the last term vanishes due to the boundary conditions and $\delta x_i$ is chosen arbitrarily $\Delta \SSS$ can only vanish if the term inside the integral is zero. Therefore
 \[ 
 m \frac{\dd x_i }{\dd t} = \frac{\p V}{\p x_i}
 \]
@@ -260,28 +261,28 @@ This equation of motion is true for all $\delta x_i$.
 \newline\newline
 \textbf{Symmetries}\\
 Lets assume the system has a rotational invariance $V = V(r)$ with $r = \sqrt{ \sum_i x_i^2}$. If a transformation $O_{ij}$ orthogonal to the rotational invariance is applied to the trajectory $x_j$ the action remains the same
-\[ S[ \sum_j O_{ij} x_j (t) ] = S[x_j(t)]\]
+\[ \SSS[ \sum_j O_{ij} x_j (t) ] = S[x_j(t)]\]
 Also the equation of motions is invariant
 \[ m \frac{ \dd^2 ( O_{ij} x_j)}{\dd t^2} = - \frac{ O_{ij} x_j}{r} \frac{\dd V}{\dd r} \]
 
 \subsection{Field Theory Lagrangian}
 In quantum field theory the action is given by
-\[ S([\phi_r]) = \int \dd ^4 x~\mathcal{L}(\phi_r, \p_\mu \phi_r)\]
-with $\phi_r = \phi_r(\vx, t)$. $\LL$ is the lagrange density. It is not directly dependant on $x$, because it should be invariant in the whole four dimensional space.\\
+\[ \SSS([\phi_r]) = \int \dd ^4 x~\mathcal{L}(\phi_r, \p_\mu \phi_r)\]
+with $\phi_r = \phi_r(\vx, t)$. $\LL$ is the Lagrange density. It is not directly dependant on $x$, because it should be invariant in the whole four dimensional space.\\
 The integral here is over all four dimensions because time and space are treated equally in field theory.\\
-There are some requirements to the lagrange density:
+There are some requirements to the Lagrange density:
 \begin{enumerate}
 \item $\LL$ is local - there are no connections or interactions between two arbitrary space points. Also there can not be any instantaneus interaction of two spacepoints because information travels at finite speeds.
 \item $\LL$ is real - this is necessary to conserve probability
-\item $\LL$ is lorentz invariant - $x'^\mu = \Lambda^\mu_{~\nu}x^\nu ~\df~ \dd^4 x' = (\det \Lambda) \dd^4 x = \dd ^4 x$. Therefore also the action is lorentz invariant.
+\item $\LL$ is Lorentz invariant - $x'^\mu = \Lambda^\mu_{~\nu}x^\nu ~\df~ \dd^4 x' = (\det \Lambda) \dd^4 x = \dd ^4 x$. Therefore also the action is Lorentz invariant.
 \item there is no need for derivatives higher than the first, this is implied by causality (?)
 \end{enumerate}
-In natural units the action is dimensionless (whereas in SI units it has the same unit as $\hbar$). Also $\dd^4 x$ has units of $\si{\frac{1}{GeV}^4}$ in natural units, therefore $\LL$ has to have units of $\si{GeV}^4$
+In natural units the action is dimensionless (whereas in SI units it has the same unit as $\hbar$). Also $\dd^4 x$ has units of $\si{\frac{1}{GeV^4}}$ in natural units, therefore $\LL$ has to have units of $\si{GeV}^4$
 \newline\newline
 \textbf{Extremal of Action}\\
-Same as before we can calculate the extremal of the action $S$ for variations $\delta \phi_r$. Here the boundary condition has to be $\delta \phi_r(x) = 0$ for $x \in \p \Omega$ where $\p \Omega$ is the surface of the integrated space.\\
+Same as before we can calculate the extremal of the action $\SS$ for variations $\delta \phi_r$. Here the boundary condition has to be $\delta \phi_r(x) = 0$ for $x \in \p \Omega$ where $\p \Omega$ is the surface of the integrated space.\\
 It follows
-\[ 0 = \Delta S = \int_\Omega \dd ^4 x \sum_r \left[ \frac{\p \LL}{\p \phi_r} \delta \phi_r + \frac{ \p \LL}{\p (\p_\mu \phi_r)} \p_\mu(\delta \phi_r) \right]\]
+\[ 0 = \Delta \SSS = \int_\Omega \dd ^4 x \sum_r \left[ \frac{\p \LL}{\p \phi_r} \delta \phi_r + \frac{ \p \LL}{\p (\p_\mu \phi_r)} \p_\mu(\delta \phi_r) \right]\]
 
 In the second term the equality of $\delta (\p _\mu \phi_r) = \p_\mu(\delta \phi_r)$ was used. Also we can rewrite the partial derivative in the second term to an absolute derivative
 \[
@@ -289,15 +290,15 @@ In the second term the equality of $\delta (\p _\mu \phi_r) = \p_\mu(\delta \phi
 \]
 Therefore
 \[
-\Delta S = \int_\Omega \dd ^4 x \left[ \sum_r \delta \phi_r \left( \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)}\right) + \p_\mu \left( \sum_r \delta \phi_r \frac{\p \LL}{\p(\p_\mu \phi_r)} \right)\right]
+\Delta \SSS = \int_\Omega \dd ^4 x \left[ \sum_r \delta \phi_r \left( \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)}\right) + \p_\mu \left( \sum_r \delta \phi_r \frac{\p \LL}{\p(\p_\mu \phi_r)} \right)\right]
 \]
-The last term is rewritable into a surface integral via gauss' theorem, therefore it vanishes due to the boundary conditions. Similar to the classical approach $\delta \phi_r$ can be chosen arbitrarily and therefore the action only vanishes if the first term is equal to zero
+The last term is rewritable into a surface integral via Gauss' theorem, therefore it vanishes due to the boundary conditions. Similar to the classical approach $\delta \phi_r$ can be chosen arbitrarily and therefore the action only vanishes if the first term is equal to zero
 \[ 
 \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p(\p_\mu \phi_r)} = 0
 \]
-These are the Euler Lagrange equations.
+These are the Euler-Lagrange equations.
 \sub{Example}
-Consider a scalar field $\phi(x)$. The lagrange density is given by
+Consider a scalar field $\phi(x)$. The Lagrange density is given by
 \[ \LL = \frac{1}{2} (\p_\alpha \phi)(\p^\alpha \phi) - V(\phi) = \frac{1}{2} \left[ (\p_0\phi)^2 - \sum_i (\p_i \phi)^2\right]\]
 So the equation of motion calculates to
 \[ \frac{\p \LL}{\p \phi} = - V'(\phi) = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \phi)}\right) = \p_0 \p_0 \phi - \vn(\vn \phi) = \square \phi\]
@@ -305,15 +306,15 @@ So the equation of motion calculates to
 Different potentials then lead to different equations of motion
 \begin{itemize}
 \item $V(\phi) = \frac{m^2}{2}\phi^2 ~\df~ V' = m^2\phi$ leads to $\square\phi + m^2 \phi = 0$
-which is the Klein Gordon equation. Its lagrange density is
+which is the Klein-Gordon equation. Its Lagrange density is
 \[ \LL = \frac{1}{2} (\p_\mu \phi)(\p^\mu \phi) - \frac{m^2}{2}\phi^2\]
 \item $V(\phi) = \frac{m^2}{2}\phi^2 + \frac{\lambda}{4}\phi^4$ leads to $\square \phi + m^2 \phi + \lambda \phi^3  = 0$
 \item $V(\phi) = A \cos \frac{\phi}{M}$ leads to $\square\phi - \frac{A}{M} \sin \frac{\phi}{M}$
-which is called the sine Gordon equation.
+which is called the sine-Gordon equation.
 \end{itemize}
 
 \subsection{Dirac Lagrangian}
-For spin-$\frac{1}{2}$ particles the lagrangian is connected to the Dirac equation. It is given by
+For spin $\frac{1}{2}$ particles the Lagrangian is connected to the Dirac equation. It is given by
 \[ \LL = \bar{\psi}(x)(i \dslash - m) \psi(x),~~~\bar{\psi} = \psi^\dagger \gamma^0 = (\psi^*)^T \gamma^0\]
 where $\psi$ has four complex and eight real components.\\
 The components of $\psi$ and $\bar{\psi}$ are treated as independant fields. This leads to the following equations of motion
@@ -321,11 +322,118 @@ The components of $\psi$ and $\bar{\psi}$ are treated as independant fields. Thi
 \[ \frac{\p\LL}{\p\psi} = -m \bar{\psi} = \p_\mu\left( \frac{\p\LL}{\p(\p_\mu \psi)}\right) = i \p_\mu(\bar{\psi}\gamma^\mu)~~~~\df ~~ i \p_\mu(\bar{\psi}\gamma^\mu) + m \bar{\psi} = 0\]
 
 
+\[
+\LL = \bar{\psi} \gamma^\mu \p_\mu \psi + i q \bar{\psi} \gamma^\mu A_\mu \psi + m \bar{\psi}\psi + \frac{1}{16 \pi} F_{\mu\nu}F^{\mu\nu}
+\]
 %\input{chap/Kap1}
 
-\chapter{Symmetrien und Gruppen}
-\section{Darstellungstheorie}
-\section{Lie Gruppen und Lie Algebra}
+\chapter{Groups and Symmetries}
+\section{Representation of Groups}
+A group is an object of the form $G = \{ g_i | i = 1,\ldots\}$ where $g_i$ are the elements of the group. In the group a multiplication exists so, that $g_1 g_2 = g_3 \in G$. This also has the following traits:
+\begin{itemize}
+\item it has to be associatiove: $g_1(g_2g_3) = (g_1g_2)g_3$
+\item there is an identity element $e \equiv 1$ so that $g\cc e = e \cc g = g ~~\forall g \in G$
+\item $\forall g \in G$ there is an inverse $g_{-1} \in G$: $gg^{-1} = g^{-1}g = e$
+\end{itemize}
+The representation of $G$ is a mapping $r: G \df \mathbbm{C}^{(n,n)}$ where $r(g_i) = M_i$ is a $n\times n$-matrix.\\
+With this representation the multiplication rules are being preserved: $r(g_1g_2) = r(g_1)r(g_2)$ or $M_3 = M_1M_2$. Also $r(e) = \ehm_n$ and $r(g^{-1}g) = MM^{-1} = \ehm$.\\
+A reducable representation is a representation such that a single unitary $n\times n$ matrix $U$ exists such that
+\[ U M_i U^{-1} = \Matz{M_i'}{0}{0}{M_i''}\]
+So instrad of working with $M_i$ we could have worked with the block diagonal matrices $M_i'$ and $M_i''$.\\
+An irreducable representation then is a representation where no unitary matrix exists that splits the matrix $M_i$ into block diagonal matrices.\\
+For finite groups $G = \{ g_i | i = 1, \ldots, n \}$ the dimensions $d_r$ of all the irreducible representations are bounded by 
+\[n = \sum_r d_r^2\]
+Therefore an infinite group has infinte number of different finite dimensional irreducible representations.
+\section{Lie groups and Lie algebra}
+Lie groups are a special case of groups. They are parametrizised by $G = \{ U(\theta)| \theta = ( \theta_1, \ldots, \theta_n) \in \mathbbm{R}^n\}$ with $U(0) = e$. \\
+$U(\theta)$ is analytic in all its components; it is infinitely differentiable.\\
+The simplest example if a Lie group is the three dimensional rotation group $SO(3)$ with the rotation matrices $R(\phi,\psi,\theta)$. The three rotations are\\
+the rotation around the $z$-axis:
+\[ R_z(\theta) = \Mat{\cos\theta}{\sin\theta}{0}{- \sin\theta}{\cos\theta}{0}{0}{0}{1}\]
+the rotation around the $y$-axis:
+\[ R_y(\psi) = \Mat{\cos\psi}{0}{-\sin\psi}{0}{1}{0}{\sin\psi}{0}{\cos\psi}\]
+the rotation around the $x$-axis:
+\[ R_x(\phi) = \Mat{1}{0}{0}{0}{\cos\phi}{\sin\psi}{0}{-\sin\phi}{\cos\phi}\]
+
+
+\sub{Lie algebra}
+As the elements of the Lie group are infinitely differentiable we can apply the definition of the Taylor expansion onto an element of the group. This leads to the generators of the group
+\[L_a \equiv \frac{1}{i} \left.\frac{\p U}{\p \phi_a} \right|_{\theta = 0}\]
+These generators completely describe the groups properties.\\
+The Taylor expansion also leads to infinitesimal transformations:
+\[ U(\theta) = 1 + i \sum_a \theta_a L_a + \ldots\]
+In summation convention this also can be written as $\sum_a \theta_a L_a = \theta_a L_a = \theta\cc L$.\\
+As one general group property is the formation of the $1$-element: $U(\theta)U^{-1}(\theta) = 1$ this also has to be applicable for inifitiesimal transformations. This leads to
+\[ G \ni U(\theta)U(\psi)U^{-1}(\theta)U^{-1}(\psi) \neq 1\]
+which is not the $1$-element for non commuting groups. The Taylor expanison of this expression leads to
+\[ 1 + i^2 \theta_a\psi_b ( L_aL_b + L_aL_b - L_aL_b - L_bL_a) + \ldots = 1 - \theta_a \psi_b [L_a, L_b]+\ldots = 1 + i \sum_c \theta_a \psi_b ( - L_c f^{abc})\]
+In the first step the only terms of first order are either linear in $\psi$ or $\theta$ so they cancel. In the second order all terms quadratic in $\theta$ or $\psi$ also cancel and the only things left are mixed terms. In the second step the definition of the commutator was applied and in the last step we used, that the resulting element had to be in the group $G$ again, so it must be able to be written as a taylor expansion again. This therefore leads to the identity
+\[ [ L_a, L_b] = -i L_c f^{abc}\]
+Where $f^{abc}$ are group specific structure constants.\\
+For the $SO(3)$ group this is for example the known $\eps$-tensor. The generators are the components of angular momentum:
+\[L_x = \Mat{}{}{}{}{}{-i}{}{i}{}, ~~ L_y = \Mat{}{}{i}{}{}{}{-i}{}{}, ~~L_z = \Mat{}{-i}{}{i}{}{}{}{}{}\]
+The identity here is $[L_x,L_y] = iL_z$.\\
+These generators form the basis of the Lie algebra.\\
+\\
+Another trait of the group can be shown for a finite group with $\theta = (\theta_1, \ldots, \theta_n)$. If we use $\eps = \frac{1}{N}\theta$ then for high $N$, $\eps$ becomes small. So a Taylor expansion can be applied:
+\[ U(\eps) = 1 + i \eps_a L_a = 1 + i \frac{\theta_a L_a}{N}\]
+So the original $\theta$ can be written as the following
+\[ U(\theta) = U(\eps)^N \df \lim_{N \df \infty} U(\eps) ^N = \lim_{N\df\infty} \left( 1 + i \frac{\theta_aL_a}{N}\right)^N = e^{i\theta_aL_a} = \sum_{k = 0}^{\infty}\frac{1}{k!}(i\theta_aL_a)^k\]
+The $i$ was introduced in the definition of the generators, so the generators would be hermitian operators. If we look at $U(\theta)$, which is unitary it follows
+\[ U(\theta) = e^{i\theta L} ~~\df~~ U^{-1}(\theta) = e^{-i\theta L}\]
+and thus
+\[ e^{-i\theta_aL_a^\dagger} = U^\dagger(\theta) = U^{-1}(\theta) = e^{-i\theta_aL_a}\]
+From this we can see, that $L_a$ and $L_a^\dagger$ must be the same.
+
+
+\sub{Special unitary groups}
+Another group of Lie groups are the special unitary groups $SU(N) = \{ U \in\mathbbm{C}^{(N\times X)} | U^{-1} = U^\dagger, \det(U) = 1\}$. Its group elements are unitary and have a determinante of one. The number of generators $L_a$ can be expressed formally for every $N$:\\
+$L_a$ has to be a hermitian $N\times N$ matrix with trace $\tr(L_a) = 0$. This follows from
+\[ \det(U) = \det \left( e^{i \theta_a L_a}\right) = e^{i \tr(\theta_a L_a)} \soll 1 ~~\df ~~ \tr(L_a) = 0\]
+Now because there are $N^2$ matrices but one of them neccesarily is $\ehm$ which is not traceless, there are always $N^2-1$ generators in $SU(N)$.\\
+For $N = 2$ the generators are $L_a = \frac{\sigma_a}{2}$ where $\sigma_a$ are the Pauli matrices.\\
+For $N = 3$ the generators are the eight Gell-Mann matrices. They have the following forms
+\begin{align*} \lambda_1 &= \Mat{}{1}{}{1}{}{}{}{}{},~~~\lambda_2 = \Mat{}{-i}{}{i}{}{}{}{}{},~~~\lambda_3 = \Mat{1}{}{}{}{-1}{}{}{}{}\\
+\lambda_4 &= \Mat{}{}{1}{}{}{}{1}{}{}, ~~~\lambda_5 = \Mat{}{}{-i}{}{}{}{i}{}{}\\
+\lambda_6 &= \Mat{}{}{}{}{}{1}{}{1}{}, ~~~\lambda_7 = \Mat{}{}{}{}{}{-i}{}{i}{}, ~~~\lambda_8 = \frac{1}{\sqrt{3}} \Mat{1}{}{}{}{1}{}{}{}{-2}
+\end{align*}
+These matrices have normalization conditions which also apply for abitrary $N$:
+\[ \tr(\lambda^a \lambda^b) = 2\delta^{ab}, ~~~ L_a = \frac{\lambda_a}{2}\]
+
+
+\sub{Rank of the Lie algebra}
+The Lie algebra also has a rank. The rank is defined as the maximum number of commuting generators in the algebra. $SU(N)$ has $N-1$ diagonal generators, which naturally all commute. So the rank of an arbitraty $SU(N)$ algebra is always $N-1$.\\
+These $N-1$ eigenvalues of these $L_a$ then specify the basis states in a $SU(N)$ multiplet.\\
+For example for $N = 2$ the rank is one, so it has only one invariant, which is $\vv{J}^2$ so that $[\vv{J}^2, J_i] = 0$.\\
+Generally, if we have any polynomial such that $C = \eta_{ab} L_a L_b + \eta_{abc} L_aL_bL_c + \ldots$ that commutes with all generators, $[C,L_a] = 0 ~\forall a$ then it is called a Casimir invariant.\\
+For $SU(2)$ the only Casimir invariant is $\vv{J}^2$, for $SU(3)$ there are two different Casimir invariants.\\
+For any $SU(N)$ there is a Casimir invariant $C_2 = L_aL_a$ which is also referred to as the quadratic Casimir of the $SU(N)$ group.\\
+Furhtermore, the eigenvalues of all independant Casimir invariants do specify an irreducible representation.
+
+
+\sub{Adjoint irreducible representation}
+If we take a look at the Jacobi identity
+\[ [A,[B,C]] + [B,[C,A]] + [C,[A,B]] = 0\]
+and take $A = L_a$, $B= L_b$, $C=L_j$ we get
+\[ [A,B] = i f_{abm} L_m ~~~\df~~~ [C,[A,B]] = i f_{abm}[L_j,L_m] = if_{abm}if_{jmc} L_c\]
+from this follows the relationship
+\[ (-if_{aim}(-if_{bmj}) - (-if_{bim})(-if_{amj}) = if_{abc}(-if_{aij})\]
+If we now write $if_{abc} = (F^a)_{bc}$ as a matrix element of a matrix $F^a$ we get
+\[ (F^a)_{im} (F^b)_{mj} - (F^b)_{im}(F^a)_{mj} = i f_{abc} (F^c)_{ij}\]
+due to the summation convention this is equivalent with
+\[ (F^aF^b)_{ij} - (F^bF^a)_{ij} = if_{abc}(F^c)_{ij}\]
+So this in it self satisfies the commutation relation of the Lie algebra:
+\[ [F^a, F^b] = i f^{abc} F^c\]
+So these objects for an irreducible representation of the Lie algebra called the adjoint irreducible representation.\\
+\\
+In summary, for any $SU(N)$ group there are three irreducible representations:
+\begin{itemize}
+\item the trivial representation: $U(\theta) = 1$
+\item the fundamental representation: $U(\theta) = \exp\left( i \frac{\lambda^a}{2} \theta^a\right)$
+\item the adjoint representation: $U(\theta) = \exp \left( i F^a \theta ^a\right)$
+\end{itemize}
+
+
 \section{Relativistische Invarianz und die Lorentzgruppe}
 \section{Feldtransformationen: Darstellungen der Lorentzgruppe}
 
