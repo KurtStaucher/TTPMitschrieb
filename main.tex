@@ -401,7 +401,7 @@ These matrices have normalization conditions which also apply for abitrary $N$:
 \[ \tr(\lambda^a \lambda^b) = 2\delta^{ab}, ~~~ L_a = \frac{\lambda_a}{2}\]
 
 
-\sub{Rank of the Lie algebra}
+~\newline\newline\sub{Rank of the Lie algebra}
 The Lie algebra also has a rank. The rank is defined as the maximum number of commuting generators in the algebra. $SU(N)$ has $N-1$ diagonal generators, which naturally all commute. So the rank of an arbitraty $SU(N)$ algebra is always $N-1$.\\
 These $N-1$ eigenvalues of these $L_a$ then specify the basis states in a $SU(N)$ multiplet.\\
 For example for $N = 2$ the rank is one, so it has only one invariant, which is $\vv{J}^2$ so that $[\vv{J}^2, J_i] = 0$.\\
@@ -434,7 +434,78 @@ In summary, for any $SU(N)$ group there are three irreducible representations:
 \end{itemize}
 
 
-\section{Relativistische Invarianz und die Lorentzgruppe}
+\section{The Lorentz Group and Relativistic Invariance}
+\sub{Lorentz transformations}
+COnsider two inertial frames with common origin at $t = 0$ and moving with relative velocity $v$ along the $x$-axis. Lets assume that in the first frame an event is taking place at $x^\mu = (t, \vx)^T$ and is seen at $x'^\mu = (t', \vx')^T$ in the primed frame. The transformation is as follows
+\[ x'^\mu = \vektorz{t'}{\vx'} = \begin{pmatrix} \gamma t - \gamma v t \\  \gamma v t + \gamma x\\ y \\z\end{pmatrix} = \begin{pmatrix} \gamma & - \gamma v & 0 & 0 \\ -\gamma v & \gamma & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}\cc x^\mu\]
+The transformation matrix is called $\Lambda$ so that $x'^\mu = \Lambda^\mu_{~\alpha} x^\alpha \equiv L x$.\\
+\\A Lorentz transformation now is any linear transformation $\Lambda$ which keeps the relative length invariant:
+\[ s^2 = x'^\mu x'^\nu g_{\mu\nu} = \Lambda^\mu_{~\alpha} \Lambda^\nu_{~\beta}x^\alpha x^\beta g_{\mu\nu}\soll x^\alpha x^\beta g_{\alpha\beta}\]
+This must hold for all possible $x^\mu$.\\
+From this follows
+\[ \Lambda^\mu_{~\alpha} \Lambda^\nu_{~\beta} g_{\mu\nu} = g_{\alpha\beta}\]
+If we now regard $x^\mu$ as a column vector $x$ and $\Lambda^\mu_{~\nu}$ as the elements of some $4\times 4$ matrix $L$ then follows
+\[x' = L \cc x, ~~~~ s^2 = x^Tg x\]
+Then the condition on the $\Lambda$'s reads
+\[g^\alpha_{~\beta} = \Lambda_\mu^{~\alpha} g^\mu_{~\nu} \Lambda^\nu_{~\beta}~~\df~~ g_{\alpha\beta} = \Lambda^\mu_{~\alpha} g_{\mu\nu}\Lambda^\nu_{~\beta} = (L^TgL)_{\alpha\beta}\]
+Now, because $g$ is symmetric ($g_{\alpha\beta} = g_{\beta\alpha}$) also $L^TgL$ must be symmetric. Therefore there are only ten conditions on $L$ (ten independent elements).\\
+If we now take the determinante of that expression we find
+\[\det(g) = \det(L^T)\det(g) \det(L)~~~\df~~~ \det(L) = \pm 1\]
+and with the Jacobi determinant follows
+\[ \int \dd ^4 x' = \int \dd ^4 x| \det(L) | = \int \dd ^4 x\]
+We call Lorentz transformations with $\det(L) = 1$ proper Lorentz transformations and Lorentz transformations with $\det(L) = -1$ improper.\\
+Also, if we take $\alpha = \beta = 0$ in the equation, we find 
+\[g_{00} = 1 = \Lambda^{\mu}_{~0} g_{\mu\nu} \Lambda^\nu_{~0} = (\Lambda^0_{~0})^2 - (\Lambda^i_{~0})^2\]
+So necessarily $|\Lambda^0_{~0}| \geq 1$.\\
+We then call Lorentz transformations with $\Lambda^0_{~0} \geq 1$ orthochronous and Lorentz transformations with $\Lambda^0_{~0} \leq 1$ non orthonormous.
+
+\sub{Lorentz group}
+All Lorentz transformations form a group, the Lorentz group. It has the following attributes
+\begin{itemize}
+\item the product of two Lorentz transformations is again a Lorentz transformation
+\item the inverse exists. In the example of the beginning it would replace $v \df -v$.
+\item there is a unitary element ($L = \ehm_4$)
+\end{itemize}
+Because a product of Lorentz transformations is again a Lorentz transformation we can reduce the types of different transformations to four:
+\begin{enumerate}
+\item time inversions: $x'^0 = - x^0, x'^i = x^i$ (non orthochronous, improper)
+\item parity transformation: $x'^0 = x^0, x'^i = - x^i$ (orthochronous, improper)
+\item rotations: $x'^0 = x^0, x'^i = a^{ij} x^j$ with a rotation matrix $a^{ij}$, $L = \Matz{1}{0}{0}{L}$ where $a$ is the $3\times 3$ rotation matrix with $\det(a) = 1$. (orthochronous, proper)
+\item boosts (here in one direction): $x'^0 = x^0 \cosh \eta + x^1 \sinh \eta$, $x'^1 = x^0 \sinh\eta x^1 \cosh\eta$, $x'^{(2,3)} = x^{(2,3)}$ where $\eta$ is the rapidity. (orthochronous, proper)
+\end{enumerate}
+The number of possible rotations is three (for example the Euler angles), the number of boosts also is three (for example the three boost directions or two angles plus $v$). Therefore, any proper, orthochronous Lorentz transformation can be described by six real parameters. The time inversion and party transformation do not have infinitesimal representations, because they are discrete transformations.
+
+\sub{Inifitesimal generators of proper and orthochronous Lorentz transformations}
+For any adequate description of the Lorentz group we need to study infinitesimal generators. Therefore we consider the infinitesimal Lorentz transformation:
+\[ \Lambda^\mu_{~\nu} = \delta^\mu_{~\nu} + \eps^\mu_{~\nu} \equiv g^\mu_{~\nu} + \eps^\mu_{~\nu}\]
+Now, the condition $g = L^T g L$ can be rewritten as 
+\[ \delta^\alpha_{~\beta} = g^\alpha_{~\beta} = \Lambda_\mu^{~\alpha} g^\mu_{~\nu}\Lambda^\nu_{~\beta} = \Lambda_\mu^{~\alpha}\Lambda^\mu_{~\beta} = ( g_\mu^{~\alpha} + \eps_\mu^{~\alpha})(g^\mu_{~\beta} + \eps^\mu_{~\beta}) = g_\beta^{~\alpha} \eps_\beta^{~\alpha} + \eps^\alpha_{~\beta} + \OO(\eps^2)\]
+From there follows $\eps_\beta^{~\alpha} + \eps^\alpha_{~\beta} = 0$, for example $\eps_{\alpha\beta} = - \eps_{\beta\alpha}$. So this is antisymmetric with six independant real elements.\\
+\\
+We now introduce $L_{\mu\nu} = i ( x_\mu \p_\mu - x_\nu\p_\mu)$ with $\p_\mu = \left( \frac{\p}{\p t}, \vn\right)^T$ as a generalization of the angular momentum operator $J^i -i \eps^{ijk} x^j \p_k$. It comes as as surprise, that these $L_{\mu\nu}$ exactly are the generators of the infinitesimal Lorentz transformation:
+\[J^i = i \eps^{ijk} x_j \p _k = \frac{1}{2}\eps^{ijk} L_{jk}\]
+With $\delta x^\mu = \Lambda^\mu_{~\nu} x^\nu - x^\mu = \eps^\mu_{~\nu} x^\nu$ it follows
+\[ \frac{i}{2} e^{\rho\sigma} L_{\rho\sigma} x^\mu = \frac{i}{2} i \eps^{\rho\sigma} ( x_\rho g_\sigma^{~\mu}- x_\sigma g_\rho^{~\mu}) = - \frac{1}{2} (e^{\rho\mu} x_\rho - \eps^{\mu\sigma}x_\sigma )= \eps^{\mu\sigma}x_\sigma = \delta x^\mu\]
+where we used $\eps^{\rho\mu} = - \eps^{\mu\rho}$. Therefore
+\[ \frac{i}{2}\eps^{\rho\sigma} L_{\rho\sigma} x^\mu = \eps^\mu_{~\nu} x^\nu\]
+So the $L_{\rho\sigma}$ are indeed the generators of rotations in Minkovski space, explicitly, the $SO(3,1)$. The Lie algebra is
+\[ [L_{\mu\nu}, L_{\rho\sigma}] = i ( g_{\nu\rho} L_{\mu\sigma} - g_{\mu\rho}L_{\nu\sigma} - g_{\nu\sigma}L_{\mu\rho} + g_{\mu\sigma}L_{\nu\rho})\]
+\newline
+As a generalization, $L_{\mu\nu}$ is analogous to orbital angular momentum. We can add a spin term, which of course commutes with $L$ and forms some algebra similar to the $L$'s among themselves.\\
+The most general representation of $SO(3,1)$ generators is by $M_{\mu\nu} \equiv i(x_\mu \p_\nu - x_\nu\p_\mu) + S_{\mu\nu}$. The $M_{\mu\nu}$ space comppnents, or more familiarly, the $J^i = \frac{1}{2} \eps^{ijk} M_{jk}$ components are the generators of inifinetismal rotations with $[J_i, J_j] = i \eps^{ijk} J^k$ (the commutation relation form $SO(2)$).\\
+The $M^{0i} \equiv K^i$ are space time components and generate the boosts.\\
+The commutation relation of these $K^i$ and the known $J^i$ are
+\[ [K^i, K^j] = - \eps^{ijk} J^k, ~~~~ [J^i, K^j] = i \eps^{ijk} K^k\]
+These are much simpler than the commutation relation of the $L_{\mu\nu}$.\\
+Also, there usually is a trick to separate two $SO(2)$'s from each other by taking the linear combinations
+\[N^i \equiv \frac{1}{2}(J^i + i K^i), ~~~~~ N^{i\dagger} \equiv \frac{1}{2} ( J^i - i K^i)\]
+For these we find the commutation relations
+\[ [N^i, N^{i\dagger}] = 0, ~~~ [N^i, N^j] = i \eps^{ijk} N^k, ~~~ [N^{i\dagger}, N^{j\dagger} = i \eps^{ijk} N^{k\dagger}\]
+Because the first one is zero, $N^\dagger$ and $N$ are decoupled.\\
+Finally, we find, that the finite dimensional representations of the restriced Lorentz group is characterized by $(n,m)$ where $n,m = 0,  \frac{1}{2}, 1, \ldots$ and are given by the eigenvalues of the Casimir operators:
+\[N^iN^i|n,n_3\rk = n(n+1)|n,n_3\rk, ~~~~ N^{i\dagger}N^{i\dagger}|m,m_3\rk = m(m+1)|m,m_3\rk\]
+
+
 \section{Feldtransformationen: Darstellungen der Lorentzgruppe}
 
 \chapter{Klassiche Feldtheorie: Lagrangians}
