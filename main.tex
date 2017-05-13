@@ -99,7 +99,7 @@ There are many more particles/boundstates of quarks and gluons for different com
 	\item $\Delta^+:~|duu\rk$
 	\item $\Delta^{++}:~|uuu\rk$
 \end{itemize}
-Because the $\Delta$ baryons are spin $\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$-baryon because it consists of thrice the same quark. However, the total wavefunction of the baryons must be antisymmetric because it is a fermion.\\
+Because the $\Delta$ baryons are spin $\frac{3}{2}$ particles all of the quarks spins must be aligned, so the spin wavefunction is symmetric. Also the orbital wavefunction is symmetric for the $\Delta^{++}$ baryon because it consists of thrice the same quark. However, the total wavefunction of the baryons must be antisymmetric because it is a fermion.\\
 This is the reason a color charge was introduced to interpret the Dirac statistics correctly and characterize the strong interaction with a new quantum number.\\
 Alltogether one can describe the four $\Delta$ baryons in an isospin quartet with $I = \frac{3}{2}$.\\
 \\
@@ -112,11 +112,11 @@ Another group of particles are the mesons, they consist of one quark and an anti
 They have masses of $m_\pi c^2 \approx 140~\si{MeV}$ and are spin $0$ particles. Together they form the isospin triplet $I = 1$.\\
 \\
 Another group of mesons with spin $0$ are the kaons. These have another type of quark, the strange quark. For this new quark a new quantum number (next to isospin) was introduced, the strangeness.\\
-We can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is a $\eta$-meson with the same strangeness and isospin as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{\sqrt{6}}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
+We can summarize the kaons and the pions in a meson octett depicted in figure \ref{1}. The kaons have masses of $m_Kc^2 \approx 495~\si{MeV}$. Additionally to the four kaons and the three pions there is an $\eta$ meson with the same strangeness and isospin as the $\pi^0$. It is like the $\pi^0$ but has additional strange quarks: $|\eta\rk = \frac{1}{\sqrt{6}}\left( |u\bar{u}\rk + |d\bar{d}\rk - 2 | s \bar{s}\rk\right)$.\\
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.1]{include/mesonoctett.pdf}
-\caption{meson octett for spin-$0$}
+\caption{meson octett for spin $0$}
 \label{1}
 \end{figure}
 
@@ -165,7 +165,7 @@ $\nu_\tau$ & &0\\
 \end{table}
 \end{minipage}
 
-It is important, that the down quark is slightly heavier than the up quark; because then the down quark more likely decays into the up quark than vice versa and therefore the proton is much more stable than the neutron. This way also atoms remain to be stable and charged.\\
+It is important, that the down quark is slightly heavier than the up quark; because then the down quark more likely decays into the up quark than vice versa and therefore the proton is much more stable than the neutron. This way also atoms remain stable and charged.\\
 \\
 These leptons and quarks are all known matter fields save the bosons:
 \begin{itemize}
@@ -280,7 +280,7 @@ There are some requirements to the Lagrange density:
 In natural units the action is dimensionless (whereas in SI units it has the same unit as $\hbar$). Also $\dd^4 x$ has units of $\si{\frac{1}{GeV^4}}$ in natural units, therefore $\LL$ has to have units of $\si{GeV}^4$
 \newline\newline
 \textbf{Extremal of Action}\\
-Same as before we can calculate the extremal of the action $\SS$ for variations $\delta \phi_r$. Here the boundary condition has to be $\delta \phi_r(x) = 0$ for $x \in \p \Omega$ where $\p \Omega$ is the surface of the integrated space.\\
+Same as before we can calculate the extremal of the action $\SSS$ for variations $\delta \phi_r$. Here the boundary condition has to be $\delta \phi_r(x) = 0$ for $x \in \p \Omega$ where $\p \Omega$ is the surface of the integrated space.\\
 It follows
 \[ 0 = \Delta \SSS = \int_\Omega \dd ^4 x \sum_r \left[ \frac{\p \LL}{\p \phi_r} \delta \phi_r + \frac{ \p \LL}{\p (\p_\mu \phi_r)} \p_\mu(\delta \phi_r) \right]\]
 
@@ -318,7 +318,7 @@ For spin $\frac{1}{2}$ particles the Lagrangian is connected to the Dirac equati
 \[ \LL = \bar{\psi}(x)(i \dslash - m) \psi(x),~~~\bar{\psi} = \psi^\dagger \gamma^0 = (\psi^*)^T \gamma^0\]
 where $\psi$ has four complex and eight real components.\\
 The components of $\psi$ and $\bar{\psi}$ are treated as independant fields. This leads to the following equations of motion
-\[ \frac{\p \LL}{\p \bar{\psi}} = ( i \dslash - m)\psi = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \bar{\psi})}:\right) = 0~~~~\df ~~ (i \dslash - m) \psi = 0\]
+\[ \frac{\p \LL}{\p \bar{\psi}} = ( i \dslash - m)\psi = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \bar{\psi})}\right) = 0~~~~\df ~~ (i \dslash - m) \psi = 0\]
 \[ \frac{\p\LL}{\p\psi} = -m \bar{\psi} = \p_\mu\left( \frac{\p\LL}{\p(\p_\mu \psi)}\right) = i \p_\mu(\bar{\psi}\gamma^\mu)~~~~\df ~~ i \p_\mu(\bar{\psi}\gamma^\mu) + m \bar{\psi} = 0\]
 
 
@@ -331,23 +331,23 @@ The components of $\psi$ and $\bar{\psi}$ are treated as independant fields. Thi
 \section{Representation of Groups}
 A group is an object of the form $G = \{ g_i | i = 1,\ldots\}$ where $g_i$ are the elements of the group. In the group a multiplication exists so, that $g_1 g_2 = g_3 \in G$. This also has the following traits:
 \begin{itemize}
-\item it has to be associatiove: $g_1(g_2g_3) = (g_1g_2)g_3$
+\item it has to be associative: $g_1(g_2g_3) = (g_1g_2)g_3$
 \item there is an identity element $e \equiv 1$ so that $g\cc e = e \cc g = g ~~\forall g \in G$
-\item $\forall g \in G$ there is an inverse $g_{-1} \in G$: $gg^{-1} = g^{-1}g = e$
+\item $\forall g \in G$ there is an inverse $g^{-1} \in G$: $gg^{-1} = g^{-1}g = e$
 \end{itemize}
 The representation of $G$ is a mapping $r: G \df \mathbbm{C}^{(n,n)}$ where $r(g_i) = M_i$ is a $n\times n$-matrix.\\
 With this representation the multiplication rules are being preserved: $r(g_1g_2) = r(g_1)r(g_2)$ or $M_3 = M_1M_2$. Also $r(e) = \ehm_n$ and $r(g^{-1}g) = MM^{-1} = \ehm$.\\
 A reducable representation is a representation such that a single unitary $n\times n$ matrix $U$ exists such that
 \[ U M_i U^{-1} = \Matz{M_i'}{0}{0}{M_i''}\]
-So instrad of working with $M_i$ we could have worked with the block diagonal matrices $M_i'$ and $M_i''$.\\
+So instead of working with $M_i$ we could have worked with the block diagonal matrices $M_i'$ and $M_i''$.\\
 An irreducable representation then is a representation where no unitary matrix exists that splits the matrix $M_i$ into block diagonal matrices.\\
 For finite groups $G = \{ g_i | i = 1, \ldots, n \}$ the dimensions $d_r$ of all the irreducible representations are bounded by 
 \[n = \sum_r d_r^2\]
 Therefore an infinite group has infinte number of different finite dimensional irreducible representations.
-\section{Lie groups and Lie algebra}
+\section{Lie Groups and Lie Algebra}
 Lie groups are a special case of groups. They are parametrizised by $G = \{ U(\theta)| \theta = ( \theta_1, \ldots, \theta_n) \in \mathbbm{R}^n\}$ with $U(0) = e$. \\
 $U(\theta)$ is analytic in all its components; it is infinitely differentiable.\\
-The simplest example if a Lie group is the three dimensional rotation group $SO(3)$ with the rotation matrices $R(\phi,\psi,\theta)$. The three rotations are\\
+The simplest example of a Lie group is the three dimensional rotation group $SO(3)$ with the rotation matrices $R(\phi,\psi,\theta)$. The three rotations are\\
 the rotation around the $z$-axis:
 \[ R_z(\theta) = \Mat{\cos\theta}{\sin\theta}{0}{- \sin\theta}{\cos\theta}{0}{0}{0}{1}\]
 the rotation around the $y$-axis:
@@ -365,7 +365,7 @@ The Taylor expansion also leads to infinitesimal transformations:
 In summation convention this also can be written as $\sum_a \theta_a L_a = \theta_a L_a = \theta\cc L$.\\
 As one general group property is the formation of the $1$-element: $U(\theta)U^{-1}(\theta) = 1$ this also has to be applicable for inifitiesimal transformations. This leads to
 \[ G \ni U(\theta)U(\psi)U^{-1}(\theta)U^{-1}(\psi) \neq 1\]
-which is not the $1$-element for non commuting groups. The Taylor expanison of this expression leads to
+which is not neccesarily the $1$-element for non commuting groups. The Taylor expanison of this expression leads to
 \[ 1 + i^2 \theta_a\psi_b ( L_aL_b + L_aL_b - L_aL_b - L_bL_a) + \ldots = 1 - \theta_a \psi_b [L_a, L_b]+\ldots = 1 + i \sum_c \theta_a \psi_b ( - L_c f^{abc})\]
 In the first step the only terms of first order are either linear in $\psi$ or $\theta$ so they cancel. In the second order all terms quadratic in $\theta$ or $\psi$ also cancel and the only things left are mixed terms. In the second step the definition of the commutator was applied and in the last step we used, that the resulting element had to be in the group $G$ again, so it must be able to be written as a taylor expansion again. This therefore leads to the identity
 \[ [ L_a, L_b] = -i L_c f^{abc}\]
@@ -387,7 +387,7 @@ From this we can see, that $L_a$ and $L_a^\dagger$ must be the same.
 
 
 \sub{Special unitary groups}
-Another group of Lie groups are the special unitary groups $SU(N) = \{ U \in\mathbbm{C}^{(N\times X)} | U^{-1} = U^\dagger, \det(U) = 1\}$. Its group elements are unitary and have a determinante of one. The number of generators $L_a$ can be expressed formally for every $N$:\\
+Another group of Lie groups are the special unitary groups $SU(N) = \{ U \in\mathbbm{C}^{(N\times N)} | U^{-1} = U^\dagger, \det(U) = 1\}$. Its group elements are unitary and have a determinante of one. The number of generators $L_a$ can be expressed formally for every $N$:\\
 $L_a$ has to be a hermitian $N\times N$ matrix with trace $\tr(L_a) = 0$. This follows from
 \[ \det(U) = \det \left( e^{i \theta_a L_a}\right) = e^{i \tr(\theta_a L_a)} \soll 1 ~~\df ~~ \tr(L_a) = 0\]
 Now because there are $N^2$ matrices but one of them neccesarily is $\ehm$ which is not traceless, there are always $N^2-1$ generators in $SU(N)$.\\
@@ -436,7 +436,7 @@ In summary, for any $SU(N)$ group there are three irreducible representations:
 
 \section{The Lorentz Group and Relativistic Invariance}
 \sub{Lorentz transformations}
-COnsider two inertial frames with common origin at $t = 0$ and moving with relative velocity $v$ along the $x$-axis. Lets assume that in the first frame an event is taking place at $x^\mu = (t, \vx)^T$ and is seen at $x'^\mu = (t', \vx')^T$ in the primed frame. The transformation is as follows
+Consider two inertial frames with common origin at $t = 0$ and moving with relative velocity $v$ along the $x$-axis. Lets assume that in the first frame an event is taking place at $x^\mu = (t, \vx)^T$ and is seen at $x'^\mu = (t', \vx')^T$ in the primed frame. The transformation is as follows
 \[ x'^\mu = \vektorz{t'}{\vx'} = \begin{pmatrix} \gamma t - \gamma v t \\  \gamma v t + \gamma x\\ y \\z\end{pmatrix} = \begin{pmatrix} \gamma & - \gamma v & 0 & 0 \\ -\gamma v & \gamma & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}\cc x^\mu\]
 The transformation matrix is called $\Lambda$ so that $x'^\mu = \Lambda^\mu_{~\alpha} x^\alpha \equiv L x$.\\
 \\A Lorentz transformation now is any linear transformation $\Lambda$ which keeps the relative length invariant:
@@ -470,7 +470,7 @@ Because a product of Lorentz transformations is again a Lorentz transformation w
 \begin{enumerate}
 \item time inversions: $x'^0 = - x^0, x'^i = x^i$ (non orthochronous, improper)
 \item parity transformation: $x'^0 = x^0, x'^i = - x^i$ (orthochronous, improper)
-\item rotations: $x'^0 = x^0, x'^i = a^{ij} x^j$ with a rotation matrix $a^{ij}$, $L = \Matz{1}{0}{0}{L}$ where $a$ is the $3\times 3$ rotation matrix with $\det(a) = 1$. (orthochronous, proper)
+\item rotations: $x'^0 = x^0, x'^i = a^{ij} x^j$ with a rotation matrix $a^{ij}$, $L = \Matz{1}{0}{0}{a}$ where $a$ is the $3\times 3$ rotation matrix with $\det(a) = 1$. (orthochronous, proper)
 \item boosts (here in one direction): $x'^0 = x^0 \cosh \eta + x^1 \sinh \eta$, $x'^1 = x^0 \sinh\eta x^1 \cosh\eta$, $x'^{(2,3)} = x^{(2,3)}$ where $\eta$ is the rapidity. (orthochronous, proper)
 \end{enumerate}
 The number of possible rotations is three (for example the Euler angles), the number of boosts also is three (for example the three boost directions or two angles plus $v$). Therefore, any proper, orthochronous Lorentz transformation can be described by six real parameters. The time inversion and party transformation do not have infinitesimal representations, because they are discrete transformations.
@@ -492,7 +492,7 @@ So the $L_{\rho\sigma}$ are indeed the generators of rotations in Minkovski spac
 \[ [L_{\mu\nu}, L_{\rho\sigma}] = i ( g_{\nu\rho} L_{\mu\sigma} - g_{\mu\rho}L_{\nu\sigma} - g_{\nu\sigma}L_{\mu\rho} + g_{\mu\sigma}L_{\nu\rho})\]
 \newline
 As a generalization, $L_{\mu\nu}$ is analogous to orbital angular momentum. We can add a spin term, which of course commutes with $L$ and forms some algebra similar to the $L$'s among themselves.\\
-The most general representation of $SO(3,1)$ generators is by $M_{\mu\nu} \equiv i(x_\mu \p_\nu - x_\nu\p_\mu) + S_{\mu\nu}$. The $M_{\mu\nu}$ space comppnents, or more familiarly, the $J^i = \frac{1}{2} \eps^{ijk} M_{jk}$ components are the generators of inifinetismal rotations with $[J_i, J_j] = i \eps^{ijk} J^k$ (the commutation relation form $SO(2)$).\\
+The most general representation of $SO(3,1)$ generators is by $M_{\mu\nu} \equiv i(x_\mu \p_\nu - x_\nu\p_\mu) + S_{\mu\nu}$. The $M_{\mu\nu}$ space comppnents, or more familiarly, the $J^i = \frac{1}{2} \eps^{ijk} M_{jk}$ components are the generators of inifinetismal rotations with $[J_i, J_j] = i \eps^{ijk} J^k$ (the commutation relation from $SO(2)$).\\
 The $M^{0i} \equiv K^i$ are space time components and generate the boosts.\\
 The commutation relation of these $K^i$ and the known $J^i$ are
 \[ [K^i, K^j] = - \eps^{ijk} J^k, ~~~~ [J^i, K^j] = i \eps^{ijk} K^k\]
@@ -500,14 +500,106 @@ These are much simpler than the commutation relation of the $L_{\mu\nu}$.\\
 Also, there usually is a trick to separate two $SO(2)$'s from each other by taking the linear combinations
 \[N^i \equiv \frac{1}{2}(J^i + i K^i), ~~~~~ N^{i\dagger} \equiv \frac{1}{2} ( J^i - i K^i)\]
 For these we find the commutation relations
-\[ [N^i, N^{i\dagger}] = 0, ~~~ [N^i, N^j] = i \eps^{ijk} N^k, ~~~ [N^{i\dagger}, N^{j\dagger} = i \eps^{ijk} N^{k\dagger}\]
+\[ [N^i, N^{i\dagger}] = 0, ~~~ [N^i, N^j] = i \eps^{ijk} N^k, ~~~ [N^{i\dagger}, N^{j\dagger}] = i \eps^{ijk} N^{k\dagger}\]
 Because the first one is zero, $N^\dagger$ and $N$ are decoupled.\\
 Finally, we find, that the finite dimensional representations of the restriced Lorentz group is characterized by $(n,m)$ where $n,m = 0,  \frac{1}{2}, 1, \ldots$ and are given by the eigenvalues of the Casimir operators:
 \[N^iN^i|n,n_3\rk = n(n+1)|n,n_3\rk, ~~~~ N^{i\dagger}N^{i\dagger}|m,m_3\rk = m(m+1)|m,m_3\rk\]
+These $m$ and $n$ are related by parity: $J_i \overset{P}{\df} J_i$, $K_i \overset{P}{\df} - K_i$. This follows, because $J_i$ has two spacial directions and $K_i$ only has one. Now, the parity transformation changes the sign of the spacial components, so for $J_i$ this cancels. The $N$ transform as
+\[ N^i \overset{P}{\df} N^{i\dagger}, ~~~ \df ~~~ (n,m) \overset{P}{\df} (m,n)\]
+Hence $n$ and $m$ are related. Additionaly we can identify the spin of the representation as $n+m$, this follows, because $J^i = N^i + N^{i\dagger}$ (?).\\
+Some special cases are for example:
+\begin{itemize}
+\item The scalar representation with spin 0 is $(0,0)$.
+\item $\left(\frac{1}{2}, 0\right)$ and $\left( 0, \frac{1}{2}\right)$ are representations of spin $\frac{1}{2}$ where the first one represents right handed spinors and the second one left handed spinors. Both are Weyl spinors.
+\item Combining $\left(0, \frac{1}{2}\right)\oplus \left(\frac{1}{2}, 0 \right)$ as a direct sum this leads to Dirac spinors. This is for example needed, when a parity invariant theory is wanted.
+\end{itemize}
+With $J$ and $K$ we can describe finite Lorentz transformations by exponenciating the infinitesimal ones in a non covariant form:
+\[ e^{-i(\vv{\omega}\vv{J} + \vv{\nu}\vv{K})}\]
+Here $\vv{\omega}$ is the direction of the rotation axis and $|\vv{\omega}|$ is the rotation angle. The direction of the boost is given by $\vv{\nu}$ and $|\vv{\nu}|$ is the rapidity of the boost.\newline
+\sub{Poincaré group}
+The Poincaré group is obtaioned from the Lorentz group by adding translations $x^\mu \df x'^\mu = x^\mu + a^\mu$ where $a^\mu$ is a constant 4 vector. The most general translation is
+\[ x^\mu \df x'^\mu = \Lambda^\mu_{~\nu}x^\nu + a^\mu\]
+This has ten real parameters, so we need four additional generators. These will be the momentum operators.\\
+Infinitesimally the difference between the translated and untranslated vector can be expressed as $\delta x^\mu = \eps^\mu = - \eps^\rho P_\rho x^\mu$ with $P_\rho = i \p_\rho$.\\
+The commutation relations of the momentum operator are
+\[ [P_\mu, P_\nu] = 0, ~~~[M_{\mu\nu}, P_\rho] = -i g_{\mu\nu}P_\nu + ig_{\nu\rho}P_\mu\]
 
 
-\section{Feldtransformationen: Darstellungen der Lorentzgruppe}
-
+\section{Transformation of Fields under Lorentz Transformations}
+Lets take a look at a vector field $A_\mu(x)$ (for example the vector potential of the electromagnetic field). An observer in the primed frame describes the same physical situation by another field $A'_\mu(x)$. The two observed fields are of course related, for $x'_\mu = \Lambda_\mu^{~\nu}x_\nu$ it follows
+\[A'_\mu = \Lambda_\mu^{~\nu}A_\nu(x)\]
+This relation is, what defines $A_\mu$ as a vectorfield. We can generalize this:\\
+Let $x_\mu$ and $x'_\mu = \Lambda_\mu^{~\nu} x_\nu$. Thee should describe some point $P$ in two inertial frames. Let $\Lambda_A^{~B}$ ($A,B = 1, \ddots d$) be the corresponding $d$-dimensional representation matrixes of an irreducible representation of $SO(3,1)$. A $d$-component field $f_A(x)$ and $f'_A(x')$ in the two transformations is said to transform under this irreducible representation if $f'_A(x') = \lambda_A^{~B} f_B(x)$. In the infinitesimal version this is $\Lambda_A^{~B} = \delta_A^{~B} - \frac{i}{2} \eps^{\alpha \beta}(S_{\alpha\beta})_A^{~B}$.\\
+Here are some examples
+\begin{table}[H]
+\begin{tabular}{lll}
+irr. rep. of $SO(3,1)$ & field & transf. property\\
+\midrule
+$\left(0, 0\right)$, scalar & $\phi(x)$ & $\phi'(x') = \phi(x)$\\
+$\left(\frac{1}{2}, \frac{1}{2}\right)$, vector & $V^\mu(x)$ & $V'^\mu(x') = \Lambda^\mu_{~\nu}V^\nu(x)$\\
+$\left(0,\frac{1}{2}\right)$, left handed Weyl spinor & $\psi_L(x)$ & $\psi'_L(x') = \Lambda_L \psi_L(x)$\\
+$\left(\frac{1}{2}, 0 \right)$, right handed Weyl spinor & $\psi_R(x)$ & $\psi'_R(x') = Lambda_R \psi_R(x)$\\
+\end{tabular}
+\end{table}
+The transformation matrices $\Lambda_R$ and $\Lambda_L$ are given by:
+\[\Lambda_{L,R} = e^{-i(\vv{\omega}\vv{J} + \vv{\nu}\vv{K})}\]
+with $\vv{J} = \vv{N} + \vv{N}^\dagger$ and $\vv{K} = i (\vv{N}^\dagger - \vv{N})$. For $Lambda_L$ the $N$ are $\vv{N}^\dagger = \frac{\vv{\sigma}}{2}$ and $\vv{N} = 0$. For $\Lambda_R$ they are $\vv{N}^\dagger = 0$ and $\vv{N} = \frac{\vv{\sigma}}{2}$. This follows, because $\vv{N}$ are $SU(2)$ groups and we need a representation of $SU(2)$ which describes spin $\frac{1}{2}$ particles.\\
+With this parametrization the $\Lambda$ are given by
+\[ \Lambda_L = \exp\left( -i \frac{\vv{\sigma}}{2} \left(\vv{\omega} + i \vv{\nu}\right)\right)\]
+\[ \Lambda_R = \exp\left( i \frac{\vv{\sigma}}{2} \left( \vv{\omega} - i \vv{\nu}\right)\right)\]
+Some properties of $\Lambda_{R,L}$ are
+\begin{itemize}
+\item $\Lambda_L^{-1} = \Lambda_R^\dagger$
+\item $\sigma^2 \Lambda_L \sigma^2 = \Lambda_R^*$
+\item $\sigma^2 \Lambda_L^{-1} \sigma^2 = \Lambda_L^T$
+\end{itemize}
+Now consider a Lorentz transformation of the field $\sigma^2 \psi_R^*$:
+\[ \sigma^2 \psi_R^* ~~~\df~~~ \sigma^2 \Lambda_R^*\psi_R^* = \underbrace{\sigma^2 \Lambda_R^*\sigma^2}_{\Lambda_L} \sigma^2 \psi_R^* = \Lambda_L \sigma^2 \psi_R^*\]
+Thus $\sigma^2 \psi_R^*$ is a left handed spinor because it transforms the same way. It is called the charge conjugate of $\psi_R$). Therefore:
+\begin{itemize}
+\item $\psi_L$ and $\sigma^2\psi_R^*$ transform as $\left(0, \frac{1}{2}\right)$
+\item $\psi_R$ and $\sigma^2\psi_L^*$ transform as $\left(\frac{1}{2}, 0\right)$
+\end{itemize}
+$\psi_L$ and $\psi_R$ are called Weyl spinors.
+\sub{Construction of scalars and vectors}
+The Weyl spinors can be combined to construct scalars and vectors. First, consider products of two left handed spinors $\chi_L$ and $\psi_L$. Since $\left( 0, \frac{1}{2}\right) \otimes \left( 0, \frac{1}{2}\right) = (0,0) \oplus (0,1)$ we can construct a scalar from them:
+\[ \chi_L^T \sigma^2 \psi_L ~~\overset{LT}{\df} \chi_L^T \Lambda_L^T \sigma^2 \Lambda_L \psi_L = \chi_L^T \sigma^2 \psi_L\]
+In the second step we used, that $\Lambda_L^T \sigma^2 \Lambda_L$ is equal to $\sigma^2 \Lambda_L^{-1}\sigma^2\sigma^2 \Lambda_L$ due to the properties of $\Lambda_{L}$ and that $(\sigma^2)^2= 1$ and $\Lambda_L^{-1}\Lambda_L = 1$. \\
+We therefore know, that $\chi^T_L\sigma^2\psi_L$ is a scalar. With
+\[ \chi_L = \vektorz{\chi_1}{\chi_2}, ~~~ \psi_L = \vektorz{\psi_1}{\psi_2}\]
+follows
+\[ \chi_L^T \sigma^2 \psi_L = \begin{pmatrix} \chi_1 & \chi_2\end{pmatrix} \Matz{0}{-i}{i}{0} \vektorz{\psi_1}{\psi_2} = - i (\chi_1 \psi_2 - \chi_2 \psi_1)\]
+This shows, that this scalar is antisymmetrical in the two fields. It is important to realize, that these are spin $\frac{1}{2}$ fields, so they must be represented by anitcommuting Grassmann numbers to conserve the properties demanded by spin $\frac{1}{2}$.\\
+Hence even von $\chi_L = \psi_L$ we get
+\[ \psi_L^T \sigma^2 \psi_L = - i( \psi_1 \psi_2 - \psi_2 \psi_1) = 2i \psi_2 \psi_1 \neq 0\]
+This is non zero because of the anticommuting Grassmann numbers. This would not be the case, if these scalars would commute like normal scalars.\\
+This combination is used in Majorana mass terms.\\
+We can also take $\chi_L = \sigma^2\psi_R^*$ because it also is a lefthanded spinor. Then we get
+\[\chi_L^T \sigma^2 \psi_L = \psi^\dagger_R(-\sigma^2)^2 \psi_L = - \psi_R^\dagger \psi_L\]
+Which is a particle of the Dirac mass term.\\
+\\
+Vectors $\left(\frac{1}{2},\frac{1}{2}\right)$ can be obtained from the product of $\psi_L$ and $\sigma^2\psi_R^*$, $\left(\frac{1}{2}, 0 \right) \otimes \left(0,\frac{1}{2}\right) = \left(\frac{1}{2},\frac{1}{2}\right)$. \\
+We start from $\psi_L^\dagger \psi_L$ which is invariant under rotations. Under boosts this transforms as 
+\[ \psi_L^\dagger \psi_L ~~\df~~ \psi_L^\dagger \Lambda_L^\dagger \Lambda_L \psi_L = \psi_L^\dagger e^{\vv{\sigma}\vv{\nu}} \psi_L = \psi_L^\dagger \psi_L + \vv{\nu} \psi_L^\dagger \vv{\sigma} \psi_L + \ldots\]
+Similarly for $\psi_L^\dagger \sigma^i \psi_L$:
+\[ \psi_L^\dagger \sigma^i \psi_L ~~\df~~ \psi_L^\dagger e^{\vv{\sigma}\vv{\nu}/2} \sigma^i e^{\vv{\sigma}\vv{\nu}/2} \psi_L = \psi_L^\dagger \sigma^i \psi_L - \nu^i \psi_L^\dagger \psi_L\]
+In the second step we used $e^{\vv{\sigma}\vv{\nu}/2} \sigma^i e^{\vv{\sigma}\vv{\nu}/2} = \sigma^i - \frac{1}{2} \nu^j \{\sigma^j,\sigma^i\} = \sigma^i - \nu^i \delta^{ji}$.\\
+Summarizing the differnce between transformed and untransformed vectors $\delta$ is given by
+\[ \delta(\psi_L^\dagger \psi_L) = - \nu^i \psi_L^\dagger (-\sigma^i) \psi_L\]
+and
+\[ \delta( \psi_L(-i\sigma^i) \psi_L) = -\nu^i \psi^\dagger_L \psi_L\]
+If we compare this with the general transformation of 4 vectors under boosts which is given by
+\[ \frac{1}{2} \eps^{\mu\nu} M_{\mu\nu} = \eps^{0i} M_{0i} = - \eps^{0i}K^i = \vv{\nu}\vv{K} \]
+where of course only boosts were considered. The difference here is given by
+\[ \delta V^\mu = - \eps^\mu_{~\nu} V^\nu\]
+For the time component this leads to
+\[ \delta V^0 = \eps^{0i} V^i = - \nu^i V^i\]
+and for the spacial components
+\[ \delta V^i = - \eps^{i0} V^0 = \eps^{0i} V^0 =  -\nu^i V^0\]
+Therefore $( \psi_L^\dagger \psi_L, - \psi_L^\dagger \vv{\sigma} \psi_L)$ transforms as a 4 vector. This is often times written as $\psi_L ^\dagger \sigma_-^\mu \psi_L$ with $\sigma_-^\mu \equiv (\ehm, - \vv{\sigma})$.\\
+Similarly for the right handed spinors $\psi_R^\dagger \psi_R$ with $\Lambda_R = e^{\vv{\sigma}\vv{\nu}/2}$ we get the vector
+\[ \psi_R^\dagger \sigma_+^\mu \psi_R = ( \psi_R^\dagger \psi_R, \psi_R^\dagger \vv{\sigma} \psi_R), ~~~ \sigma_+^\mu \equiv (\ehm, \vv{\sigma})\]
+Lorentz scalars now can be formed by contracting with Lorentz vectors in particular with $\p_\mu$: $( \p_\mu \psi_L^\dagger) \sigma_-^\mu \psi_L, \psi_L^\dagger \sigma_-^\mu ( \p_\mu \psi_L) )$, etc are thus candidates for kinetic energy terms in Lagrangians.
 \chapter{Klassiche Feldtheorie: Lagrangians}
 \section{Bewegungsgleichungen}
 \section{Symmetrien (Noether's Theorem)}
