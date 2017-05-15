@@ -599,7 +599,88 @@ and for the spacial components
 Therefore $( \psi_L^\dagger \psi_L, - \psi_L^\dagger \vv{\sigma} \psi_L)$ transforms as a 4 vector. This is often times written as $\psi_L ^\dagger \sigma_-^\mu \psi_L$ with $\sigma_-^\mu \equiv (\ehm, - \vv{\sigma})$.\\
 Similarly for the right handed spinors $\psi_R^\dagger \psi_R$ with $\Lambda_R = e^{\vv{\sigma}\vv{\nu}/2}$ we get the vector
 \[ \psi_R^\dagger \sigma_+^\mu \psi_R = ( \psi_R^\dagger \psi_R, \psi_R^\dagger \vv{\sigma} \psi_R), ~~~ \sigma_+^\mu \equiv (\ehm, \vv{\sigma})\]
-Lorentz scalars now can be formed by contracting with Lorentz vectors in particular with $\p_\mu$: $( \p_\mu \psi_L^\dagger) \sigma_-^\mu \psi_L, \psi_L^\dagger \sigma_-^\mu ( \p_\mu \psi_L) )$, etc are thus candidates for kinetic energy terms in Lagrangians.
+Lorentz scalars now can be formed by contracting with Lorentz vectors in particular with $\p_\mu$: $( \p_\mu \psi_L^\dagger) \sigma_-^\mu \psi_L,~~ \psi_L^\dagger \sigma_-^\mu ( \p_\mu \psi_L) $, etc are thus candidates for kinetic energy terms in Lagrangians. Becaue no point in spacetime is special $x^\mu$ does not appear in the physical theories, only terms with $\p^\mu$. Now, because $\p^\mu$ transforms as $\left(\frac{1}{2}, \frac{1}{2}\right)$ and thus as a vector field, $\psi^\dagger_L \sigma_-^\mu ( \p_\mu\psi_L)$ and $\psi_R^\dagger \sigma_+^\mu \p_\mu \psi_R$ transform as $(0,0)$ and are thus scalars. These expressions are just contractions of two four vectors.\\
+\\
+If we take a look at $\psi_R^\dagger\psi_L$ and $\psi^\dagger_L\psi_R$ it is obvious, that we need a $\psi_L$ if we have a $\psi_R^\dagger$ to form a scalar. This is the only way to get a scalar. Equally we can only get a vector if $\psi_R^\dagger$ is multiplied with another $\psi_R$, or the same with $\psi_L$.\\
+That means, that in $\psi^\dagger_R \sigma_+^\mu \p_\mu \psi_R$ the $\sigma_+^\mu\p_\mu \psi_R$ must transform as a left handed Weyl spinor with $\left( 0,\frac{1}{2}\right)$. The same holds for $\sigma_-^\mu\p_\mu\psi_L$ with must transform as a right handed Weyl spinor with $\left( \frac{1}{2},0\right)$.\\
+These terms are just spinors with a derivative multiplied with dirac matrices. So they are candidates for terms in equations of motion.
+
+
+\sub{Field Equations for Weyl Spinors}
+If we take a look at the newly found terms and try to construct an equation of motion for them, we can use $i \sigma_-^\mu\p_\mu \psi_L$ as a starting point. This is a right handed Weyl spinorfield, and thus it must be also equal to another right handed spinorfield.\\
+There are three possibilieties, to which every other solution can be reduced:
+\begin{itemize}
+\item $i \sigma_-^\mu \p_\mu \psi_L = 0$. This is the correct equation for massless, left handed particles, for example the massless neutrinos.
+\item $i \sigma_-^\mu \p_\mu \psi_L = m \sigma^2 \psi_L^*$. This is the equation for Majorana particels. It would describe Majorana neutrionos. The $m$ was introduced, because the left side has units of energy, coming from $\p^\mu$, thus also the right side has to have units of energy, which led to an introduction of the mass $m$.
+\item $i \sigma_-^\mu \p_\mu \psi_L = m \psi_R$. This is the Dirac equation. Now, because there is a $\psi_R$ in the equation for $\psi_L$ we also need an equation of motion for $\psi_R$, which must have at least one derivative of $\psi_R$ in it. Therefore we introduce another Dirac equation $i \sigma_+^\mu \p_\mu \psi_R = m \psi_L$.
+\end{itemize}
+The last two equations are equivalent with the known Dirac equation. This follows easily if we write the two equations as a combination for the Dirac spinor $\psi = \vektorz{\psi_L}{\psi_R}$:
+\[ m \psi = m \vektorz{\psi_L}{\psi_R} = i \Matz{0}{\sigma_+^\mu}{\sigma_-^\mu}{0} \p_\mu\vektorz{\psi_R}{\psi_L}\]
+The resulting matrix is called $\gamma^\mu$ and should have the known anticommutation relation for gamma matrices: $\{\gamma^\mu, \gamma^\nu\} = 2g^{\mu\nu}$:
+\[\{\gamma^\mu, \gamma^\nu\} = \Matz{\sigma_+^\mu\sigma_-^\nu + \sigma_+^\nu\sigma_-^\mu}{0}{0}{\sigma_-^\mu\sigma_-^\nu+ \sigma_-^\nu\sigma_+^\mu}\]
+If both indices are zero, this reduces to $2\ehm_4 = 2 g^{00}$ which satisfies the anticommutation relation. If only one index is zero and the other is $i = 1,2,3$ the matrix is equal to zero, because $\sigma_-^i + \sigma_+^i = \sigma^i - \sigma^i = 0 = 2 g^{0i}$ due to the signs in the definition of the $\sigma_\pm$ matrices. \\
+If both indices are $i,j = 1,2,3$ the matrix can be written as 
+\[ \{\gamma^i,\gamma^j\} = \Matz{-\{\sigma^i,\sigma^j\}}{0}{0}{-\{\sigma^i,\sigma^j\}}\]
+The anticommutator of the Pauli matrices is known to be $\{\sigma^i, \sigma^j\} = 2\delta_{ij}$, thus the anticommutation relation is $\{\gamma^i,\gamma^j\} = - 2\delta_{ij} = 2 g^{ij}$ due to Minkovski metrics. All in all, the wanted anticommutation relation is fullfilled and therefore this is in fact the Dirac equation in another form.
+
+\sub{Parity}
+Lets take a look at the parity transformation $x^\mu = (t, \vx) ~\overset{P}{\df}~ (t, - \vx) = \tilde{x}^\mu$.\\
+In the irreducible representation of $SO(3,1)$ this transformation is $(j_1, j_2)~\overset{P}{\df}~ (j_2, j_1)$. This follows from the first component being $\vv{N} = \vv{J} + i \vv{K}$ and the second one being $\vv{N}^\dagger = \vv{J} - i \vv{K}$. Under parity transformation $\vv{J}$ stays the same and $i\vv{K}$ gets a minus sign, thus $\vv{N}$ transforms to $\vv{N}^\dagger$ and vice versa.\\
+This means, that a left handed field becomes a right handed one and vice versa:
+\[\psi_L(x) ~\overset{P}{\df}~ \psi_R(\tilde{x})\]
+To construct a parity invariant theory, the right handed and left handed fields have to have the same masses and signs, etc. to remain conserved under parity transformation.\\
+For the Dirac spinor the parity transformations yields
+\[ \psi(x) = \vektorz{\psi_L}{\psi_R} ~\overset{P}{\df}~ \vektorz{\psi_R(\tilde{x})}{\psi_L(\tilde{x})} = \Matz{0}{\ehm_2}{\ehm_2}{0} \vektorz{\psi_L}{\psi_R} = \gamma^0 \psi(\tilde{x})\]
+A projection onto $\psi_L$ or $\psi_R$ can be done with the projection operators:
+\[ P_L \equiv P_- = \frac{1}{2} ( 1 - \gamma^5) = \Matz{\ehm_2}{0}{0}{0}\]
+\[ P_R \equiv P_+ = \frac{1}{2} ( 1 + \gamma^5) = \Matz{0}{0}{0}{\ehm_2}\]
+These operators project $\psi_R$ or $\psi_L$ out of $\psi$. Here the $\gamma^5$ matrix is $\gamma^5 = i \gamma^0 \gamma^1\gamma^2\gamma^3 = \Matz{-\ehm}{0}{0}{\ehm}$. The projection can be seen by applying $P_\pm$:
+\[P_L\psi = \vektorz{\psi_L}{0} \equiv \psi_L, ~~~ P_R \psi = \vektorz{0}{\psi_R} \equiv \psi_R\]
+This four component vector is sometimes written as $\psi_L$ or $\psi_R$ respectively, which can be easily confused with the two component Weyl spinor $\psi_L$ or $\psi_R$ which it consists of. Only from context it is visible, which of the two is meant.\\
+This treatment of parity transformation is needed, because it will show, that quantum electro dynamics (QED) - the electromagnetic interaction, and quantum chromo dynamics (QCD) - the strong interaction, are in fact parity invariant, but the weak interaction is not. In fact it violates the parity conservation maximally, only left handed particles interact with the $W^\pm$ bosons.
+
+\section{Plane Wave Solutions of the Dirac Equation}
+
+Lets take a look at $\psi(x) = e^{-ikx}\psi(k)$ and find its plane wave solutions with the Dirac equation $i \p^\mu \gamma_\mu \psi = m \psi$. In $k$ space the Dirac equation yields $i (-i k^\mu) \gamma_\mu \psi = \slashed{k} \psi$ thus the equation to be solved is $(\slashed{k} - m) \psi(k) = 0$. Multiplying this equation with another $\slashed{k}$ leads to
+\[ k^2 - m \slashed{k}) \psi(k) = (k^2 - m ^2) \psi(k)= 0 \]
+because $\slashed{k}^2 = k^2$ and $m\slashed{k}\psi(k) = m^2 \psi(k)$.\\
+This, $k^2 = m^2$ or $k^0 = \pm \sqrt{ \vv{k}^2 + m ^2}$ are solutions for $k$. The $\pm$ solutions are positive and negative energy solutions. For positive energy this is
+\[\psi^+(x) = e^{-ipx}u(p)\]
+and for negative energies
+\[ \psi^-(x) = e^{+ipx}v(p)\]
+Where $p^0 = + \sqrt{\vv{p} + m^2} = \pm k^0$ was used to express the exponents the same way.\\
+All in all we have four solutions here, two $v$ solutions which correspond to anti partices and two $u$ solutions which correspond to partices, both with spin $\frac{1}{2}$. For both, $\left( 0, \frac{1}{2}\right)$ and $\left(\frac{1}{2}, 0\right)$ holds $\vv{J} \equiv \vv{S} = \frac{\vv{sigma}}{2}$.\\
+Thus for the Dirac spinor, the spin operator is given by
+\[ \vv{S} = \Matz{\frac{\vv{\sigma}}{2}}{0}{0}{\frac{\vv{\sigma}}{2}}\]
+The problem here arises from $(\slashed{k} - m)\psi(k) = 0$. If we look at $slashed{p}$ we get
+\[ \slashed{p} = \Matz{0}{E - \vv{\sigma}\vv{p}}{E + \vv{\sigma}\vv{p}}{0}\]
+where $\vv{\sigma}\vp$ is the projection of the Pauli matrices onto the direction of the momentum, so $[\slashed{p}, S_i]\neq 0$ for directions not in the directions of the spin. So no simultaneous eigenvalues can be found for both.\\
+The exceptions are twofold, the first is in the rest frame of the particle with $\vp = 0$. There we can choose a spin direction and boost to an arbitrary frame. This does not work for massless particles in ultrarelativistics.\\
+The second, more general approach is, to choose the direction of $\vp$ as the quantization axis, then the helicity eigenvalues are the simultaneous eigenvalues for momentum and spin of the particle.\\
+The components of $\vv{S}$ in the direction of $\vp$ are called the helicity:
+\[\frac{\vv{S}\vp}{|\vp|} u(\vp, \lambda) = \frac{1}{2|\vp|}\Matz{\vv{\sigma}vp}{0}{0}{\vv{\sigma}\vp}u(p,\lambda) = \frac{\lambda}{2}u(p,\lambda)\]
+This matrix now commutes with $\slashed{p}$, and in any specific direction the eigenvalues are $\pm \frac{1}{2} = \lambda$. This means, that $\lambda = + \frac{1}{2}$ corresponds with positive heilcity and this spin in the direction of the momentum $\vp$.\\
+The same holds for anti particles
+\[ \frac{ \vv{S}\vp }{ |\vp| } v(p,\lambda) = - \frac{\lambda}{2}v(\vp, \lambda)\]
+The minus sign is due to the interpretation of the anti particles as holes in the Dirac sea.\\
+Expicitly, $u$ and $v$ have the following forms
+\[ u(p, \lambda = \pm 1) = \vektorz{ \sqrt{ E\mp |\vp|} \chi_\pm(\vp)}{\sqrt{E\pm|\vp|} \chi_\pm(\vp)}\]
+\[ v(p, \lambda = \pm 1) = \pm\vektorz{-\sqrt{E\pm|\vp|} \chi_\mp(\vp)}{\sqrt{E\mp |\vp|}\chi_\mp(\vp)}\]
+These normalize to
+\[ \bar{u}(p, \lambda) u(p, \lambda') = 2m \delta_{\lambda\lambda'}, ~~\bar{v}(p, \lambda)v(p, \lambda') = - 2m \delta_{\lambda\lambda'}, ~~ \bar{u}(p, \lambda)v(p,\lambda') = 0\]
+and form the completeness relations
+\[ \sum_\lambda u(p,\lambda) \bar{u}(p,\lambda) = \slashed{p} + m\]
+\[ \sum_\lambda v(p, \lambda) \bar{v}(p,\lambda) = \slashed{p} - m\]
+The important thing to notice is, that if we have a highly relativistic particle, the energy becomes $E = \sqrt{\vp^2 + m^2} \approx \vp$, so whenever there is a minus sign in the square roots of the expressions for $u$ and $v$, these are zero. So the two component spinors are reduced:
+\[ u(p, \lambda = +1) ~~\df~~ \vektorz{0}{\sqrt{2E} \chi_+} = \vektorz{0}{\psi_R}\]
+which has positive helicity and positive chirality,
+\[ u(p, \lambda = -1) ~~\df~~ \vektorz{\sqrt{2E} \chi_-}{0} = \vektorz{\psi_L}{0}\]
+which has negative helicity and negative chirality. And for the anti particles
+\[v(p, \lambda = +1) ~~\df~~\vektorz{-\sqrt{2E}\chi_-}{0} = \vektorz{\psi_L}{0}\]
+which has positive helicity but negative chirality and
+\[v(p, \lambda = -1) ~~\df~~\vektorz{0}{- \sqrt{2E} \chi_+} = \vektorz{0}{\psi_R}\]
+which has negative helicity but positive chirality.\\
+Thus a particle with positive helicity in the ultra relativistic limit always consists of only the right handed component, whereas an anti particle with positive helicity is always reduced to a left handed component.
 \chapter{Klassiche Feldtheorie: Lagrangians}
 \section{Bewegungsgleichungen}
 \section{Symmetrien (Noether's Theorem)}
