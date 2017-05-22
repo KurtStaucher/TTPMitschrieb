@@ -735,7 +735,7 @@ Therefore the equations of motions are
 These are generalizations of the Klein Gordon equations with a generalized $V$.\\
 For fields which satisfy the equation of motion the conserved current $j^\mu$ can be constructed:
 \[ j ^\mu = \frac{\p \LL}{p (\p_\mu \phi)} \frac{\delta \phi}{\delta \alpha} + \frac{\p \LL}{\p(\p_\mu \phi^*)} \frac{\delta \phi^*}{\delta \alpha} = ( \p^\mu \phi^*)(-i \phi) + ( \p^\mu \phi) (+i \phi^*) = i ( \phi^* \p_\mu \phi - \phi \p_\mu \phi^*)\]
-\sub{Noethers Theorem}
+\section{Symmetries: Noethers Theorem}
 Connected to the conserved current, there also is a conserved charge
 \[ Q(x^0) \equiv \int \dd^3 \vx \cc j^0(x^0, \vx)\]
 The fact that it is conserved just means, that 
@@ -771,20 +771,76 @@ the $\delta_0 \phi_r$ can be rewritten from the relation calculated before:
 \[ \delta( \dd^4 x \LL) = \dd^4 x \p_\mu\left[ \LL \delta x^\mu + \sum_r \frac{\p \LL}{\p (\p_\mu \phi_r)} \delta\phi_r - \delta x^\rho \left( \p_\mu \frac{\p \LL}{\p ( \p_\mu \phi_r)} \right) \p_\rho \phi_r\right]\]
 In the first term in the brackets, the $\delta x^\mu$ can be expressed as $g^\mu_{~\rho} \delta x^\rho$ so it can be written together with the third term which also is proportional to $\delta x^\rho$. The second term is proportional to $\delta \phi$ and everything can thus be written as
 \[ \delta( \dd^4 x \LL) = \dd^4x \p_\mu \left[ \left( \LL g^\mu _{~\rho} - \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \p_\rho \phi_r \right) \delta x^\rho + \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \delta \phi_r \right]  = 0\]
-The first term proportional to $\delta x^\rho$ will be called $- \mathcal{T}^\mu_{~\rho}$ and the whole thing in the brackets is proportional to a conserved current.\\
+The first term proportional to $\delta x^\rho$ will be called $- \mathcal{T}^\mu_{~\rho}$ and the whole thing in the brackets is proportional to a conserved current.
+\[\mathcal{T}^\mu_{~\rho} = \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \p_\rho \phi_r - g^\mu_{~\rho} \LL\]
 With $\delta x^\rho = \frac{\delta x^\rho}{\delta \omega}\delta\omega$ and $\delta \phi_r = \frac{\delta \phi_r}{\delta \omega}{\delta \omega}$ we have the conserved current
 \[j ^\mu = - \mathcal{T}^\mu_{~\rho} \frac{\delta x^\rho}{\delta \omega} + \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \frac{\delta \phi_r}{\delta \omega}\]
-Lets apply this to actual transformations:
-\begin{enumerate}
-\item Translations: $x' = x + \eps$ and $\delta x^\rho = \eps ^\rho$. Here, moving the coordinate frame by $- \eps$ or alternatively $x$ by $\eps$ is equivalent. Thus $ \phi'(a) = \phi(a - \eps)$, which is $\phi'_r(x) = \phi_r(x - \eps)$ and thus $\phi_r'(x') = \phi_r(x)$. Therefore $\delta \phi_r = 0$ for a translation.\\
-Therefore, in the current only the first term is non zero and for conserved quantities this means $\p_\mu \mathcal{T}^{\mu\rho} = 0$ where $\mathcal{T}^{\mu\rho}$ is the energy momentum tensor.
-
-
-
-
-\end{enumerate}
-\section{Bewegungsgleichungen}
-\section{Symmetrien (Noether's Theorem)}
+So in summary, this is the energy momentum tensor times the variation of the coordiantes plus the variation of the field. Lets apply this to actual transformations:
+\sub{Translations}
+$x' = x + \eps$ and $\delta x^\rho = \eps ^\rho$. Here, moving the coordinate frame by $- \eps$ or alternatively $x$ by $\eps$ is equivalent. Thus $ \phi'(a) = \phi(a - \eps)$, which is $\phi'_r(x) = \phi_r(x - \eps)$ and thus $\phi_r'(x') = \phi_r(x)$. Therefore $\delta \phi_r = 0$ for a translation.\\
+Therefore, in the current only the first term is non zero and for conserved quantities this means $\p_\mu \mathcal{T}^{\mu\rho} = 0$ where $\mathcal{T}^{\mu\rho}$ is the energy momentum tensor, which is therefore conserved. If we take a look at the momentum
+\[ p ^\rho = \int \dd^3 x \mathcal{T}^{0\rho}(t, \vx)\]
+we see, that they are time independant, so they are conserved in time. Furthermore, the zeroth component ($\rho = 0$) of the momentum corresponds to the energy of the field which is therefore also time independant
+\[p^0 = \int dd^3 x \left[ \sum_r \frac{ \p \LL}{\p ( \p_0 \phi_r)} \p_0 \phi_r- \LL\right] = \int \dd ^3 x \left[ \sum_r \frac{\p \LL}{\p \dot{\phi_r}} \dot{\phi_r}-\LL\right]\]
+If we compare this to the Hamiltionian in classical quantum mechanics of a one dimensional system we get $H = p \dot{q} - L$ with the canonical momentum $p = \frac{\p L}{\p \dot{q}}$. This is somewhat equivalent to what we got for fields, just with less degrees of freedom. For fields the conjugate momentum is
+\[ \Pi_r(x) \equiv \frac{\p \LL(x)}{\p \dot{\phi_r}(x)}\]
+In summary, Translation invariance implies conserved $H$ and $\vp$.
+\\Lets take a look at an example for this, the real Klein Gordon field. The Lagrangian of this is 
+\[\LL = \frac{1}{2} ( \p_\mu \phi)^2 - \frac{m^2}{2}\phi^2\]
+Thus, the energy momentum tensor is
+\[ \mathcal{T}^{\mu\nu} = \frac{\p\LL}{\p (\p_\mu \phi)} \p^\nu \phi - g^{\mu\nu} \LL = (\p ^\mu \phi)(\p^\nu \phi) - g^{\mu\nu} \LL\]
+The Hamiltionian in perticular then is
+\[ H = p ^0 = \int \dd^3 x \mathcal{T}^{00} = \int \dd^3 x ( (\p^0 \phi)^2 - \LL ) = \int \dd^3 x ( \dot{\phi}^2 - \LL)\]
+By rewriting the Lagrangian as
+\[ \LL = \frac{1}{2} \left( \dot{\phi}^2 - ( \vn \phi)^2 \right) - \frac{m^2}{2} \phi^2\]
+we get the Hamiltionian
+\[ H = \frac{1}{2} \int \dd ^3 x \left[ \dot{\phi}^2(x) + ( \vn \phi(x))^2 + m^2 \phi^2(x) \right]\]
+So every term of the Hamiltonian is real and squared. Therefore the integral must be positive, $H \geq 0$. This is going to be the solution for the negative energy problem of the Klein Gordon equation later on.
+\sub{Lorentz Invariance of the Action}
+Lets take a look at the Lorentz invariance of the action $\SSS$, that is to say, the invariance under $ \delta x^\rho = \eps^{\rho \sigma}x_\sigma$ with antisymmetric $\eps^{\rho\sigma}$. The fields themselves are invariant under $\delta \phi_r = - \frac{i}{2} \eps^{\rho \sigma} \sum_s (S_{\rho\sigma})_r^{~s}\phi_s$ where $S_{\rho\sigma}$ are the generators.\\
+With $\delta(\dd^4 x \LL) = 0 = \dd^4 x \p_\mu j^\mu$ we get
+\[ 0 = \dd^4 x \p_\mu \left[ - \mathcal{T}^\mu_{~\rho} x_\sigma + \frac{1}{2} \sum_{r,s} \frac{\p \LL}{\p( \p_\mu \phi_r)} (-i S_{\rho \sigma})_r^{~s}\phi_s\right] e^{\rho \sigma}\]
+where we pulled out the $\eps^{\rho\sigma}$ factor. Now the first term is symmetric under exchange of $\rho$ and $\sigma$ whereas the second one is anti symmetric. To have uncorrelated equations for each combination of $\sigma$ and $\rho$ also the first term has to be anti symmetric. Thus we add the corresponding term $\mathcal{T}^{\mu}_{~\sigma}x_\rho$. Now, the equations $\p_\mu \mathcal{M}^\mu_{~\rho\sigma} =0$ hold at an arbitrary choice of $\eps^{\rho\sigma}$.
+\[\mathcal{M}^\mu = \mathcal{T}^\mu_{~\sigma} x_\rho - \mathcal{T}^\mu_{~\rho}x_\sigma - i \frac{\p \LL}{\p ( \p _\mu \phi_r)} ( S_{\rho\sigma})_r^{~s}\phi_s\]
+Now, the conserved charges are
+\[ M_{\rho \sigma} \equiv \int \dd^3 x \mathcal{M}^0_{\rho\sigma}\]
+with $M_{ij}$ the generating rotations ($\sim \vv{J}$) and $M_{0i}$ the generating boosts ($\sim K_i$).
+\sub{Free Dirac Field}
+Another example is the free Dirac field with $\LL = \bar{\psi}( i \gamma^\mu \p_ \mu - m ) \psi$. Here the energy momentum tensor is
+\[ \mathcal{T}^{\mu \nu} = (\p^\nu \bar{\psi}) \frac{\p \LL}{\p ( \p_\mu \bar{\psi})} + \frac{\p \LL}{\p ( \p_\mu \psi)} ( \p^\nu \psi) - g^{\mu\nu} \LL = i \bar{\psi} \gamma^\mu \p ^\nu \psi - g^{\mu\nu} \LL\]
+And the Hamiltionian
+\[ H = \int \dd^3 x T^{00} = \int \dd^3 x \left[ i \bar{\psi} \gamma^0 \p_0 \psi - \LL\right] = \int \dd^3 x \left[ i \bar{\psi}\vv{\gamma} \vn \psi + m \bar{\psi} \psi \right]\]
+Alternatively we can use, that here, $\LL = 0$ if the equations of motion are satisfied, such that 
+\[ H = \int \dd^3 x \left[ \psi^\dagger i \frac{\p}{\p t} \psi \right]\]
+\section{Inner Symmetries: Dirac Equation}
+The Dirac equation is $(i \gamma^\mu \p_\mu - m ) \psi = 0$ and the corresponding Lagrange density is $\LL = \bar{\psi}(i \gamma^\mu \p_\mu - m ) \psi$. The Lagrange density is invariant under $U(1)$ transformations
+\[ \psi(x) ~\df~ \psi'(x) = e^{-i\alpha}\psi(x), ~~~ \bar{\psi}(x) ~\df~ \bar{\psi}'(x) = e^{i\alpha} \bar{\psi}(x)\]
+This implies a conserved current
+\[ j^\mu = \frac{\p \LL}{\p ( \p_\mu \psi)} \frac{\p \psi}{\p \alpha} + \frac{\p \bar{\psi}}{\p \alpha} \underbrace{ \frac{\p \LL}{\p( \p_\mu \bar{\psi})}}_{ = 0} \]
+There is no term proportional to the energy momentum tensor, because we are looking at an internal symmetry here.\\
+We do not only have one single field here, we do have many four component Dirac spinors. Therefore $\psi \df \psi_i$ with $i = 1, \ldots, N$. However, the masses should stay the same to conserve the symmetriy of the $\psi_i$. All of the $\psi_i$ can be written together as $\psi$. Then we replace $\psi ~\df~ U\psi$ and $\bar{psi} ~\df~ \bar{\psi}U^\dagger$ which means $\psi_i ~\df~ U_{ij}\psi_i$. Under this transformation the Lagrange density should stay invariant:
+\[ \bar{\psi} U^\dagger ( i \slashed{\p} - m ) U \psi \soll \bar{\psi}(i \slashed{\p} - m ) \psi\]
+To fulfill this requirement for symmetry, $U$ must be unitary, so that $U^{-1}U = \ehm$ and $U$ must not be dependant on $x$, because it must commutate with $\slashed{\p}$. Therefore $U$ must be a constant unitary $N \times N$ matrix.\\
+This matix can generally be split into a phasefactor times a special unitary matrix.\\
+If we now consider the special case, that $U$ itself already is part of $SU(N)$: $U = e^{i \theta^a T^a}$ then a symmetry of the Lagrangian is
+\[ \psi' = e^{i \theta^a T^a} \psi ~~~\df ~~~ \delta \psi = i \theta^a T^a\]
+The continuous parameter of this transformation $\delta \omega$ here corresponds to $\delta \theta^a$ for $a = 1, \ldots, N$. For each $a$ there is a conserved current:
+\[ J^{\mu a} = - \sum_j \frac{\delta \LL}{\delta( \p_\mu \psi_j)} \frac{\delta \psi_j}{\delta \theta^a} = - \sum _j ( \psi_j i \gamma^\mu) i T^a \psi_j) = \bar{\psi} \gamma^\mu T^a \psi\]
+The minus sign was only introduced to cancel the $i^2$. The $T^a$ here is a $N \times N$ matrix and $\bar{psi}$ as well as $\psi$ are $N$ component spinors.\\
+\sub{scalar fields}
+For scalar fields (specifically the Higgs field) we have two complex scalar fields $\phi_1$ and $\phi_2$. The Lagrangian here is
+\[ \LL = \sum_{i = 1}^2 ( \p _ \mu \phi_i)^*( \p^\mu \phi_i) - V( | \phi_1|^2+ | \phi_2|^2)\]
+We can combine $\psi_1$ and $\psi_2$ into a doublet $\psi = \vektorz{\psi_1}{\psi_2}$ which transforms under $SU(2)$ transformation to $U \vektorz{\phi_1}{\phi_2}$. Because $\phi^\dagger \phi$ is inviariant under $SU(2)$ transformation:
+\[ \phi^\dagger \phi ~\df ~ \phi^\dagger U ^\dagger U \phi = \phi^\dagger \phi\]
+it is useful to write the Lagrangian as
+\[ \LL = ( \p_\mu \phi)^\dagger ( \p^\mu \phi) - V( \phi^\dagger \phi)\]
+with $ \phi^\dagger = \begin{pmatrix} \phi_1^* & \phi_2^*\end{pmatrix}$.\\
+We can always write $U$ as $U = e^{i \theta^a \sigma^a/2}$ for $SU(2)$, such that 
+\[ \phi' = e^{i \theta^a \sigma^a/2} \phi = \left( 1 + i \theta ^a \frac{\sigma^a}{2}\right) \phi = \phi + \delta \phi, ~~~\delta \phi = i \theta^a \frac{\sigma^a}{2} \phi\]
+The same holds for $\phi^\dagger$:
+\[ \delta \phi^\dagger = - i \theta^a \phi^\dagger \frac{\sigma^a}{2}\]
+Then the conserved currents are
+\[ J^{\mu a} = \frac{ \delta \LL}{\p ( \p_\mu \phi)} \frac{\delta \phi}{\delta \theta^a} + \frac{\delta \phi^*}{\delta \theta^a} \frac{\delta \LL}{\p ( \p_\mu \phi^*)} = i\left( ( \p^\mu \phi^\dagger) \frac{\sigma^a}{2} \phi - \phi^\dagger \frac{\sigma^a}{2} ( \p^\mu \phi) \right)  \]
 \section{Eichsymmetrie, Eichfelder}
 
 \chapter{Kanonische (zweite) Quantisierung von Spin 0, 1/2, 1 Feldern}
