@@ -623,7 +623,7 @@ If both indices are $i,j = 1,2,3$ the matrix can be written as
 \[ \{\gamma^i,\gamma^j\} = \Matz{-\{\sigma^i,\sigma^j\}}{0}{0}{-\{\sigma^i,\sigma^j\}}\]
 The anticommutator of the Pauli matrices is known to be $\{\sigma^i, \sigma^j\} = 2\delta_{ij}$, thus the anticommutation relation is $\{\gamma^i,\gamma^j\} = - 2\delta_{ij} = 2 g^{ij}$ due to Minkovski metrics. All in all, the wanted anticommutation relation is fullfilled and therefore this is in fact the Dirac equation in another form.
 
-\sub{Parity}
+\section{Parity}
 Lets take a look at the parity transformation $x^\mu = (t, \vx) ~\overset{P}{\df}~ (t, - \vx) = \tilde{x}^\mu$.\\
 In the irreducible representation of $SO(3,1)$ this transformation is $(j_1, j_2)~\overset{P}{\df}~ (j_2, j_1)$. This follows from the first component being $\vv{N} = \vv{J} + i \vv{K}$ and the second one being $\vv{N}^\dagger = \vv{J} - i \vv{K}$. Under parity transformation $\vv{J}$ stays the same and $i\vv{K}$ gets a minus sign, thus $\vv{N}$ transforms to $\vv{N}^\dagger$ and vice versa.\\
 This means, that a left handed field becomes a right handed one and vice versa:
@@ -681,7 +681,108 @@ which has positive helicity but negative chirality and
 \[v(p, \lambda = -1) ~~\df~~\vektorz{0}{- \sqrt{2E} \chi_+} = \vektorz{0}{\psi_R}\]
 which has negative helicity but positive chirality.\\
 Thus a particle with positive helicity in the ultra relativistic limit always consists of only the right handed component, whereas an anti particle with positive helicity is always reduced to a left handed component.
-\chapter{Klassiche Feldtheorie: Lagrangians}
+
+\section{Charge Conjugation}
+Lets take a look at the Dirac equation $(i \slashed{\p} - q \slashed{A} -m ) \psi = 0$. This describes particles and anti particles at the same time. However, what is defined to be a particle and what an anti particles is random. The equation also describes particles with charge $-q$ instead of $q$ in the same electro magnetic field. The equation of a charge conjugated particle thus yields
+\[ ( i \slashed{\p} + q \slashed{A} - m) \psi^C = 0\]
+where $\psi^C(x) = C \bar{\psi}^T = - i \gamma^0 \gamma^2 \bar{\psi}^T$.\\
+$\psi^C$ therefore is the chage conjugate field which makes anti particles a basic degree of freedom.\\
+Explicitly we can take a look at a Dirac field
+\[ \psi = \vektorz{\psi_L}{\psi_R} = P_L \psi + P_R\psi = \vektorz{\psi_L}{0} + \vektorz{0}{\psi_R} \equiv \psi_L + \psi_R\]
+the charge conjugate of this field is
+\[ \psi^C = i \gamma^2 \gamma^0 ( \psi^\dagger \gamma^0 )^T = i \gamma^2 (\gamma^0)^2 \psi^* = i \gamma^2 \psi^* = i \Matz{0}{\sigma_2}{-\sigma_2}{0} \vektorz{\psi_L^*}{\psi_R^*} = \vektorz{i \sigma_2 \psi_R^*}{-i\sigma_2\psi_L}\]
+As we showed earlier, $i \sigma_2 \psi_R^*$ transforms as a left handed field and $i \sigma_2 \psi_L^*$ transforms as a right handed field.\\
+One special case of these Dirac fields are the Majorana fermions. For them $\psi = \psi^C$ holds. Therfore, the charge conjugated Field is
+\[ \psi^C = \vektorz{i \sigma_2 \psi_R}{-i \sigma_2 \psi_L} = \vektorz{\psi_L}{\psi_R}\]
+which follows because $\psi_L = i \sigma_2 \psi_R^* ~\df~ -i \sigma_2 \psi_L^* = -i \sigma_2( -i(-\sigma_2)) \psi_R = \psi_R$. Thus we can write a Majorana field as
+\[ \psi_M = \vektorz{\psi_L}{-i \sigma_2 \psi_L^*}\]
+This defines a fermion spinor which is automatically its own charge conjugate. Furthermore it can be shown, that every particles for which this relation holds, must have no charge.\\
+\\
+If we now take a look at the charge conjugation of $\psi_L$ we get
+\[ (\psi_L)^C = \vektorz{\psi_L}{0}^C = \vektorz{ 0}{-i \sigma_2 \psi_L^*} = (\psi^C)_R\]
+which is a right handed field. On the other hand, if we take the charge conjugate of the Dirac field and take the left handed component of it we get
+\[ (\psi^C)_L = \vektorz{ i \sigma_2 \psi_R^*}{-i \sigma_2 \psi_L^*} = \frac{1}{2} ( 1 - \gamma^5) \vektorz{ i \sigma_2 \psi_R^* }{-i \sigma_2 \psi_L^*} = \vektorz{ i \sigma_2 \psi_R^*}{0} \]
+which is a left handed field. Therfore the charge conjugation of a left handed field and the left handed component of a charge conjugated Dirac field are not equal.
+
+
+
+
+
+
+\chapter{Classical Field Theory: Lagrangians}
+
+The action $\SSS$ was defined as
+\[ \SSS = \int_\Omega \dd^4 x \cc \LL( \phi_r(x), \p_\mu \phi_r(x))\]
+where $\Omega$ was some region in Minkovski space. An infinitesimal variation around the original field was given as $\delta \phi_r(x) + \phi_r(x) = \phi_r'(x)$. This induced a variation of the action
+\[ \delta \SSS = \int_\Omega \dd^4 x \cc \sum_r \left[ \p_\mu \left( \frac{\p \LL}{\p (\p_\mu \phi_r)} \delta \phi_r \right) + \left( \frac{ \p \LL}{\p \phi_r} - \p_\mu \left( \frac{\p \LL}{\p (\p_\mu \phi_r)}\right) \right)  \delta \phi_r\right]\soll 0 \]
+For the equation of motion we looked at variations $\delta \phi_r = 0$ that vanish on the surface $\p \Omega$ of $\Omega$ but are arbitrary elsewhere. Therefore the first term in the sum vanishes, because it can be reduced to a surface integral vial Gauss law. Now, because $\delta \phi_r$ is arbitrary, the second term has to be equl to zero to satisfy $\delta \SSS = 0$. This then led to the Euler Lagrange equation
+\[ \left( \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p ( \p_\mu \phi_r)} \right) = 0\] 
+
+Now, if we only look at fields that do satisfy the Euler Lagrange equation the variation of the action can be reduced to
+\[ \delta \SSS = \int_\Omega \dd ^4 x \cc \sum_r \left[ \p_\mu \left( \frac{\p \LL}{\p( \p_\mu \phi_r)} \delta \phi_r\right)\right] = 0\]
+If we now take $\delta \phi_r$ to be a correlated variation instead of an arbitrary one, which then describes a symmetry, so that $\delta \SSS = 0$ still holds, then $\frac{\p \LL}{\p ( \p_\mu \phi_r)} \delta \phi_r$ has to be a conserved current. If the correlation of $\delta \phi_r$ is then given by $\delta_r = \frac{\delta \phi_r}{\delta \omega}\delta \omega$ then the conserved current is given by
+\[ j^\mu \equiv \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \frac{\delta \phi_r}{\delta \omega}\]
+Also the variation of the action can be written as $\delta \SSS = \int_\Omega \dd^4 x \cc \p_\mu j^\mu \delta \omega = 0$ which implies the conservation of the current as $\p_\mu j^\mu = 0 = \p_0 j^0 + \vn \vv{j}$.
+\sub{Example}
+Lets take a look at a complex scalar field as an example:
+\[ \phi = \frac{1}{\sqrt{2}} ( \phi_1(x) + i \phi_2(x))\]
+The Lagrangian of this is given as
+\[ \LL = ( \p_\mu \phi)^*(\p^\mu \phi) - V( \phi^*\phi) = \frac{1}{2} \p_\mu \phi_1^2 + \frac{1}{2} \p_\mu \phi_2^2 - V( \phi_1^2 + \phi_2^2)\]
+Is invariant under $\phi(x) \df e^{-i\alpha} \phi(x)$ and $\phi^*(x) \df e^{i\alpha}\phi^*(x)$ or $\delta \phi = - i \alpha \phi$ and $\delta \phi^* = i \alpha \phi*$ in the infinitesimal representation. So the infinitesimal parameter $\omega$ here is called $\alpha$. The equation of motion of this is 
+\[ \frac{\p \LL}{\p \phi} = - V'( | \phi|^2) \phi^* \soll \p_\mu \left( \frac{\p \LL}{\p ( \p_\mu \phi)}\right) = \p_\mu ( \p^\mu \phi^*) = \square \phi^*\]
+Therefore the equations of motions are
+\[ ( \square + V'(| \phi|^2)) \phi^* = 0, ~~~ ( \square + V'(|\phi|^2)) \phi = 0\]
+These are generalizations of the Klein Gordon equations with a generalized $V$.\\
+For fields which satisfy the equation of motion the conserved current $j^\mu$ can be constructed:
+\[ j ^\mu = \frac{\p \LL}{p (\p_\mu \phi)} \frac{\delta \phi}{\delta \alpha} + \frac{\p \LL}{\p(\p_\mu \phi^*)} \frac{\delta \phi^*}{\delta \alpha} = ( \p^\mu \phi^*)(-i \phi) + ( \p^\mu \phi) (+i \phi^*) = i ( \phi^* \p_\mu \phi - \phi \p_\mu \phi^*)\]
+\sub{Noethers Theorem}
+Connected to the conserved current, there also is a conserved charge
+\[ Q(x^0) \equiv \int \dd^3 \vx \cc j^0(x^0, \vx)\]
+The fact that it is conserved just means, that 
+\[ \frac{ \dd Q}{\dd t} = \int_{\Omega = \mathbbm{R}^3} \dd^3 \vx \cc \p_0 j^0 = - \int_\Omega \dd^3 \vx\cc \vn \vv{j} = \int_{\p \Omega} \dd \vv{S} \cc \vv{j} = 0\]
+where the integrated volume is all of $\mathbbm{R}^3$. In the second step, the integral was transformed via Gauss' law and the last integral has to be equal to zero, because the current has to dissapear in infinity.\\
+The connection between conserved current and conserved charge is described by Noethers theorem:\\\
+The invariance of the Lagrangian $\LL$ under a continuous one-parameter set of transformations implies the existence of a conserved current $j^\mu$ with $\p_\mu j^\mu = 0$ and hence a conserved charge $Q = \int \dd ^3 x \cc j^0(x)$.\\
+\\
+In the general case this transformation can be written as $x^\mu ~\df ~ x'^\mu = x^\mu + \delta x^\mu$ and simultaneous $\phi_r(x) ~\df~ \phi_r'(x') = \phi_r(x) + \delta \phi_r(x)$.\\
+These are correlated transformations which leave the action invariant: $\delta \SSS = 0$. The change in the action then is given by
+\[ \delta \SSS = \int_\Omega \dd^4 x \cc \LL\left(\phi_r'(x'), (\p_\mu \phi_r)'(x')\right) - \int_\Omega \dd^4 x \cc \LL(\phi_r, \p_\mu \phi_r) = 0~~ \forall \Omega\]
+This means, that $\delta(\dd ^4 x \LL) = 0$ must be fulfilled aswell, because $\Omega$ is arbitrary. This is given by
+\[ \delta( \dd^4 x \LL) = \delta( \dd^4x) \LL + \dd^4x \delta\LL\]
+We first take a look at $\delta( \dd^4 x)$, this is the difference between the measures of $\dd^4x$ and $\dd^4 x'$ which is given my the Jacobi determinant
+\[ \delta( \dd^4 x) = \dd^4 x \cc \left( \det\left| \frac{\dd^4 x'}{\dd^4 x} \right| - 1\right)\]
+The determinante yields
+\[ \det( \p_\mu x^\nu + \p_\mu \delta x^\nu) = \det( g_\mu^{~\nu} + \p_\mu \delta x^\nu) ~\grqq = \grqq \det\begin{pmatrix}1+\eps & \eps & \eps & \eps\\ \eps &  1+ \eps & \eps & \eps \\ \eps & \eps & 1+ \eps & \eps \\ \eps & \eps & \eps & 1+ \eps \end{pmatrix}\]
+The matrix can be expressed by infinitesimal $\epsilon$. On the diagonal entries the one from $g_\mu^{~\mu}$ is present. Because the $\eps$ are inifintesimally small the determinante approximally yields $1 + \eps + \OO(\eps^2)$. Thus follows
+\[ \delta(\dd^4 x) = \dd^4x( 1+ \p_\mu \delta x^\nu -1) = \dd^4x( \p_\mu \delta x^\nu)\]
+By separating the changes of $x$ and $phi_r$ in $\delta \phi_r$ we get
+\[ \delta \phi_r = \phi_r'(x') - \phi_r(x) = \underbrace{\phi_r'(x') - \phi_r'(x)}_{=\p_\rho \phi'_r(x) \delta x^\rho} + \underbrace{\phi_r'(x) - \phi_r(x)}_{\equiv \delta_0 \phi_r(x)} \]
+where the second and third term were introduced as a $\pm$. This is being separated into a term which only changes in $\phi$ and one which only changes in $x$. By only regarding first oder terms we get
+\[ \delta \phi_r = \delta x^\rho \p_\rho \phi_r(x) + \delta_0 \phi_r = \phi_r\]
+The same can be done with $\delta \LL$:
+\[ \delta \LL = \underbrace{ \LL( \phi'_r(x'), \ldots) - \LL(\phi_r'(x)}_{= \delta x^\mu \p_\mu \LL}+ \LL(\phi'_r(x)) - \LL(\phi_r) \]
+The third and fourth term can be combined:
+\[ \LL(\phi_r') - \LL(\phi_r) = \sum_r \frac{ \p \LL}{\p \phi_r} \delta_0 \phi_r + \frac{\p \LL}{\p (\p_\mu \phi_r)} \phi_\mu ( \delta_0 \phi_r) = \p_\mu \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \delta_0 \phi_r\]
+Here, it was used, that the first term in the second step can be rewritten through the equation of motion to $\frac{\p \LL}{\p \phi_r} = \p_\mu \frac{\p \LL}{\p ( \p_\mu \phi_r)}$. With that the whole thing could be rewritten as a total derivative in step three. Therefore follows
+\[ \delta \LL = \delta x^\mu ( \p_\mu \LL) + \p_\mu \sum_r \left( \frac{\p \LL}{\p( \p_\mu \phi_r) } \delta_0 \phi_r\right)\]
+All in all the change $\delta( \dd^4 x \LL)$ thus yields
+\[ \delta( \dd^4 x\LL) = \dd^4 x \left[ \LL \p_\mu \delta x^\mu + \delta x^\mu ( \p_\mu \LL) + \p_\mu \left( \sum_r \frac{\p \LL}{\p( \p_\mu \phi_r)} \delta_0 \phi_r \right)\right]\]
+the $\delta_0 \phi_r$ can be rewritten from the relation calculated before:
+\[ \delta( \dd^4 x \LL) = \dd^4 x \p_\mu\left[ \LL \delta x^\mu + \sum_r \frac{\p \LL}{\p (\p_\mu \phi_r)} \delta\phi_r - \delta x^\rho \left( \p_\mu \frac{\p \LL}{\p ( \p_\mu \phi_r)} \right) \p_\rho \phi_r\right]\]
+In the first term in the brackets, the $\delta x^\mu$ can be expressed as $g^\mu_{~\rho} \delta x^\rho$ so it can be written together with the third term which also is proportional to $\delta x^\rho$. The second term is proportional to $\delta \phi$ and everything can thus be written as
+\[ \delta( \dd^4 x \LL) = \dd^4x \p_\mu \left[ \left( \LL g^\mu _{~\rho} - \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \p_\rho \phi_r \right) \delta x^\rho + \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \delta \phi_r \right]  = 0\]
+The first term proportional to $\delta x^\rho$ will be called $- \mathcal{T}^\mu_{~\rho}$ and the whole thing in the brackets is proportional to a conserved current.\\
+With $\delta x^\rho = \frac{\delta x^\rho}{\delta \omega}\delta\omega$ and $\delta \phi_r = \frac{\delta \phi_r}{\delta \omega}{\delta \omega}$ we have the conserved current
+\[j ^\mu = - \mathcal{T}^\mu_{~\rho} \frac{\delta x^\rho}{\delta \omega} + \sum_r \frac{\p \LL}{\p ( \p_\mu \phi_r)} \frac{\delta \phi_r}{\delta \omega}\]
+Lets apply this to actual transformations:
+\begin{enumerate}
+\item Translations: $x' = x + \eps$ and $\delta x^\rho = \eps ^\rho$. Here, moving the coordinate frame by $- \eps$ or alternatively $x$ by $\eps$ is equivalent. Thus $ \phi'(a) = \phi(a - \eps)$, which is $\phi'_r(x) = \phi_r(x - \eps)$ and thus $\phi_r'(x') = \phi_r(x)$. Therefore $\delta \phi_r = 0$ for a translation.\\
+Therefore, in the current only the first term is non zero and for conserved quantities this means $\p_\mu \mathcal{T}^{\mu\rho} = 0$ where $\mathcal{T}^{\mu\rho}$ is the energy momentum tensor.
+
+
+
+
+\end{enumerate}
 \section{Bewegungsgleichungen}
 \section{Symmetrien (Noether's Theorem)}
 \section{Eichsymmetrie, Eichfelder}
