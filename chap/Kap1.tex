@@ -135,7 +135,7 @@ The Klein-Gordon equation in SI units is given as
 \[
 \left[ \tilde{\square} + \left( \frac{mc}{\hbar}\right)^2 \right] \phi(\tilde{x}) = 0
 \]
-where $x$ is a four vector $\tilde{x}^\mu = ( x \tilde{t}, \tilde{\vx}) = \hbar c (t , \vx)$. Also the d'Alembert operator in SI units is given as
+where $x$ is a four vector $\tilde{x}^\mu = ( c \tilde{t}, \tilde{\vx}) = \hbar c (t , \vx)$. Also the d'Alembert operator in SI units is given as
 \[ 
 \tilde{\square} = \frac{1}{c^2} \frac{\p^2}{\p \tilde{t}^2} - \tilde{\vn}^2 = \frac{1}{(\hbar c)^2} \square = \frac{1}{(\hbar c)^2} \left( \frac{\p^2}{\p t^2} - \vn^2 \right)
 \]
@@ -182,8 +182,7 @@ Also the equation of motions is invariant
 \subsection{Field Theory Lagrangian}
 In quantum field theory the action is given by
 \[ \SSS([\phi_r]) = \int \dd ^4 x~\mathcal{L}(\phi_r, \p_\mu \phi_r)\]
-with $\phi_r = \phi_r(\vx, t)$. $\LL$ is the Lagrange density. It is not directly dependant on $x$, because it should be invariant in the whole four dimensional space.\\
-The integral here is over all four dimensions because time and space are treated equally in field theory.\\
+with $\phi_r = \phi_r(\vx, t)$. $\LL$ is the Lagrange density. It is not directly dependant on $x$, because it should be invariant in the whole four dimensional space. The integral here is over all four dimensions because time and space are treated equally in field theory.\\
 There are some requirements to the Lagrange density:
 \begin{enumerate}
 \item $\LL$ is local - there are no connections or interactions between two arbitrary space points. Also there can not be any instantaneus interaction of two spacepoints because information travels at finite speeds.
@@ -213,7 +212,7 @@ The last term is rewritable into a surface integral via Gauss' theorem, therefor
 These are the Euler-Lagrange equations.
 \sub{Example}
 Consider a scalar field $\phi(x)$. The Lagrange density is given by
-\[ \LL = \frac{1}{2} (\p_\alpha \phi)(\p^\alpha \phi) - V(\phi) = \frac{1}{2} \left[ (\p_0\phi)^2 - \sum_i (\p_i \phi)^2\right]\]
+\[ \LL = \frac{1}{2} (\p_\alpha \phi)(\p^\alpha \phi) - V(\phi) = \frac{1}{2} \left[ (\p_0\phi)^2 - \sum_i (\p_i \phi)^2\right]-V(\phi)\]
 So the equation of motion calculates to
 \[ \frac{\p \LL}{\p \phi} = - V'(\phi) = \p_\mu \left( \frac{\p \LL}{\p(\p_\mu \phi)}\right) = \p_0 \p_0 \phi - \vn(\vn \phi) = \square \phi\]
 \[\df \square \phi + V'(\phi) = 0\]

@@ -176,7 +176,91 @@ Similarly we get the commutator $[P^\mu, a(p)] = - p^\mu a(p)$ from is equivalen
 Also, there is a ground state, or vacuum state $|0\rk$ with $a(k) |0\rk = 0 ~\forall k = (\omega_k, \vv{k})$.
 
 
-\section{Fockraum}
+\section{Fockspace, Hilbertspace}
+The basis of the Hilbertspace (Fockspace) is given by the zero particle state, or vacuum state $|0\rk$, which is unique with the property $a(k)|0\rk = 0~\forall k$. All the other states are build by applying the creation operator onto the vacuum state.\\
+For example, the one particle states are constructed as $a^\dagger(k_1)|0\rk = |k_1 \rk$, and the two particle states as $a^\dagger(k_1)a^\dagger(k_2)|0\rk = |k_1, k_2\rk$. This is the same as $a^\dagger(k_2)a^\dagger(k_1)|0\rk = + |k_2,k_1\rk$ because the $a^\dagger$ commute. Therefore, this is automatically Bose symmetric.\\
+In the Hilbertspace, the momentum eigenstates are normailzed as distributions, the matrix element of two one particle states is
+\[ \lk k_1 | k_2 \rk = \lk 0 | a(k_1)a^\dagger(k_2) | 0 \rk = \lk 0 | [ a(k_1), a^\dagger(k_2)] + a^\dagger(k_2) a(k_1)|0\rk\]
+In the last step, the expression between the bra-ket was rewritten with the commutator. Now the extra term vanishes, because $a(k_1)|0\rk$ is zero, and the commutator can be calculated, which leads to
+\[ \lk 0 | 0 \rk  (2\pi)^3 2 \omega_{k_1} \delta^{(3)}(\vv{k}_1 - \vv{k}_2)\]
+Note, that the ground state is normalized to $\lk 0 | 0 \rk = 1$.\\
+To nomalize a state, we have to look at a wave package, as a one particle state with a wafe function $f$:
+\[ | 1 , f\rk = \int \dd \tilde{k} f(k) |k\rk\]
+where $f(k)$ is the wave function in momentum space. The norm then is given by
+\[ \| | 1, f\rk \|^2 = \lk 1, f| 1, f\rk = \int \dd\tilde{k}_1 f^*(k_1) \dd \tilde{k}_2 f(k_2) \lk k_1 |k_2\rk = \int \dd \tilde{k}_2 | f(k_2) |^2\]
+In the last step, the just derived expression for the matrix element was used, and the $\delta$-function was evaluated, which reduced the double integral to just one. Thus, the norm is given by the quared wave function.\\
+A normalizable $n$-particle state then is
+\[ |n, F\rk = \frac{1}{\sqrt{ n! \int \dd \tilde{k}_1 \ldots \dd\tilde{k}_n | F(k_1, \ldots k_n) |^2}} \int \dd \tilde{k}_1 \ldots \dd \tilde{k}_n F(k_1, \ldots k_n) a^\dagger(k_1) \ldots a^\dagger(k_n) |0\rk\]
+The $n!$ appears, because there are $n!$ permutations of the $a^\dagger$ which all yield the same result. $F$ is without loss of generality a bose function; even if it wasnt, only the Bose symmetric part of it would contribute. $F$ is therefore symmetric under exchange of two indices.\\
+A state with $n$ particles in mode $\psi(k)$ then can be expressed as
+\[ \frac{1}{\sqrt{n!}} \left( \int \dd \tilde{k} \psi(k) a^\dagger(k) \right)^n | 0 \rk\]
+with $\int \dd \tilde{k} | \psi(k) |^2 = 1$. The expressin in the brackets is essentialy a wave package.
+\sub{Complex Klein Gordon field}
+The Lagrangian of a complex Klein Gordon field is
+\[ \LL = ( \p_\mu \phi) ^* ( \p ^\mu \phi) - m^2 \phi^* \phi \]
+from this also follows the Klein Gordon equation ($\square + m^2) \phi(x) = 0$.\\
+We can now express the two complex fields as two separate real fields:
+\[ \phi(x) = \frac{1}{\sqrt{2}} \left( \phi_1(x) + i \phi_2(x) \right)\]
+\[ \phi^*(x) = \frac{1}{\sqrt{2}} \left( \phi_1(x) - i \phi_2(x) \right)\]
+With these real fields $\phi_1$ and $\phi_2$ the Lagrangian is
+\[ \LL = \frac{1}{2} ( \p_\mu \phi_1)^2 - \frac{m^2}{2} \phi_1^2 + \frac{1}{2} (\p_\mu\phi_2)^2 - \frac{m^2}{2} \phi_2^2\]
+So we have two indepeandat, equivalent, real Klein Gordon fields of the same mass $m$. If we take a look at the canonical quantization
+\[ [ \phi_i (\vx, t), \p_0 \phi_j(\vy, t) ] = i \delta_{ij} \delta^{(3)}( \vx - \vy) \]
+the fields do commute for different indices $i$ and $j$. Thus they really are independant.\\
+In terms of creation and annihilation operators we have
+\[ \phi_i(x) = \int \dd \tilde{k} \left[ a_i(k) e^{-ikx} + a_i^\dagger(k) e^{ikx} \right]\]
+This implies, that the complex filed is
+\[ \phi(x) = \int \dd \tilde{k} \left[ \frac{1}{\sqrt{2}} \left(a_1(k) + i a_2(k)\right) e^{-ikx} + \frac{1}{\sqrt{2}} \left( a_1^\dagger(k) + i a_2^\dagger(k)\right)e^{ikx} \right]\]
+We now call the expressions in the brackets $a(k)$ and $b^\dagger(k)$:
+\[ a(k) \equiv a_1(k) + i a_2(k), ~~~ b(k) \equiv a_1(k) - i a_2(k)\]
+These operators have a more physical interpretation than the $a_i(k)$.\\
+We can now calculate the commutator
+\[ [a(k), a^\dagger(p)] = (2\pi)^3 2 \omega_k \delta^{(3)}(\vp - \vv{k})\]
+and similarly
+\[ [b(k), b^\dagger(p)] = (2\pi)^3 2 \omega_k \delta^{(3)}(\vp - \vv{k})\]
+also the mixed commutator vanishes: $[a(k), b^\dagger(k)] = 0$.\\
+The four momentum operator $P^\mu$ which has been introduced earlier
+\[ P^\mu = \int \dd \tilde{k} \cc k^\mu \left( a_1^\dagger(k) a_1(k) + a_2^\dagger(k) a_2(k)\right)\]
+can now be written with the newly defined operators
+\[ P^\mu = \int \dd \tilde{k} \cc k^\mu \left( a^\dagger(k) a(k) + b^\dagger(k) b(k) \right)\]
+There is however no real advantage of using the new operators here, it basically is the same. A real difference emerges when looking at the conserved charge. Its current is given as
+\[ j^\mu = -i:(\p^\mu \phi)\phi - \phi^\dagger(\p^\mu \phi)|\]
+where the $:$-notation just means, ordering the terms in a way, that the vacuum state is zero. The conserved charge then is
+\[ Q = \int \dd ^3 x j^0(x) = \int \dd \tilde{k} i \left( a_1^\dagger(k) a_2(k) - a_2^\dagger(k) a_1(k) \right)\]
+for the old operators. This constellation of operators describes the taking away of particle 2 with $k$ and replacing it with particle 1 with momentum $k$ and vice versa for the second term. This is not a very clear and physical interpretation. However, if we write the charge with the new operators we find
+\[  Q = \int \dd \tilde{k} \left( a^\dagger(k) a(k) - b^\dagger(k)b(k)\right)\]
+Here are no mixed terms, so this can be interpreted as $N_a- N_b$, the difference in number of particles, where $N_a = a^\dagger a$ and similarly for $N_b$. This interpretation then yields, that $a^\dagger(k)$ creates particles of charge $Q = +1$ and $b^\dagger(k)$ creates anti particles with charge $Q = -1$. The total charge $Q = N_a - N_b$ is conserved, this even holds for interacting fields, as long as we have a $U(1)$ symmetry. So, the only posibility to change $N_a$ is a pair creation and annihilation.\\
+An example of this formalism is the electric charge of $\pi^+$ and $\pi^-$ or the hyper charge or strangeness of $K^0$ and $\bar{K}^0$.
+\sub{Covariant commutation relations}
+Earlier we looked at equal time commutators, now lets take a more general approach. We first start the discussion just for real Klein Gordon fields
+\[ \phi(x) = \int \dd \tilde{k} a(k) e^{-ikx} + \int \dd \tilde{k} a^\dagger(k) e^{ikx}\]
+We now call the first term, the term for positive energy $\phi^+(x)$ and the second one, for negative energy $\phi^-(x)$. Now, the commutator for arbitrary, four dimensional $x$ and $y$ is given as
+\[ [ \phi(x), \phi(y)] = [\phi^+(x) + \phi^-(x), \phi^+(y), \phi^-(y)]=[\phi^+(x), \phi^-(y)] + [ \phi^-(x), \phi^+(y)]\]
+In the last step we used, that the remaining two commutators would vanish, because they are proportional to $[a(p),a(k)]$ or $[a^\dagger(p), a^\dagger(k)]$ which are equal to zero.  Now, as the first commutator is kinda the same as the second one, just with interchanged $x$ and $y$ we only calculate the first one
+\[ [\phi^+(x), \phi^-(y)] = \int \dd \tilde{k}_1 \dd \tilde{k}_2 e^{-ik_1x} e^{ik_2x} [a(k_1), a^\dagger(k_2)] = \int \dd \tilde{k} e^{-ik(x-y)} \equiv i \Delta^+(x-y)\]
+In the last step we again used the commutator relation $[ a(k_1), a^\dagger(k_2)] = (2\pi)^3 2 \omega_{k_1} \delta^{(3)} (\vv{k}_1 - \vv{k}_2)$. The resulting expression is called $i \Delta^+$, where $\Delta^+$ only depends on the difference $x-y$.\\
+From this we get the whole commutator
+\[ i \Delta(x-y) \equiv [ \phi(x), \phi(y)] = i \Delta^+(x-y) + i \Delta^-(x-y) = \int \dd\tilde{k} \left( e^{-ik(x-y)} - e^{ik(x-y)}\right)\]
+This can be writtes as a sine, so that
+\[ i\Delta(x) = -2 i\int \dd\tilde{k} \sin\left( k x\right)\]
+Some properties of these functions $\Delta(x)$ are
+\begin{itemize}
+\item $\Delta(x)$ is Lorentz invariant, that is to say it is only dependant on $x^2$ and the sign of $x^0$ because only they are Lorentz invariant (?).
+\item $\Delta(x-y)|_{x^0 = y^0}$ is the equal time commutator, which is zero. This implies that $\Delta(x-y) = 0$ for $(x-y)^2 <0$ because in some Lorentz frame $x'_0 = y'_0$ for the same physical point. In other words, the commutator will vanish outside of the forward and backward light cones. This is sometimes also called micro causality:\\
+Measurements of fields $\phi$ at $x$ and $y$ are independat, that is to say, they do not influence each other, for space like separations. Since the signal between $x$ and $y$ would need to exceed the speed of light.
+\end{itemize}
+The explicit form of $\Delta(x)$ is
+\[ i \Delta(x) = \frac{i}{4 \pi | \vx|} \frac{\p}{\p | \vx|} \begin{cases}
+J_0 (m \sqrt{x^2}), ~~~~~~ x^0 > |\vx|\\
+0 ,~~~~~~~~~~~~~~~~~~ - | \vx| < x^0 | |\vx| \\
+-J_0(m\sqrt{x^2}), ~~~~ x^0 < |\vx|
+\end{cases}
+\]
+With the commutator, also the vacuum expectation value of two Klein Gordon fileds is calculatable
+\[ \lk 0 | \phi(x) \phi(y) | 0 \rk = \lk 0 | \phi^+(x) \phi^-(y) | 0 \rk = \lk 0 | [\phi^+, \phi^-(y)] | 0\rk = \lk 0 | i \Delta^+(x-y) | 0  \rk \]
+In the first step we used, that every other term would vanish, because it would be equal with $a(k)$ acting on $|0\rk$. In the second step we rewrote $\phi^+(x) \phi^-(y) = [\phi^+(x), \phi^-(y)] + \phi^-(y)\phi^+(x)$. The extra term vanishes though for the same reason. Now, because $\lk 0 | 0 \rk = 1$ we get
+\[ \lk 0 | \phi(x) \phi(y) | 0 \rk = i \Delta^+ (x-y) = \int \frac{ \dd^3 \vv{k}}{(2\pi)^3 2 \omega_k} e^{-ik(x-y)}\]
+
 \section{Propagatoren}
 \section{Gupta Bleuler Quantisierung des Photons}
 

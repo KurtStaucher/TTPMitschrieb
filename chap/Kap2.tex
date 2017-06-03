@@ -88,10 +88,10 @@ If we take a look at the Jacobi identity
 and take $A = L_a$, $B= L_b$, $C=L_j$ we get
 \[ [A,B] = i f_{abm} L_m ~~~\df~~~ [C,[A,B]] = i f_{abm}[L_j,L_m] = if_{abm}if_{jmc} L_c\]
 from this follows the relationship
-\[ (-if_{aim}(-if_{bmj}) - (-if_{bim})(-if_{amj}) = if_{abc}(-if_{aij})\]
+\[ (-if_{aim})(-if_{bmj}) - (-if_{bim})(-if_{amj}) = if_{abc}(-if_{aij})\]
 If we now write $if_{abc} = (F^a)_{bc}$ as a matrix element of a matrix $F^a$ we get
 \[ (F^a)_{im} (F^b)_{mj} - (F^b)_{im}(F^a)_{mj} = i f_{abc} (F^c)_{ij}\]
-due to the summation convention this is equivalent with
+due to the summation convention this is equivalent to
 \[ (F^aF^b)_{ij} - (F^bF^a)_{ij} = if_{abc}(F^c)_{ij}\]
 So this in it self satisfies the commutation relation of the Lie algebra:
 \[ [F^a, F^b] = i f^{abc} F^c\]
@@ -128,7 +128,7 @@ We call Lorentz transformations with $\det(L) = 1$ proper Lorentz transformation
 Also, if we take $\alpha = \beta = 0$ in the equation, we find 
 \[g_{00} = 1 = \Lambda^{\mu}_{~0} g_{\mu\nu} \Lambda^\nu_{~0} = (\Lambda^0_{~0})^2 - (\Lambda^i_{~0})^2\]
 So necessarily $|\Lambda^0_{~0}| \geq 1$.\\
-We then call Lorentz transformations with $\Lambda^0_{~0} \geq 1$ orthochronous and Lorentz transformations with $\Lambda^0_{~0} \leq 1$ non orthonormous.
+We then call Lorentz transformations with $\Lambda^0_{~0} \geq 1$ orthochronous and Lorentz transformations with $\Lambda^0_{~0} \leq 1$ non orthochronous.
 
 \sub{Lorentz group}
 All Lorentz transformations form a group, the Lorentz group. It has the following attributes
@@ -144,7 +144,7 @@ Because a product of Lorentz transformations is again a Lorentz transformation w
 \item rotations: $x'^0 = x^0, x'^i = a^{ij} x^j$ with a rotation matrix $a^{ij}$, $L = \Matz{1}{0}{0}{a}$ where $a$ is the $3\times 3$ rotation matrix with $\det(a) = 1$. (orthochronous, proper)
 \item boosts (here in one direction): $x'^0 = x^0 \cosh \eta + x^1 \sinh \eta$, $x'^1 = x^0 \sinh\eta x^1 \cosh\eta$, $x'^{(2,3)} = x^{(2,3)}$ where $\eta$ is the rapidity. (orthochronous, proper)
 \end{enumerate}
-The number of possible rotations is three (for example the Euler angles), the number of boosts also is three (for example the three boost directions or two angles plus $v$). Therefore, any proper, orthochronous Lorentz transformation can be described by six real parameters. The time inversion and party transformation do not have infinitesimal representations, because they are discrete transformations.
+The number of possible rotations is three (for example the Euler angles), the number of boosts also is three (for example the three boost directions or two angles plus $v$). Therefore, any proper, orthochronous Lorentz transformation can be described by six real parameters. The time inversion and parity transformation do not have infinitesimal representations, because they are discrete transformations.
 
 \sub{Inifitesimal generators of proper and orthochronous Lorentz transformations}
 For any adequate description of the Lorentz group we need to study infinitesimal generators. Therefore we consider the infinitesimal Lorentz transformation:
@@ -153,7 +153,7 @@ Now, the condition $g = L^T g L$ can be rewritten as
 \[ \delta^\alpha_{~\beta} = g^\alpha_{~\beta} = \Lambda_\mu^{~\alpha} g^\mu_{~\nu}\Lambda^\nu_{~\beta} = \Lambda_\mu^{~\alpha}\Lambda^\mu_{~\beta} = ( g_\mu^{~\alpha} + \eps_\mu^{~\alpha})(g^\mu_{~\beta} + \eps^\mu_{~\beta}) = g_\beta^{~\alpha} \eps_\beta^{~\alpha} + \eps^\alpha_{~\beta} + \OO(\eps^2)\]
 From there follows $\eps_\beta^{~\alpha} + \eps^\alpha_{~\beta} = 0$, for example $\eps_{\alpha\beta} = - \eps_{\beta\alpha}$. So this is antisymmetric with six independant real elements.\\
 \\
-We now introduce $L_{\mu\nu} = i ( x_\mu \p_\mu - x_\nu\p_\mu)$ with $\p_\mu = \left( \frac{\p}{\p t}, \vn\right)^T$ as a generalization of the angular momentum operator $J^i -i \eps^{ijk} x^j \p_k$. It comes as as surprise, that these $L_{\mu\nu}$ exactly are the generators of the infinitesimal Lorentz transformation:
+We now introduce $L_{\mu\nu} = i ( x_\mu \p_\mu - x_\nu\p_\mu)$ with $\p_\mu = \left( \frac{\p}{\p t}, \vn\right)^T$ as a generalization of the angular momentum operator $J^i =i \eps^{ijk} x_j \p_k$. It comes as as surprise, that these $L_{\mu\nu}$ exactly are the generators of the infinitesimal Lorentz transformation:
 \[J^i = i \eps^{ijk} x_j \p _k = \frac{1}{2}\eps^{ijk} L_{jk}\]
 With $\delta x^\mu = \Lambda^\mu_{~\nu} x^\nu - x^\mu = \eps^\mu_{~\nu} x^\nu$ it follows
 \[ \frac{i}{2} e^{\rho\sigma} L_{\rho\sigma} x^\mu = \frac{i}{2} i \eps^{\rho\sigma} ( x_\rho g_\sigma^{~\mu}- x_\sigma g_\rho^{~\mu}) = - \frac{1}{2} (e^{\rho\mu} x_\rho - \eps^{\mu\sigma}x_\sigma )= \eps^{\mu\sigma}x_\sigma = \delta x^\mu\]
@@ -163,7 +163,7 @@ So the $L_{\rho\sigma}$ are indeed the generators of rotations in Minkovski spac
 \[ [L_{\mu\nu}, L_{\rho\sigma}] = i ( g_{\nu\rho} L_{\mu\sigma} - g_{\mu\rho}L_{\nu\sigma} - g_{\nu\sigma}L_{\mu\rho} + g_{\mu\sigma}L_{\nu\rho})\]
 \newline
 As a generalization, $L_{\mu\nu}$ is analogous to orbital angular momentum. We can add a spin term, which of course commutes with $L$ and forms some algebra similar to the $L$'s among themselves.\\
-The most general representation of $SO(3,1)$ generators is by $M_{\mu\nu} \equiv i(x_\mu \p_\nu - x_\nu\p_\mu) + S_{\mu\nu}$. The $M_{\mu\nu}$ space comppnents, or more familiarly, the $J^i = \frac{1}{2} \eps^{ijk} M_{jk}$ components are the generators of inifinetismal rotations with $[J_i, J_j] = i \eps^{ijk} J^k$ (the commutation relation from $SO(2)$).\\
+The most general representation of $SO(3,1)$ generators is by $M_{\mu\nu} \equiv i(x_\mu \p_\nu - x_\nu\p_\mu) + S_{\mu\nu}$. The $M_{\mu\nu}$ space components, or more familiarly, the $J^i = \frac{1}{2} \eps^{ijk} M_{jk}$ components are the generators of inifinetismal rotations with $[J_i, J_j] = i \eps^{ijk} J^k$ (the commutation relation from $SO(2)$).\\
 The $M^{0i} \equiv K^i$ are space time components and generate the boosts.\\
 The commutation relation of these $K^i$ and the known $J^i$ are
 \[ [K^i, K^j] = - \eps^{ijk} J^k, ~~~~ [J^i, K^j] = i \eps^{ijk} K^k\]
@@ -200,7 +200,7 @@ The commutation relations of the momentum operator are
 Lets take a look at a vector field $A_\mu(x)$ (for example the vector potential of the electromagnetic field). An observer in the primed frame describes the same physical situation by another field $A'_\mu(x)$. The two observed fields are of course related, for $x'_\mu = \Lambda_\mu^{~\nu}x_\nu$ it follows
 \[A'_\mu = \Lambda_\mu^{~\nu}A_\nu(x)\]
 This relation is, what defines $A_\mu$ as a vectorfield. We can generalize this:\\
-Let $x_\mu$ and $x'_\mu = \Lambda_\mu^{~\nu} x_\nu$. Thee should describe some point $P$ in two inertial frames. Let $\Lambda_A^{~B}$ ($A,B = 1, \ddots d$) be the corresponding $d$-dimensional representation matrixes of an irreducible representation of $SO(3,1)$. A $d$-component field $f_A(x)$ and $f'_A(x')$ in the two transformations is said to transform under this irreducible representation if $f'_A(x') = \lambda_A^{~B} f_B(x)$. In the infinitesimal version this is $\Lambda_A^{~B} = \delta_A^{~B} - \frac{i}{2} \eps^{\alpha \beta}(S_{\alpha\beta})_A^{~B}$.\\
+Let $x_\mu$ and $x'_\mu = \Lambda_\mu^{~\nu} x_\nu$. This should describe some point $P$ in two inertial frames. Let $\Lambda_A^{~B}$ ($A,B = 1, \ldots, d$) be the corresponding $d$-dimensional representation matrixes of an irreducible representation of $SO(3,1)$. A $d$-component field $f_A(x)$ and $f'_A(x')$ in the two transformations is said to transform under this irreducible representation if $f'_A(x') = \Lambda_A^{~B} f_B(x)$. In the infinitesimal version this is $\Lambda_A^{~B} = \delta_A^{~B} - \frac{i}{2} \eps^{\alpha \beta}(S_{\alpha\beta})_A^{~B}$.\\
 Here are some examples
 \begin{table}[H]
 \begin{tabular}{lll}
@@ -209,12 +209,12 @@ irr. rep. of $SO(3,1)$ & field & transf. property\\
 $\left(0, 0\right)$, scalar & $\phi(x)$ & $\phi'(x') = \phi(x)$\\
 $\left(\frac{1}{2}, \frac{1}{2}\right)$, vector & $V^\mu(x)$ & $V'^\mu(x') = \Lambda^\mu_{~\nu}V^\nu(x)$\\
 $\left(0,\frac{1}{2}\right)$, left handed Weyl spinor & $\psi_L(x)$ & $\psi'_L(x') = \Lambda_L \psi_L(x)$\\
-$\left(\frac{1}{2}, 0 \right)$, right handed Weyl spinor & $\psi_R(x)$ & $\psi'_R(x') = Lambda_R \psi_R(x)$\\
+$\left(\frac{1}{2}, 0 \right)$, right handed Weyl spinor & $\psi_R(x)$ & $\psi'_R(x') = \Lambda_R \psi_R(x)$\\
 \end{tabular}
 \end{table}
 The transformation matrices $\Lambda_R$ and $\Lambda_L$ are given by:
 \[\Lambda_{L,R} = e^{-i(\vv{\omega}\vv{J} + \vv{\nu}\vv{K})}\]
-with $\vv{J} = \vv{N} + \vv{N}^\dagger$ and $\vv{K} = i (\vv{N}^\dagger - \vv{N})$. For $Lambda_L$ the $N$ are $\vv{N}^\dagger = \frac{\vv{\sigma}}{2}$ and $\vv{N} = 0$. For $\Lambda_R$ they are $\vv{N}^\dagger = 0$ and $\vv{N} = \frac{\vv{\sigma}}{2}$. This follows, because $\vv{N}$ are $SU(2)$ groups and we need a representation of $SU(2)$ which describes spin $\frac{1}{2}$ particles.\\
+with $\vv{J} = \vv{N} + \vv{N}^\dagger$ and $\vv{K} = i (\vv{N}^\dagger - \vv{N})$. For $\Lambda_L$ the $N$ are $\vv{N}^\dagger = \frac{\vv{\sigma}}{2}$ and $\vv{N} = 0$. For $\Lambda_R$ they are $\vv{N}^\dagger = 0$ and $\vv{N} = \frac{\vv{\sigma}}{2}$. This follows, because $\vv{N}$ are $SU(2)$ groups and we need a representation of $SU(2)$ which describes spin $\frac{1}{2}$ particles.\\
 With this parametrization the $\Lambda$ are given by
 \[ \Lambda_L = \exp\left( -i \frac{\vv{\sigma}}{2} \left(\vv{\omega} + i \vv{\nu}\right)\right)\]
 \[ \Lambda_R = \exp\left( i \frac{\vv{\sigma}}{2} \left( \vv{\omega} - i \vv{\nu}\right)\right)\]
@@ -226,7 +226,7 @@ Some properties of $\Lambda_{R,L}$ are
 \end{itemize}
 Now consider a Lorentz transformation of the field $\sigma^2 \psi_R^*$:
 \[ \sigma^2 \psi_R^* ~~~\df~~~ \sigma^2 \Lambda_R^*\psi_R^* = \underbrace{\sigma^2 \Lambda_R^*\sigma^2}_{\Lambda_L} \sigma^2 \psi_R^* = \Lambda_L \sigma^2 \psi_R^*\]
-Thus $\sigma^2 \psi_R^*$ is a left handed spinor because it transforms the same way. It is called the charge conjugate of $\psi_R$). Therefore:
+Thus $\sigma^2 \psi_R^*$ is a left handed spinor because it transforms the same way. It is called the charge conjugate of $\psi_R$. Therefore:
 \begin{itemize}
 \item $\psi_L$ and $\sigma^2\psi_R^*$ transform as $\left(0, \frac{1}{2}\right)$
 \item $\psi_R$ and $\sigma^2\psi_L^*$ transform as $\left(\frac{1}{2}, 0\right)$
@@ -241,7 +241,7 @@ We therefore know, that $\chi^T_L\sigma^2\psi_L$ is a scalar. With
 follows
 \[ \chi_L^T \sigma^2 \psi_L = \begin{pmatrix} \chi_1 & \chi_2\end{pmatrix} \Matz{0}{-i}{i}{0} \vektorz{\psi_1}{\psi_2} = - i (\chi_1 \psi_2 - \chi_2 \psi_1)\]
 This shows, that this scalar is antisymmetrical in the two fields. It is important to realize, that these are spin $\frac{1}{2}$ fields, so they must be represented by anitcommuting Grassmann numbers to conserve the properties demanded by spin $\frac{1}{2}$.\\
-Hence even von $\chi_L = \psi_L$ we get
+Hence even for $\chi_L = \psi_L$ we get
 \[ \psi_L^T \sigma^2 \psi_L = - i( \psi_1 \psi_2 - \psi_2 \psi_1) = 2i \psi_2 \psi_1 \neq 0\]
 This is non zero because of the anticommuting Grassmann numbers. This would not be the case, if these scalars would commute like normal scalars.\\
 This combination is used in Majorana mass terms.\\
@@ -255,7 +255,7 @@ We start from $\psi_L^\dagger \psi_L$ which is invariant under rotations. Under 
 Similarly for $\psi_L^\dagger \sigma^i \psi_L$:
 \[ \psi_L^\dagger \sigma^i \psi_L ~~\df~~ \psi_L^\dagger e^{\vv{\sigma}\vv{\nu}/2} \sigma^i e^{\vv{\sigma}\vv{\nu}/2} \psi_L = \psi_L^\dagger \sigma^i \psi_L - \nu^i \psi_L^\dagger \psi_L\]
 In the second step we used $e^{\vv{\sigma}\vv{\nu}/2} \sigma^i e^{\vv{\sigma}\vv{\nu}/2} = \sigma^i - \frac{1}{2} \nu^j \{\sigma^j,\sigma^i\} = \sigma^i - \nu^i \delta^{ji}$.\\
-Summarizing the differnce between transformed and untransformed vectors $\delta$ is given by
+Summarizing the difference between transformed and untransformed vectors $\delta$ is given by
 \[ \delta(\psi_L^\dagger \psi_L) = - \nu^i \psi_L^\dagger (-\sigma^i) \psi_L\]
 and
 \[ \delta( \psi_L(-i\sigma^i) \psi_L) = -\nu^i \psi^\dagger_L \psi_L\]
@@ -279,7 +279,7 @@ These terms are just spinors with a derivative multiplied with dirac matrices. S
 
 \sub{Field Equations for Weyl Spinors}
 If we take a look at the newly found terms and try to construct an equation of motion for them, we can use $i \sigma_-^\mu\p_\mu \psi_L$ as a starting point. This is a right handed Weyl spinorfield, and thus it must be also equal to another right handed spinorfield.\\
-There are three possibilieties, to which every other solution can be reduced:
+There are three possibilities, to which every other solution can be reduced:
 \begin{itemize}
 \item $i \sigma_-^\mu \p_\mu \psi_L = 0$. This is the correct equation for massless, left handed particles, for example the massless neutrinos.
 \item $i \sigma_-^\mu \p_\mu \psi_L = m \sigma^2 \psi_L^*$. This is the equation for Majorana particels. It would describe Majorana neutrionos. The $m$ was introduced, because the left side has units of energy, coming from $\p^\mu$, thus also the right side has to have units of energy, which led to an introduction of the mass $m$.
@@ -313,23 +313,23 @@ This treatment of parity transformation is needed, because it will show, that qu
 \section{Plane Wave Solutions of the Dirac Equation}
 
 Lets take a look at $\psi(x) = e^{-ikx}\psi(k)$ and find its plane wave solutions with the Dirac equation $i \p^\mu \gamma_\mu \psi = m \psi$. In $k$ space the Dirac equation yields $i (-i k^\mu) \gamma_\mu \psi = \slashed{k} \psi$ thus the equation to be solved is $(\slashed{k} - m) \psi(k) = 0$. Multiplying this equation with another $\slashed{k}$ leads to
-\[ k^2 - m \slashed{k}) \psi(k) = (k^2 - m ^2) \psi(k)= 0 \]
-because $\slashed{k}^2 = k^2$ and $m\slashed{k}\psi(k) = m^2 \psi(k)$.\\
-This, $k^2 = m^2$ or $k^0 = \pm \sqrt{ \vv{k}^2 + m ^2}$ are solutions for $k$. The $\pm$ solutions are positive and negative energy solutions. For positive energy this is
+\[ (k^2 - m \slashed{k}) \psi(k) = (k^2 - m ^2) \psi(k)= 0 \]
+because $\slashed{k}^2 = k^2$ and $m\slashed{k}\psi(k) = m^2 \psi(k)$. (?)\\
+Thus, $k^2 = m^2$ or $k^0 = \pm \sqrt{ \vv{k}^2 + m ^2}$ are solutions for $k$. The $\pm$ solutions are positive and negative energy solutions. For positive energy this is
 \[\psi^+(x) = e^{-ipx}u(p)\]
 and for negative energies
 \[ \psi^-(x) = e^{+ipx}v(p)\]
 Where $p^0 = + \sqrt{\vv{p} + m^2} = \pm k^0$ was used to express the exponents the same way.\\
-All in all we have four solutions here, two $v$ solutions which correspond to anti partices and two $u$ solutions which correspond to partices, both with spin $\frac{1}{2}$. For both, $\left( 0, \frac{1}{2}\right)$ and $\left(\frac{1}{2}, 0\right)$ holds $\vv{J} \equiv \vv{S} = \frac{\vv{sigma}}{2}$.\\
+All in all we have four solutions here, two $v$ solutions which correspond to anti partices and two $u$ solutions which correspond to partices, both with spin $\frac{1}{2}$. For both, $\left( 0, \frac{1}{2}\right)$ and $\left(\frac{1}{2}, 0\right)$ holds $\vv{J} \equiv \vv{S} = \frac{\vv{\sigma}}{2}$.\\
 Thus for the Dirac spinor, the spin operator is given by
 \[ \vv{S} = \Matz{\frac{\vv{\sigma}}{2}}{0}{0}{\frac{\vv{\sigma}}{2}}\]
-The problem here arises from $(\slashed{k} - m)\psi(k) = 0$. If we look at $slashed{p}$ we get
+The problem here arises from $(\slashed{k} - m)\psi(k) = 0$. If we look at $\slashed{p}$ we get
 \[ \slashed{p} = \Matz{0}{E - \vv{\sigma}\vv{p}}{E + \vv{\sigma}\vv{p}}{0}\]
 where $\vv{\sigma}\vp$ is the projection of the Pauli matrices onto the direction of the momentum, so $[\slashed{p}, S_i]\neq 0$ for directions not in the directions of the spin. So no simultaneous eigenvalues can be found for both.\\
 The exceptions are twofold, the first is in the rest frame of the particle with $\vp = 0$. There we can choose a spin direction and boost to an arbitrary frame. This does not work for massless particles in ultrarelativistics.\\
 The second, more general approach is, to choose the direction of $\vp$ as the quantization axis, then the helicity eigenvalues are the simultaneous eigenvalues for momentum and spin of the particle.\\
 The components of $\vv{S}$ in the direction of $\vp$ are called the helicity:
-\[\frac{\vv{S}\vp}{|\vp|} u(\vp, \lambda) = \frac{1}{2|\vp|}\Matz{\vv{\sigma}vp}{0}{0}{\vv{\sigma}\vp}u(p,\lambda) = \frac{\lambda}{2}u(p,\lambda)\]
+\[\frac{\vv{S}\vp}{|\vp|} u(\vp, \lambda) = \frac{1}{2|\vp|}\Matz{\vv{\sigma}\vp}{0}{0}{\vv{\sigma}\vp}u(p,\lambda) = \frac{\lambda}{2}u(p,\lambda)\]
 This matrix now commutes with $\slashed{p}$, and in any specific direction the eigenvalues are $\pm \frac{1}{2} = \lambda$. This means, that $\lambda = + \frac{1}{2}$ corresponds with positive heilcity and this spin in the direction of the momentum $\vp$.\\
 The same holds for anti particles
 \[ \frac{ \vv{S}\vp }{ |\vp| } v(p,\lambda) = - \frac{\lambda}{2}v(\vp, \lambda)\]
@@ -363,7 +363,7 @@ Explicitly we can take a look at a Dirac field
 the charge conjugate of this field is
 \[ \psi^C = i \gamma^2 \gamma^0 ( \psi^\dagger \gamma^0 )^T = i \gamma^2 (\gamma^0)^2 \psi^* = i \gamma^2 \psi^* = i \Matz{0}{\sigma_2}{-\sigma_2}{0} \vektorz{\psi_L^*}{\psi_R^*} = \vektorz{i \sigma_2 \psi_R^*}{-i\sigma_2\psi_L}\]
 As we showed earlier, $i \sigma_2 \psi_R^*$ transforms as a left handed field and $i \sigma_2 \psi_L^*$ transforms as a right handed field.\\
-One special case of these Dirac fields are the Majorana fermions. For them $\psi = \psi^C$ holds. Therfore, the charge conjugated Field is
+One special case of these Dirac fields are the Majorana fermions. For them $\psi = \psi^C$ holds. Therfore, the charge conjugated field is
 \[ \psi^C = \vektorz{i \sigma_2 \psi_R}{-i \sigma_2 \psi_L} = \vektorz{\psi_L}{\psi_R}\]
 which follows because $\psi_L = i \sigma_2 \psi_R^* ~\df~ -i \sigma_2 \psi_L^* = -i \sigma_2( -i(-\sigma_2)) \psi_R = \psi_R$. Thus we can write a Majorana field as
 \[ \psi_M = \vektorz{\psi_L}{-i \sigma_2 \psi_L^*}\]

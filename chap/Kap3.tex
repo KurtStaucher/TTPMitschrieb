@@ -6,7 +6,7 @@ The action $\SSS$ was defined as
 \[ \SSS = \int_\Omega \dd^4 x \cc \LL( \phi_r(x), \p_\mu \phi_r(x))\]
 where $\Omega$ was some region in Minkovski space. An infinitesimal variation around the original field was given as $\delta \phi_r(x) + \phi_r(x) = \phi_r'(x)$. This induced a variation of the action
 \[ \delta \SSS = \int_\Omega \dd^4 x \cc \sum_r \left[ \p_\mu \left( \frac{\p \LL}{\p (\p_\mu \phi_r)} \delta \phi_r \right) + \left( \frac{ \p \LL}{\p \phi_r} - \p_\mu \left( \frac{\p \LL}{\p (\p_\mu \phi_r)}\right) \right)  \delta \phi_r\right]\soll 0 \]
-For the equation of motion we looked at variations $\delta \phi_r = 0$ that vanish on the surface $\p \Omega$ of $\Omega$ but are arbitrary elsewhere. Therefore the first term in the sum vanishes, because it can be reduced to a surface integral vial Gauss law. Now, because $\delta \phi_r$ is arbitrary, the second term has to be equl to zero to satisfy $\delta \SSS = 0$. This then led to the Euler Lagrange equation
+For the equation of motion we looked at variations $\delta \phi_r$ that vanish on the surface $\p \Omega$ of $\Omega$ but are arbitrary elsewhere. Therefore the first term in the sum vanishes, because it can be reduced to a surface integral vial Gauss' law. Now, because $\delta \phi_r$ is arbitrary, the second term has to be equl to zero to satisfy $\delta \SSS = 0$. This then led to the Euler Lagrange equation
 \[ \left( \frac{\p \LL}{\p \phi_r} - \p_\mu \frac{\p \LL}{\p ( \p_\mu \phi_r)} \right) = 0\] 
 
 Now, if we only look at fields that do satisfy the Euler Lagrange equation the variation of the action can be reduced to
@@ -46,7 +46,7 @@ The determinante yields
 \[ \det( \p_\mu x^\nu + \p_\mu \delta x^\nu) = \det( g_\mu^{~\nu} + \p_\mu \delta x^\nu) ~\grqq = \grqq \det\begin{pmatrix}1+\eps & \eps & \eps & \eps\\ \eps &  1+ \eps & \eps & \eps \\ \eps & \eps & 1+ \eps & \eps \\ \eps & \eps & \eps & 1+ \eps \end{pmatrix}\]
 The matrix can be expressed by infinitesimal $\epsilon$. On the diagonal entries the one from $g_\mu^{~\mu}$ is present. Because the $\eps$ are inifintesimally small the determinante approximally yields $1 + \eps + \OO(\eps^2)$. Thus follows
 \[ \delta(\dd^4 x) = \dd^4x( 1+ \p_\mu \delta x^\nu -1) = \dd^4x( \p_\mu \delta x^\nu)\]
-By separating the changes of $x$ and $phi_r$ in $\delta \phi_r$ we get
+By separating the changes of $x$ and $\phi_r$ in $\delta \phi_r$ we get
 \[ \delta \phi_r = \phi_r'(x') - \phi_r(x) = \underbrace{\phi_r'(x') - \phi_r'(x)}_{=\p_\rho \phi'_r(x) \delta x^\rho} + \underbrace{\phi_r'(x) - \phi_r(x)}_{\equiv \delta_0 \phi_r(x)} \]
 where the second and third term were introduced as a $\pm$. This is being separated into a term which only changes in $\phi$ and one which only changes in $x$. By only regarding first oder terms we get
 \[ \delta \phi_r = \delta x^\rho \p_\rho \phi_r(x) + \delta_0 \phi_r = \phi_r\]
@@ -72,7 +72,7 @@ $x' = x + \eps$ and $\delta x^\rho = \eps ^\rho$. Here, moving the coordinate fr
 Therefore, in the current only the first term is non zero and for conserved quantities this means $\p_\mu \mathcal{T}^{\mu\rho} = 0$ where $\mathcal{T}^{\mu\rho}$ is the energy momentum tensor, which is therefore conserved. If we take a look at the momentum
 \[ p ^\rho = \int \dd^3 x \mathcal{T}^{0\rho}(t, \vx)\]
 we see, that they are time independant, so they are conserved in time. Furthermore, the zeroth component ($\rho = 0$) of the momentum corresponds to the energy of the field which is therefore also time independant
-\[p^0 = \int dd^3 x \left[ \sum_r \frac{ \p \LL}{\p ( \p_0 \phi_r)} \p_0 \phi_r- \LL\right] = \int \dd ^3 x \left[ \sum_r \frac{\p \LL}{\p \dot{\phi_r}} \dot{\phi_r}-\LL\right]\]
+\[p^0 = \int \dd^3 x \left[ \sum_r \frac{ \p \LL}{\p ( \p_0 \phi_r)} \p_0 \phi_r- \LL\right] = \int \dd ^3 x \left[ \sum_r \frac{\p \LL}{\p \dot{\phi_r}} \dot{\phi_r}-\LL\right]\]
 If we compare this to the Hamiltionian in classical quantum mechanics of a one dimensional system we get $H = p \dot{q} - L$ with the canonical momentum $p = \frac{\p L}{\p \dot{q}}$. This is somewhat equivalent to what we got for fields, just with less degrees of freedom. For fields the conjugate momentum is
 \[ \Pi_r(x) \equiv \frac{\p \LL(x)}{\p \dot{\phi_r}(x)}\]
 In summary, Translation invariance implies conserved $H$ and $\vp$.
@@ -80,7 +80,7 @@ In summary, Translation invariance implies conserved $H$ and $\vp$.
 \[\LL = \frac{1}{2} ( \p_\mu \phi)^2 - \frac{m^2}{2}\phi^2\]
 Thus, the energy momentum tensor is
 \[ \mathcal{T}^{\mu\nu} = \frac{\p\LL}{\p (\p_\mu \phi)} \p^\nu \phi - g^{\mu\nu} \LL = (\p ^\mu \phi)(\p^\nu \phi) - g^{\mu\nu} \LL\]
-The Hamiltionian in perticular then is
+The Hamiltionian in particular then is
 \[ H = p ^0 = \int \dd^3 x \mathcal{T}^{00} = \int \dd^3 x ( (\p^0 \phi)^2 - \LL ) = \int \dd^3 x ( \dot{\phi}^2 - \LL)\]
 By rewriting the Lagrangian as
 \[ \LL = \frac{1}{2} \left( \dot{\phi}^2 - ( \vn \phi)^2 \right) - \frac{m^2}{2} \phi^2\]
@@ -109,7 +109,7 @@ The Dirac equation is $(i \gamma^\mu \p_\mu - m ) \psi = 0$ and the correspondin
 This implies a conserved current
 \[ j^\mu = \frac{\p \LL}{\p ( \p_\mu \psi)} \frac{\p \psi}{\p \alpha} + \frac{\p \bar{\psi}}{\p \alpha} \underbrace{ \frac{\p \LL}{\p( \p_\mu \bar{\psi})}}_{ = 0} \]
 There is no term proportional to the energy momentum tensor, because we are looking at an internal symmetry here.\\
-We do not only have one single field here, we do have many four component Dirac spinors. Therefore $\psi \df \psi_i$ with $i = 1, \ldots, N$. However, the masses should stay the same to conserve the symmetriy of the $\psi_i$. All of the $\psi_i$ can be written together as $\psi$. Then we replace $\psi ~\df~ U\psi$ and $\bar{psi} ~\df~ \bar{\psi}U^\dagger$ which means $\psi_i ~\df~ U_{ij}\psi_i$. Under this transformation the Lagrange density should stay invariant:
+We do not only have one single field here, we do have many four component Dirac spinors. Therefore $\psi \df \psi_i$ with $i = 1, \ldots, N$. However, the masses should stay the same to conserve the symmetriy of the $\psi_i$. All of the $\psi_i$ can be written together as $\psi$. Then we replace $\psi ~\df~ U\psi$ and $\bar{\psi} ~\df~ \bar{\psi}U^\dagger$ which means $\psi_i ~\df~ U_{ij}\psi_i$. Under this transformation the Lagrange density should stay invariant:
 \[ \bar{\psi} U^\dagger ( i \slashed{\p} - m ) U \psi \soll \bar{\psi}(i \slashed{\p} - m ) \psi\]
 To fulfill this requirement for symmetry, $U$ must be unitary, so that $U^{-1}U = \ehm$ and $U$ must not be dependant on $x$, because it must commutate with $\slashed{\p}$. Therefore $U$ must be a constant unitary $N \times N$ matrix.\\
 This matix can generally be split into a phasefactor times a special unitary matrix.\\
@@ -117,7 +117,7 @@ If we now consider the special case, that $U$ itself already is part of $SU(N)$:
 \[ \psi' = e^{i \theta^a T^a} \psi ~~~\df ~~~ \delta \psi = i \theta^a T^a\]
 The continuous parameter of this transformation $\delta \omega$ here corresponds to $\delta \theta^a$ for $a = 1, \ldots, N$. For each $a$ there is a conserved current:
 \[ J^{\mu a} = - \sum_j \frac{\delta \LL}{\delta( \p_\mu \psi_j)} \frac{\delta \psi_j}{\delta \theta^a} = - \sum _j ( \psi_j i \gamma^\mu) i T^a \psi_j) = \bar{\psi} \gamma^\mu T^a \psi\]
-The minus sign was only introduced to cancel the $i^2$. The $T^a$ here is a $N \times N$ matrix and $\bar{psi}$ as well as $\psi$ are $N$ component spinors.\\
+The minus sign was only introduced to cancel the $i^2$. The $T^a$ here is a $N \times N$ matrix and $\bar{\psi}$ as well as $\psi$ are $N$ component spinors.\\
 \sub{scalar fields}
 For scalar fields (specifically the Higgs field) we have two complex scalar fields $\phi_1$ and $\phi_2$. The Lagrangian here is
 \[ \LL = \sum_{i = 1}^2 ( \p _ \mu \phi_i)^*( \p^\mu \phi_i) - V( | \phi_1|^2+ | \phi_2|^2)\]
@@ -148,12 +148,12 @@ Because of the $x$-dependance of $\alpha$ the derivative of $\psi$ yields
 this extra term exactly cancels the one in $\LL_\psi$.\\
 Thus the Lagrangian $\LL_\psi$ is invariant under the simultaneous transformations $\psi ~\df~U\psi$, $\bar{\psi}~\df~\bar{\psi}U^\dagger$, $A_\mu ~\df~A_\mu + \p_\mu \Lambda$.\\
 That we used the minimal subsitution to derive this gauge invariance was only motivated by the gauge invariance of the Maxwell equations. In another way we can say, that the momentum transforms as $p ~\df p - q A$ and therefore also the derivative $\p_\mu ~\df~ \p_\mu + i p A_\mu \equiv \Dd_\mu$ transforms into the covariant derivative. If we look at the local transformation $\psi(x) ~\df~ U(x)\psi(x)$, we also want the covariant derivative of $\psi$ to transform like $\psi$:
-\[ \Dd_\mu \psi = ( \p _\mu + i q A_\mu) \psi) ~\df~ U(x)( \Dd_\mu \psi)(x) = (\Dd_\mu\psi)' = \Dd'_\mu \psi' = \Dd'_\mu U \psi \]
+\[ \Dd_\mu \psi = ( \p _\mu + i q A_\mu) \psi ~\df~ U(x)( \Dd_\mu \psi)(x) = (\Dd_\mu\psi)' = \Dd'_\mu \psi' = \Dd'_\mu U \psi \]
 This transformation implies $U\Dd_\mu \psi = \Dd'_\mu U \psi$ and thus $\Dd'_\mu = U \Dd_\mu U^{-1}$. Therefore the transformation of $\Dd_\mu$ yields:
 \[ \Dd'_\mu = e^{-iq\Lambda}( \p_\mu + i q A_\mu) e^{i q \Lambda} = e^{-iq\Lambda}\left[ e^{iq\Lambda}(iq (\p_\mu \Lambda) + \p_\mu) + i q A_\mu e^{iq\Lambda}\right] = \p_\mu + iq(A_\mu + \p_\mu \Lambda) = \p_\mu + iq A'_\mu\]
 So we rederived the transformation of the vector potential from the Maxwell equations which we already used earlier. Therefore, the transformation $\Dd'_\mu = U \Dd_\mu U^{-1}$ is equivalent to $A'_\mu = A_\mu + \p_\mu \Lambda$ for the $U(1)$-symmetry.\\
 This all gives
-\[ \LL_\psi = \bar{\psi} i \gamma^mu \Dd_\mu \psi - m \bar{\psi}\psi\]
+\[ \LL_\psi = \bar{\psi} i \gamma^\mu \Dd_\mu \psi - m \bar{\psi}\psi\]
 and
 \[ \LL'_\psi = \bar{\psi} U^\dagger i \gamma^\mu U \Dd_\mu \psi - m \bar{\psi}U^\dagger U \psi = \bar{\psi}i \gamma^\mu \Dd_\mu \psi - m \bar{\psi}\psi\]
 which is invariant.\\
@@ -180,9 +180,9 @@ If such a $\Dd_\mu$ exists, then $\LL_\psi = \bar{\psi}(i \gamma^\mu \Dd_\mu - m
 $\Dd_\mu = \p_\mu + i g A_\mu$ yields
 \[\Dd'_\mu = \p_\mu + i g A'_\mu = U(\p_\mu + i gA_\mu) U^{-1} = U( \p_\mu U^{-1}) + UU^{-1} \p_\mu + i g U A_\mu U^{-1}\]
 Here, $U A_\mu U^{-1}$ does not neccesarily commute. Thus this only reduces to
-\[ \Dd'_\mu = U(\p_\mu U^{-1} + \p_\mu + i g U A_\mu U^{-1}\]
+\[ \Dd'_\mu = U(\p_\mu U^{-1}) + \p_\mu + i g U A_\mu U^{-1}\]
 From which the transformation of $A_\mu$ follows as
-\[ A'_\mu = \frac{1}{ig} U( \p_\mu U^{-1} + U A_\mu U^{-1}\]
+\[ A'_\mu = \frac{1}{ig} U( \p_\mu U^{-1} )+ U A_\mu U^{-1}\]
 In the abelian case, $U A_\mu U^{-1} = A_\mu$ commutes and we get the same thing we derived earlier.\\
 If we now take a look at infinitesimal transformations $\theta^a$ this yields
 \[ \frac{1}{ig} U \left( \p_\mu e^{-i \theta^a \frac{\lambda^a}{2}}\right) = \frac{1}{ig} ( -i \p_\mu \theta^a) \frac{\lambda^a}{2} + \ldots\]
@@ -195,17 +195,17 @@ The infinitesimal gauge transformation yields
 Expanding this up to linear terms yields
 \[ A_\mu^{a\prime} = - \frac{1}{g} ( \p_\mu \theta^a) T^a - A_\mu^a T^a + i \theta^a\underbrace{( T^a T^b - T^b T^a)}_{= i f^{abc}T^c} A_\mu^b = -\frac{1}{g} (\p_\mu \theta^a)T^a + T^a( A_\mu^a - f^{cba} A_\mu^b \theta^c)\]
 where in the last step the indices were relabelled.\\
-This euqation is equivalent to
+This equation is equivalent to
 \[ A_\mu^{a\prime} = A_\mu^a + f^{abc} A_\mu^b \theta^c - \frac{1}{g}(\p_\mu \theta^a)\]
 Which follows from pulling out the $T^a$. Therefore $f^{abc}A_\mu^b \theta^c$ is an additional term only appearing in the non abelian case.\\
 In summary, $SU(N)$ gauge theory is constructed with covariant derivatives $\Dd_\mu + igA_\mu^a T^a$ with $N^2-1$ gauge fields $A_\mu^a$ where $N^2-1$ is the number of generators. These $A_\mu^a$ transform inhomogenously under the adjoint representation. From this it is apparent, that people claim, that there are eight gluons, as this is the number of gauge fields for $SU(3)$ which describes quantum chromo dynamics.\\
-\sub{Field stength tensor or non abelian gauge theory}
-Lets try to define a field stenght tensor for non abelian gauge theory. We choose the same commutation relation as in the abelian case
+\sub{Field stength tensor in non abelian gauge theory}
+Lets try to define a field strength tensor for non abelian gauge theory. We choose the same commutation relation as in the abelian case
 \[ [\Dd_\mu, \Dd_\nu] ~\df [ U \Dd_\mu U^{-1}, U\Dd_\nu U^{-1}] = U [ \Dd_\mu, \Dd_\nu]U^{-1}\]
 this yields
 \[ U [ \Dd_\mu, \Dd_\nu]U^{-1} = [ \p_\mu + i g A_\mu^a T^a, \p_\mu + i gA_\nu^aT^a] = ig ( \p_\mu A_\nu^b)T^b - igT^a(\p_\nu A_\mu^a) + (ig)^2 A_\mu ^a A_\mu^b \underbrace{[T^a, T^b]}_{= i f^{abc} T^c}\]
 If we factor out one factor of the generators by relabelling the indices we get
-\[ U [ \Dd_\mu, \Dd_\nu]U^{-1} = i gT^a \left( \p_\mu A_\nu^a - \p_\nu A_\mu^a - g \underbrace{f^{bca}}_{= f^{abc}}A_\mu^b A_\mu^c\right] \equiv i g T^a F^a_{\mu\nu}\]
+\[ U [ \Dd_\mu, \Dd_\nu]U^{-1} = i gT^a \left( \p_\mu A_\nu^a - \p_\nu A_\mu^a - g \underbrace{f^{bca}}_{= f^{abc}}A_\mu^b A_\mu^c\right) \equiv i g T^a F^a_{\mu\nu}\]
 with the non abelian field stenght tensor
 \[ F^a_{\mu\nu} = \p_\mu A^a_\nu - \p_\nu A_\mu^a - gf^{abc} A_\mu^b A_\nu^c\]
 The non abelian Lagrangian can thus be postulated (as done by Yang and Mills) as
