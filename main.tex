@@ -260,8 +260,82 @@ With the commutator, also the vacuum expectation value of two Klein Gordon filed
 \[ \lk 0 | \phi(x) \phi(y) | 0 \rk = \lk 0 | \phi^+(x) \phi^-(y) | 0 \rk = \lk 0 | [\phi^+, \phi^-(y)] | 0\rk = \lk 0 | i \Delta^+(x-y) | 0  \rk \]
 In the first step we used, that every other term would vanish, because it would be equal with $a(k)$ acting on $|0\rk$. In the second step we rewrote $\phi^+(x) \phi^-(y) = [\phi^+(x), \phi^-(y)] + \phi^-(y)\phi^+(x)$. The extra term vanishes though for the same reason. Now, because $\lk 0 | 0 \rk = 1$ we get
 \[ \lk 0 | \phi(x) \phi(y) | 0 \rk = i \Delta^+ (x-y) = \int \frac{ \dd^3 \vv{k}}{(2\pi)^3 2 \omega_k} e^{-ik(x-y)}\]
+\sub{Representation in complex $k^0$ space}
+Consider the integration over all four space time components where all four components are independant. 
+\[ \int_{C^+} \frac{\dd^4 k}{(2\pi)^4} \frac{e^{-ikx}}{k^2-m^2}\]
+We are having a singularity for $k^2 = m^2$ in the integral for $k^0 = \pm \omega_k = \pm \sqrt{\vv{k}^2 +m^2}$. 
+If we now set the path of integration $C^+$ for $k^0$ to be a clockwise integraton around the singularity $\omega_k$, we can express the integral with the residue theorem
+\[ = \int \frac{dd^3 \vv{k}}{(2\pi)^4} (-2\pi i) {\rm Res}\left.\left( \frac{e^{-ikx}}{k_0^2-\omega_k^2}\right)\right|_{k^0 = \omega_k} = -i \int \frac{\dd^3 \vv{k}}{(2\pi)^32\omega_k} e^{-ikx} = \Delta^+(x)\]
+For the second step we rewrote 
+\[\frac{e^{-ikx}}{k_0^2-\omega_k^2} = \frac{e^{-ikx}}{2\omega_k}\left( \frac{1}{k^0-\omega_k}-\frac{1}{k^0+\omega_k}\right)\]
+From this we can see, that is is just a simple pole at $k^0 = \omega_k$, therefore the residue is just $\frac{e^{-ikx}}{2\omega_k}$.\\
+The same follows for 
+\[ \int_{C^-}\frac{\dd^4 k}{(2\pi)^4}\frac{e^{-ikx}}{k^2-m^2} = \Delta^-(x)\]
+where the integration $C^-$ was done around the pole at $-\omega_k$, also clockwise.
+The sum of these two, by adding the residual of both poles, leads to
+\[ \int_C \frac{\dd^4k}{(2\pi)^4} \frac{e^{-ikx}}{k^2-m^2} = \Delta(x)\]
+with $C$, the clockwise integration around both poles.
 
-\section{Propagatoren}
+\section{Propagators}
+\subsection{Feynman Propagator}
+Think of some simple physics process, where we put a particle at point $x$, it then moves to $x'$ and then we take it away again.
+Thus, we start from the vacuum state $|0\rk$, then apply $\phi(x)$ to inject the particle at $x$, then annihilate at $x'$ with $\phi(x')$ which returns the vacuum state:
+\[\lk 0 | \phi(x') \phi(x) | 0\rk\]
+We should, however, look at this for $x^0 < x^{\prime 0}$ to ensure the right chronological order of the demande processes, so the particles is first created and then annihilated an not vice versa. Therefore, to create a physical process we need
+\[ \begin{cases} \lk 0 | \phi(x') \phi(x) | 0 \rk, ~~~x^{\prime 0} > x^0\\
+\lk 0|\phi(x) \phi(x') | 0 \rk, ~~~ x^{\prime 0} < x^0 
+\end{cases} = \theta(x^{\prime 0} -x^0) \lk 0 | \phi(x') \phi(x) | 0 \rk + \theta(x^0 - x^{\prime 0}) \lk 0 | \phi(x) \phi(x') | 0 \rk\]
+With the time ordering operator $T$ this can be expressed as $\lk 0 | T\phi(x) \phi(x') | 0 \rk$
+The plus sign here only appears for bosons, for fermions there should be a minus sign.
+
+For $n$ bosonic fiels, we define
+\[ T \phi(x_1)\ldots \phi(x_n) = \theta(x_1^0-x-2^0)\theta(x_2^0-x_3^0)\ldots \theta(x_{n-1}^0-x_n^0) \phi(x_1)\ldots \phi(x_n) + (n^2-1)\textrm{~permutations}\]
+This corresponds to all orderings of the fields, such that the earliest $x^0$ is always first and the latest last.
+For fermions a factor $-1$ is added for odd permutations.
+For two fields this is called the Feynmanpropagator of two real Klein Gordon fields
+\[ i \Delta_F(x-y;m) = \lk 0 | T \phi(x) \phi(y) | 0 \rk\]
+Implicitly the propagator is
+\[ \Delta_F(x) = \theta(x^0) \Delta^+ + \theta(-x^0)\Delta^+(-x) = \theta(x^0) \Delta^+(x) - \theta(-x^0) \Delta^-(x)\]
+If we now look at the contour integral representation and integrate below the singularity for $k^0 = -\omega_k$ because of $\theta(-x^0)$ and above the pole at $k^0 = \omega_k$ we can claim, that the following expression holds.
+\[ \int_{C_F} \frac{ \dd^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{k^2-m^2} \soll \Delta_F(x)\]
+with $x^0 > 0$ we get $e^{-ik^0x^0} \df 0$ for $k^0 \df -i\infty$ when closing the loop at the bottom. 
+We can choose an arbitrary path as long as the poles inside the area dont change, thus, we can just integrate over a circle arund the pole $\omega_k$ which leads to $x^0 > 0: \Delta_F = \Delta^+(x)$.
+The same holds for $x^0 < 0$, here $e^{-ik^0x^0} \df 0$ for $k^0 \df i \infty$ which leads to $x^0 < 0: \Delta_F(x) = - \Delta^-(x)$. 
+The minus sign emergnes, because we integrate anti clockwise.
+Thus the claim holds.\\
+To simplify this further, we can replace $\omega_k \df \omega_k - i \eta$ so the poles at $\omega_k$ shift infinitesimally into the complex plane.
+Now the integration can be done along the real axis such that
+\[ \Delta_F(x) = \int \frac{ \dd^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{(k^0)^2 - ( \omega_k - i \eta)^2}, ~~\eta > 0\]
+As $\eta$ is a small factor, we an rewrite $-(\omega_k-i\eta)^2 = -\omega_k^2 + 2 i \eta\omega_k + \OO(\eta^2) = - \omega_k^2  +i \eps$. We introduced $\eps$ because it does not matter whether we parametrizise the change in $\omega_k$ with $\eta$ or indirectly over $\eps$.
+We then get the expression
+\[ \Delta_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{k^2 - m^2 + i \eps}\]
+We now call $(k^2 - m^2 + i \eps)^{-1}$ the Feynman propagator in momentum space.
+\sub{Relation to the Klein Gordon operator}
+the Klein Gordon operator $\square + m^2$ is related to the Delta functions in a way, that
+\[ (\square +m^2) \Delta^+(x) = \int_{C^\pm} \frac{\dd^4 k}{(2\pi)^4} \frac{ -k^2 + m^2}{k^2 - m^2} e^{-ikx} = - \int_{C^\pm} \frac{\dd^4 k}{(2\pi)^4} e^{-ikx} = 0\]
+Thus, after applying the Klein Gordon operator, the poles vanish, and thus also the integral.
+For the Feynman propagator we similarly get
+\[ ( \square + m^2) \Delta_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4}\frac{-k^2 + m^2 -i\eps}{k^2-m^2+i\eps} e^{-ikx}  = \int \frac{\dd^4 k}{(2\pi)^4} e^{-ikx} = - \delta^{(4)}(x)\]
+The $i\eps$ was able to be added because it is infinitesimally small. 
+So the Feynman propagator is actually a Greens function of the Klein Gordon operator.
+
+\subsection{Dirac Case}
+Now we will do the same thing for fermions. 
+The Dirac fields are the following 
+\[ \psi(x) = \int \frac{\dd ^3 \vp}{(2\pi)^3 2 \omega_p} \sum_\alpha \left[ c_\alpha(p) u^{(\alpha)}(p) e^{-ipx} + d_\alpha^\dagger(p) v^{(\alpha)}(p) e^{ipx}\right]\]
+\[ \bar{\psi}(x) = \int \dd \tilde{p} \sum_\alpha \left[ c_\alpha^\dagger(p)u^{(a)\dagger}(p) e^{ipx} + d_\alpha(p) v^{(\alpha)\dagger}(p) e^{-ipx}\right] \]
+The sum over $\alpha$ is the sum over the two possible polarization states.
+The generators for translations here are given as
+\[ p^\mu = : \int \dd^3\vx \mathcal{T}^{0\mu}(x) : = : \int \dd^3 x \psi^\dagger i \p^\mu \psi(x) :\]
+Here, the $:~\ldots~:$ notation stands for the normal ordering of the terms. We can rewrite the expression as
+\[ p^\mu = \int \dd \tilde{p} \sum_\alpha : \left[ c_\alpha^\dagger(p) c_\alpha(p) - d_\alpha(p) d_\alpha^\dagger(p) \right]:\]
+If we would quantize this with commutation relations, the negative energies we had with the Klein Gordon equation would reappear here. Thus we will be avoiding the Hamiltonian, which is not bounded from below due to the negative energies, and rather impose anti commutation relations, such that $:d_\alpha d_\alpha^\dagger: = - d_\alpha^\dagger d_\alpha$. From this we get
+\[ p^\mu = \int \dd \tilde{p} \cc p^\mu [ N_c + N_d]\]
+where
+\[ N_c = \sum_\alpha c_\alpha^\dagger (p) c_\alpha(p), ~~~ N_d = \sum_\alpha d_\alpha^\dagger (p) d_\alpha(p)\]
+
+
+
 \section{Gupta Bleuler Quantisierung des Photons}
 
 \chapter{S-Matrix, LSZ Reduktionsformel}
