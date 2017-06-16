@@ -402,7 +402,7 @@ Similarly follows
 Thus, the proof is done with
 \[ c_\alpha(p) = \sum_\beta c_\beta(\vp) \delta_{\alpha \beta} = c_\alpha(p)\]
 
-\section{Anticommutator of the fields}
+\subsection{Anticommutator of the fields}
 If we take a look at the fields $ \psi$ and $\psi^\dagger$ we notice the following proportinalities
 \[\psi \sim c+d^\dagger, ~~~ \psi^\dagger \sim c^\dagger + d \]
 The anti commutator $\{ \psi(x), \psi(y)\} = 0 = \{\psi^\dagger(x), \psi^\dagger(y)\}$ then actually vanisehd, beause all $ c(p)$, $ c(k)$, $d(p)$ and $d(k)$ commutators vanish.
@@ -430,12 +430,112 @@ The term proportional to $m$ now vanishes and the partial four dimensional deriv
 With the definition of $\dot \phi$ from an earlier chapter we can write this as
 \[ \{\psi_i(x), \psi_j^\dagger(y)\} = i \delta_{ij} [ \Pi(x), \phi(y)]_{x^0 = y^0} = i \delta_{ij} (-i \delta^{(3)}(\vx - \vy)) = \delta_{ij} \delta^{(3)}(\vx - \vy)\]
 
+We now can write the $\Delta$ functions summarizing as
+\[ \Delta ^i(x) = \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2-m^2}\]
+and the $S$ functions as
+\[ S^i(x) = (i \slashed \p +m) \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2-m^2} = \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{\slashed p + m}{p^2 - m^2} e^{-ipx}\]
+with $p^2-m^2 = (\slashed p - m ) (\slashed p + m)$ because of $\slashed p ^2 = p^2$ we can also write this as
+\[ S^i(x) = \int_{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{\slashed p - m}\]
+The $i$ from $C^i$ describes either the integration over $C^+$, $C^-$ or $C$ in a clockwise matter around the singularities $k^0 = \omega_k$ or respectively $k^0 = - \omega_k$ or both.
 
+\subsection{Feynman propagator of the Fermion}
+With the timeordering $T$ we can express the fermion and anti fermion state as
+\[ T \psi_i (x) \bar \psi_j(y) = \theta(x^0 - y^0) \psi_i(x) \bar \psi_j(y) - \theta(y^0 - x^0) \bar \psi_j(y) \psi_i(x) \]
+The minus sign here was introduced because of the Dirac statistics of the fermion fields, where two fermion fields get a minus sign if they are interchanged.\\
+The propagator now is defined as
+\[ i S_F(x-y) = \lk 0 | T \psi_i(x) \bar \psi_j(y) | 0 \rk = \theta(x^0-y^0) \lk 0 | \psi_i(x) \bar \psi_j(y) | 0 \rk - \theta(y^0 - x^0) \lk 0 | \bar \psi_j(y) \psi_i(x) | 0 \rk \]
+Now, because only the creation part of $\bar \psi_j | 0 \rk$ contributes we can instead write $ \bar \psi_j^- | 0 \rk$ and similarly with all others
+\[ i S_F(x-y) = \theta(x^0 - y^0) \lk 0 | \psi_i^+(x) \bar \psi_j^-(y) | 0 \rk - \theta(y^0 - x^0) \lk 0 | \psi^+_j (y) \psi_i^-(x) | 0 \rk \]
+Then we can introduce the anti commutators, because reverse ordering does not contribute when applied on $ | 0 \rk$.
+\[ i S_F(x-y) = \theta(x^0 - y^0) \lk 0 | \{ \psi_i^+(x), \bar \psi_j^-(y) \} | 0 \rk - \theta(y^0-x^0) \lk 0 | \{ \bar \psi_j^+, \psi_i^-(x)\} | 0 \rk\]
+With the anticommutators being evaluated we then get
+\[ i S_F(x-y) = \theta(x^0 - y^0) i S^+(x-y)_{ij} + \theta(y^0 - x^0) i S^-(x-y)_{ij}\]
+With $y = 0$ this yields
+\[ S_F(x) = \theta(x^0) S^+(x) - \theta(-x^0) S^-(x) = ( i \gamma^\mu \p_\mu + m) \left[ \theta (x^0) \Delta^+(x) - \theta(-x^0) \Delta^-(x)\right]\]
+We actually would have to add a term $-i \gamma^0 \left[ \delta(x^0) \Delta^+(x) + \delta(-x^0) \Delta^-(x) \right]$ because we swapped the derivative and the $\theta$ functions.
+The extra term, however can be rewritten to $\delta(x^0) \Delta(x) = \delta(x^0) \frac{1}{i} [ \phi(x), \phi(0)]$ which is the equal time commutator with the  $\delta(x^0)$ and thus vanishes.\\
+Additionaly, we can now express the fermion propagator in terms of the bosonic propagator $\Delta_F(x)$
+\[ S_F(x) = ( i \slashed \p + m) \Delta_F(x) = ( i \slashed \p + m) \int \frac{ \dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2 - m^2 + i \eps} = \int \frac{\dd ^4 p}{(2\pi)^4} e^{-ipx} \frac{ \slashed p + m}{\p^2 -m^2 + i \eps}, ~~\eps > 0\]
 
+We can now use $-(m^2 - i \eps) = -(m -i \eps')^2$ with another infinitesimally small and positive $\eps'$ such that $( \slashed p + m - i \eps')(\slashed p - m  + i \eps') = p^2 - m^2 + i \eps$ and thus write the propagator as
+\[ i S_F(x) = \int \frac{\dd^4 p}{(2\pi)^4} \frac{ i e^{-ipx}}{\slashed p - m + i \eps'} = \lk 0 | T \psi(x) \bar \psi(y) | 0 \rk\]
+This also is a Greens function of the Dirac operator $i \slashed p + m$.\\
+The physical interpretation of $i S_F(x-y)$ now for $x^0 > y^0$ is a fermion being created at $y$ and annihilated at $x$. For $y^0 > x^0$ an anti fermion is created at $x$ and annihilated at $y$. Feynmman interpreted this at first as a fermion travelling backwards in time, which from a mathematical standpoint is equal to an anti fermion travelling forward in time.
 
+\section{Discrete Symmetries}
+\subsection{Parity}
+Parity transformation flips the sign of the spacial components in minkovski space such that $x^\mu = (t, \vx) \overset{P}{\df} (t, - \vx) = x_\mu \equiv \tilde x ^\mu$ and also for a vector $V^\mu \overset{P}{\df} V_\mu$.\\
+For the irreducible representation of the Lorentz group $(m, n) \overset{P}{\df} (n,m)$ transforms this way, because the right handed components and the left handed components switch. For the Dirac field this is
+\[ \vektorz{\psi_L}{\psi_R} \overset{P}{\df} \vektorz{\psi_R(\tilde x)}{\psi_L(\tilde x} = \gamma^0 \psi(\tilde x)\]
+For the quantized case this is a unitary operator $\mathcal{P}$ with
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \gamma^0 \psi(\tilde x)\]
+Explicitly this yields
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \int \dd \tilde p \sum_\alpha \left[ \mathcal{P} c_\alpha ( \vp) \mathcal{P} ^\dagger u^{(\alpha)} (p) e^{-ipx} + \mathcal{P} d_\alpha^\dagger(\vp) \mathcal{P} v^{(\alpha)} (p) e^{ipx} \right] \soll \gamma^0 \psi(\tilde x)\]
+Then, coming from $\gamma^0 \psi(\tilde x)$ this must have the form
+\[ \gamma^0 \psi(\tilde x) = \int \dd \tilde p \sum_\alpha \left[ c_\alpha(\vp) \gamma^0 u^{(\alpha)} (p) e^{-ip \tilde x} + \ldots \right] = \int \dd \tilde p \sum_\alpha \left[ c_\alpha( - \vp) \gamma^0 u^{(\alpha)}(- \vp) e^{-ipx} + \ldots \right]\]
+where in the second step the sign of $p$ was flipped because this representation is equivalent.\\
+If we now look at this in the helicity basis $u^{(\alpha)} \df u(\vp, \lambda)$ we get
+\[ \gamma^0 u(-\vp, \lambda) = u(\vp, - \lambda) \eta(p, \lambda)\]
+with $\eta(p,\lambda)$ being a phase factor. The same follows for the anti particle states
+\[ \gamma^0 v(- \vp, \lambda) = v( \vp, - \lambda) \eta'(p, \lambda)\]
+These follow from
+\[ \slashed p \gamma^0 u(-\vp, \lambda) = ( p^0 \gamma^0 - \vp \vv{\gamma}) u(-\vp, \lambda) = \gamma^0(\gamma^0 p^0 + \vp \vv{\gamma}) u(-\vp, \lambda) = \gamma^0(\slashed{\tilde{p}} u(-\vp,\lambda)) =m \gamma^0 u(-\vp, \lambda)\]
+This follows from the Dirac equation. Also we get
+\[ \vv{\Sigma} \vp \gamma^0 u (-\vp, \lambda) = - \gamma^0 \vv{\Sigma}(-\vp) \gamma^0 u(-\vp, \lambda) = - \lambda | \vp | u ( - \vp, \lambda)\]
+where we used, that $-\vv{\Sigma}\vp \gamma^0 u(-\vp, \lambda) = \lambda | \vp | u (- \vp, \lambda)$ and $\vv{\Sigma} \sim \frac{i}{2} [\gamma^i, \gamma^j]$. Therefore the state $u(-\vp, \lambda)$ has helicity $-\lambda$ which permits the change of $\lambda \df - \lambda$ in the equations from before.
 
+Now we can write the parity transformation as
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \int \dd \tilde p \sum_{\lambda = \pm} \left[ c_{-\lambda} (-\vp) \eta u(p, \lambda) e^{-ipx} + \ldots\right]\]
+now, $c_{-\lambda}(-\vp) \eta \soll \mathcal{P} c_\alpha(\vp) \mathcal{P}^\dagger$ must be the same, which leads to
+\[ \mathcal{P} c(\vp , \lambda) \mathcal{P}^\dagger = c(-\vp, -\lambda) \eta(p, \lambda)\]
+and similarly for the anti particles
+\[ \mathcal{P} d( \vp, \lambda) \mathcal{P}^\dagger = d(-\vp, -\lambda) \eta\]
+That means, if we start  with a particle with spin and momentum along an anxis, the parity transformation flips the momentum but not the spin and because the helicity is the projection of the spin onto the momentum also the helicity flips.
 
+\subsection{Charge Conjugation}
+A simple picture of charge conjugation is exchanging particles and anti particles, the straight forward definition is given with the unitary operator 
+\[ \mathcal{C} c(\vp, \lambda) \mathcal{C}^\dagger = d(\vp, \lambda)\]
+which switches the fermion operator $c$ with the anti fermion operator $d$ and vice versa.
+We can now show, that
+\[ \mathcal{C} \psi(x) \mathcal{C}^\dagger = \psi^C(x) \equiv C \bar \psi^T(x), ~~~ C = i \gamma^2 \gamma^0\]
+When multiplying $C$ onto a $n$ spinor we get $u(p, \lambda) = C \bar v ^T(p, \lambda)$.
+\subsection{Fermion Bilinears}
+Fermion bilinears are arbitrary expressions of the form $\bar \psi(x) A \psi(x)$ with $A$ being a $4 \times 4$ matrix such that $A$ can be expanded into a base that nas nice Lorentz invariant properties:
+\[A = \sum_{n= 1}^{16} a_n \Gamma^n\]
+The basis, that is to say the $\Gamma^n$ can be classified into these groups
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+$\Gamma^n = \ehm$ & $\bar \psi(x) \psi(x) = S(x)$ & scalar\\
+$\Gamma^n = \gamma^\mu$ & $\bar\psi(x) \gamma^\mu \psi(x) = V^\mu(x)$ & vector\\
+$\Gamma^n = \gamma^\mu \gamma_5$&$\bar\psi(x) \gamma^\mu \gamma_5 \psi(x) = A^\mu(x)$ & pseudo vector\\
+$\Gamma^n = \sigma^{\mu\nu} = \frac{i}{2} [\gamma^\mu, \gamma^\nu]$&$ \bar\psi \sigma^{\mu\nu} \psi = T^{\mu\nu}$& tensor\\
+$\Gamma^n = \gamma^5$&$\bar \psi \gamma^5 \psi = P(x)$& pseudo scalar\\
+\end{tabular}
+\caption{Groups of fermion bilinears}
+\end{table}
+These transform under parity transformation and charge conjugation as
+\[ \mathcal{P} \bar \psi (x) \Gamma^n \psi(x) \mathcal{P}^\dagger = \mathcal{P} \bar \psi(x)  \mathcal{P}\mathcal{P}^\dagger \Gamma^n \psi(x) \mathcal{P}^\dagger = \bar \psi(\tilde x) \gamma^0 \Gamma^n \gamma^0 \psi(\tilde x)\]
+Thus, in the parity transformation we get the new $\gamma^0 \Gamma^n \gamma^0$ as the basis of the parity transformation. For the charge conjugation follows
+\[ \mathcal{C} \bar \psi(x) \Gamma^n \psi(x) \mathcal{C}^\dagger = \mathcal C \psi^\dagger(x) C^\dagger \gamma^0 \Gamma^n \mathcal C \psi(x) \mathcal C ^\dagger = ( C \bar \psi^T)^\dagger \gamma^0 \Gamma^n C \bar \psi^T (x)\]
+We can now transpose the whole thing and change nothing as the transposition of a scalar is still the same scalar
+\[ \mathcal{C} \bar \psi(x) \Gamma^n \psi(x) \mathcal{C}^\dagger = ( \bar \psi ^* C^\dagger \gamma^0 \Gamma^n C \bar \psi ^T )^T = - \bar \psi C^\dagger \Gamma_n^T \gamma^{0T}C^* \gamma^0 \psi = \bar \psi C^{-1} \Gamma^{nT} C \psi\]
+In the last step we used, that $C^\dagger = - C = C^{-1}$. So summarizing we get $C^{-1}\Gamma^{nT}C$ as the new basis for the charge conjugation.
 
+As an example, for the pseudo scalar $P(x) = \bar \psi \gamma^5 \psi$ these new bases lead to
+\[\mathcal P P(x) \mathcal P^\dagger = \bar \psi \gamma^0 \gamma^5 \gamma^0 = - P(\tilde x)\]
+\[\mathcal C P(x) \mathcal C^\dagger = \bar \psi(x) C^{-1} \gamma^5 C \psi(x) = \bar \psi(x) \gamma^5 \psi(x) = P(x)\]
+For all the other fermion bilinears this is
+\begin{table}[H]
+\centering
+\begin{tabular}{l|rrrrr}
+&$S(x)$&$P(X)$&$V^\mu(x)$&$A^\mu(X)$&$T^{\mu\nu}(x)$\\
+\midrule
+$\mathcal P$ & $S(\tilde x)$ & $-P(\tilde x)$ & $V_\mu(\tilde x)$&$-A_\mu(\tilde x)$&$ T_{\mu\nu}(\tilde x)$\\
+$\mathcal C$&$ S(x) $&$ P(x) $&$ - V^\mu(x) $&$ A^\mu(x) $&$ - T^{\mu\nu}(x) $\\
+\end{tabular}
+\caption{Transformation properties of fermion bilinears}
+\end{table}
 
 
 
