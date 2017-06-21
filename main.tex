@@ -539,7 +539,88 @@ $\mathcal C$&$ S(x) $&$ P(x) $&$ - V^\mu(x) $&$ A^\mu(x) $&$ - T^{\mu\nu}(x) $\\
 
 
 
-\section{Gupta Bleuler Quantisierung des Photons}
+\section{The Photon}
+For an explicit description of the photon, we have to deal with the Maxwell equations.
+We will use them in the following forms
+\[ F_{\mu\nu} = \p_\mu A_\nu - \p_\nu A_\mu\]
+we also need the electromagnetic current $j^\mu = ( \rho, \vv{j})$ with the inhomogenous equations
+\[ \p_\nu F^{\nu\mu} = j ^\mu\]
+When taking the divergence of this equation this leads to
+\[ \p_\mu j^\mu = \p_\mu \p_\nu F^{\nu\mu} = 0\]
+and this the electromagnetic current must be conserved. This is guaranteed by a global $U(1)$ symmetry.\\
+The components of the electromagnetic field tensor are the electric field and the magnetic field with
+\[ \vv{E} = - \vn \phi - \frac{\p \vv{A}}{\p t} \sim F^{0i}, ~~~ \vv{B} = \vn \times \vv{A} \sim F^{ij}\]
+The Maxwell equation in this form are easily obtained from a Lagrangian
+\[ \LL = -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} - A_\mu j^\mu\]
+However, this form of the Lagrangian is only valid if $j^\mu$ is not dependant on $A^\mu$, as in the case for the coupling with a scalar field. 
+In the coupling to charged fermions however, $j^\mu$ is $A^\mu$ dependant and thus the full Lagrangian here is given as
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \bar \psi ( i \slashed \Dd - m) \psi, ~~ \slashed \Dd = \gamma^\mu( \p_\mu + i q A_\mu)\]
+which explicitly is
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \bar \psi( i \slashed \p - m) \psi - \underbrace{q \bar \psi \gamma^\mu \psi}_{j^\mu}A_\mu\]
+Under charge conjugation $\mathcal{C} \bar \psi \gamma^\mu \mathcal{C}^\dagger = - \bar \psi \gamma^\mu \psi$.
+Then, $\LL$ is only charge invariant, if $\mathcal C A_\mu \mathcal C = - A_\mu$, thus the photon is $\mathcal C$-odd.
+\subsection{Canonical quantization}
+We have four fields $A_\mu$ and the conjugate momenta
+\[ \Pi^\mu(x) = \frac{ \p \LL}{\p \dot A_\mu} = \frac{\p}{\p \dot A_\mu} \left( - \frac{1}{2} F_{0\nu}F^{0\nu}\right) = - F^{0 \mu}, ~~~ F_{0\nu} = \dot A _\nu - \p_\nu A_0 \]
+In the second step we could reduce this to elements of $F$ with at least one index being zero, because only then the derivative with respect to $\dot A$ is non-zero.\\
+The problem here is, that $\Pi^0(x) = 0$, and therefore we do not have a conjugate momentum for the scalar potential.
+The solution for this is to fix a gauge. Everything works out for the Coulomb gauge $\vn \vv{A} = 0$. 
+It however has major drawbacks, as it is not manifestally Lorentz invariant, and also 
+\[A^0(x) \sim \int \dd ^3 \vv{y} \frac{\rho(\vv{y},t)}{| \vx - \vy|}\]
+so the scalar potential is fixed by the scalar current $\rho$ everywhere in space, which is an apparent loss of causality.\\
+Instead of the Coulomb gauge we are going to use the Lorentz gauge $\p_\mu A^\mu = 0$.
+We now add a gauge fixing term to the Lagrangian:
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} - \frac{\lambda}{2}( \p_\mu A^\mu) ^2 - j_\mu A^\mu\]
+This additional term is going to modify the Maxwell equations. The solution to the Euler Lagrange equation here is given as
+\[\frac{\p \LL}{\p A_\mu} = \p_\nu \frac{\p \LL}{\p(\p_\nu A_\mu)} = - \p_\nu F^{\nu\mu} - \lambda \p^\mu( \p A)\]
+And thus follows
+\[ \p_\nu F^{\nu\mu} - \lambda \p^\mu( \p A) = j^\mu\]
+From $F^{\nu\mu} = \p^\nu A^\mu - \p^\mu A^\nu$ follows
+\[ \square A^\mu - (1-\lambda)\p^\mu (\p A) = j^\mu\]
+With the conservation of the current, $\p^\mu j_\mu = 0$ we get
+\[ \square \p_\mu A^\mu (1 - (1- \lambda)) = 0 = \lambda \square \p_\mu A^\mu\]
+So, $\p A = \p_\mu A^\mu$ is a free, massless Klein Gordon field.\\
+From how on, we consider a free theory, that is to say, $j^\mu = 0$. From the gauge fixing a new term emerges in the conjugate momentum
+\[ \Pi^\mu = \frac{\p \LL}{\p \dot A_\mu} = - F^{0\mu} - \lambda g_{\mu\nu} \p A, ~~~ \Pi^0 = - \lambda \p A\]
+so the zeroth component is non-zero.
+Now we can postulate canonical commutation relations
+\[ [A_\mu(x) A_\nu(y)]_{x^0 = y^0} = 0 = [ \Pi^\mu(x) \Pi^\nu(y)]_{x^0 = y^0}\]
+and the non-vanishing ones
+\[ [A_\mu(x), \Pi^\nu(y)]_{x^0=y^0} = i g_\mu^{~\nu} \delta^{(3)}(\vx - \vy)\]
+For simplicity we set $\lambda = 1$ in the following. This is called the Feynman gauge.
+We then have the equation of motion $\square A^\mu = 0$ and
+\[ \Pi^\mu = - \p_0 A^\mu + \begin{cases} p^\mu A^0 ~~~mu &= 1,2,3\\
+-\vn \vv{A} ~~~\mu &= 0\end{cases}\]
+These additional terms do not contribute in the commutation reltions, because the canonical commutation relations imply, that $[A^\mu(x), \dot A^\nu(y)]_{x^0 = y^0} = i ( - g^{\mu\nu}) \delta^{(3)}(\vx - \vy)$ and $\square A^\mu = 0$.\\
+This is analogue to $[\phi(x), \dot \phi(y)]_{x^0 = y^0} = i \delta^{(3)}(\vx - \vy)$  for the Klein Gordon case, the only differnece is the minus sign for $g^{00} = 1$ such that $[A^0(x), \dot A^0(y)] = - i \delta^{(3)}(\vx - \vy)$.\\
+Analoguosly to the Klein Gordon case this implies, the commutator at arbitrary times is
+\[ [A^\mu (x) , A^\nu(y)] = i (-g^{\mu\nu})\Delta(x-y; m = 0) = i D^{\mu\nu}(x-y)\]
+In the integral representation this is
+\[ D^{\mu\nu} = - g^{\mu\nu} \Delta(x, m = 0) = \int _C \frac{ \dd ^ 4k}{(2\pi)^4} e^{-ikx} \left( \frac{-g^{\mu\nu}}{k^2}\right)\]
+And
+\[ \left.D^\mu\nu\right.^\pm = - g^{\mu\nu} \Delta^\pm (x, m =0) = \int_{C^\pm} \frac{\dd ^4k}{(2\pi)^4} e^{-ikx} \left( \frac{-g^{\mu\nu}}{k^2}\right)\]
+The Feynman propagator thus calculates to
+\[ \lk 0 | T A^\mu(x) A^\nu(y) | 0 \rk \equiv i D_F^{\mu\nu}(x-y) = \int \frac{\dd ^4 k}{(2\pi)^4} e^{-ik(x-y)} \left( \frac{ -ig^{\mu\nu}}{k^2 + i \eps}\right)\]
+For $\lambda \neq 1 $ we have 
+\[ D^{\mu\nu}_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4} e^{-ikx} \frac{ i \left( - g^{\mu\nu} + ( 1 - \frac{1}{\lambda}) \frac{k^\mu k^\nu}{k^2}\right)}{k^2 + i \eps}\]
+Which follows, because $D^{\mu\nu}_F$ is a Greens function for $\square A^\mu - ( 1-\lambda)\p^\mu ( \p_\nu A^\nu) = j^\mu$, that is to say, for $\lambda = 1$ it is a Greens function for $\square A^\mu$.
+
+\subsection{Gupta Bleuler construction}
+With the explicit form of the potential
+\[ A^\mu (x) = \int \dd \tilde k \sum_{r = 0}^3 \left[ a_r(k) \eps^\mu_r(k) e^{-ikx} + a_r^\dagger(k) \eps_r^\mu e^{ikx}\right]\]
+where $r$ are the four possible polarizations. Additionaly we also have $m = 0$ and thus $ \omega_k = | \vv{k} |$.\\
+We now choose a time like direction $n^\mu$ with normalization $n\cc n = 1$ such that for $ r = 0$ $\eps_{r = 0}^\mu(k) = n^\mu$ is given.\\
+Then we choose the physical polarizations $r = 1,2$ purpendicular to the time direction and the momentum direction, the $\perp (n,k)$ plane.
+So we get $\eps_r(k)\cc n = 0$ for $r = 1,2$ and we also require, that in general $\eps_r(k) \eps_s^*(k) = - \delta_{rs}$ for $r = 1,2$.
+The minus sign is needed, because they both are space like vectors.\\
+Now, we choose $\eps_3$ in the $(k,n)$ plane, purpendicular to $\eps_0 = n$.
+So what we need is $\eps_3(k) \cc n = 0$ and $(\eps_3(k))^2 = -1$. Those two conditions can also be combined to
+\[\eps_3^\mu = \frac{ k^\mu}{k \cc n} - n^\mu\]
+Summarizing, $\eps_1$ and $\eps_2$ are called transverse polarizations and $\eps_0$ is called the scalar polarization and $\eps_3$ is called the longitudinal polarization.
+
+
+
+
 
 \chapter{S-Matrix, LSZ Reduktionsformel}
 
