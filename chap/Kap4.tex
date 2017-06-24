@@ -1,0 +1,586 @@
+\chapter{Quantization of Fields}
+
+In classical mechanics we described a point particle with the action $S = \int \dd t L(q_i, \dot{q}_i)$ and the conjugate momentum $p_i = \frac{\p L}{\p \dot{q}_i}$. So we get pairs of coordinates $q$ and conjugate momenta, which are constructed by this. The quantization then followed from the condition $[q_i(t), p_j(t)] = i \hbar \delta_{ij}$. From this Lagrangian and the definition of the conjugate momentum we can impose the quantization condition on the Hamiltonian $H = \sum_i p_i \dot{q}_i - L$.\\
+Now, looking at field theories, we can use the same basic structures. Here the $q_i(t)$ correspond to te vaules of the field at space time points $\phi_r(\vx,t)$ where $r$ and $\vx$ are just indices of the field, just like the $i$. The conjugate momenta here are defined as 
+\[ \Pi_r(\vx, t) = \frac{\p \LL}{\p \dot{\phi}_r(\vx,t)}\]
+as derived in a previous chapter.\\
+We then postulate equal time commutators
+\[ [\phi_r(\vx, t) , \Pi_s(\vy, t) ] = i \delta_{rs} \delta^{(3)}(\vx - \vy)\]
+\[ [ \phi_r(\vx, t) , \phi_s( \vy, t) ] = 0 = [ \Pi_r(\vx, t), \Pi_s(\vy,t)]\]
+where the times are equal, but the indices not neccesarily are. From this follows, that two fields at different space points are independant. These commutations only hold for fields with integer spin though. For fermion fields with spin $\frac{1}{2}$ the commutation in these relations will be replaced by the anticommutator.
+\section{Bosonsic Case}
+\sub{Application: free, real Klein Gordon field}
+For a free, real Klein Gordon field, the Lagrangian is $\LL = \frac{1}{2}( \p_\mu \phi)^2 - \frac{m^2}{2} \phi^2$, so the conjugate momentum is $\Pi(x) = \frac{\p \LL}{\p \dot{\phi}} = \dot{\phi}(x)$. From the commutation relation follows $[\phi(x), \Pi(y)]_{x^0=y^0} = i \delta( \vx-\vy)$, all other commutators at equal times vanish. Also, this Lagrangian yields an equation of motion known as the Klein Gordon equation, $\square \phi + m^2 \phi = 0$ where the solutions are superpositions of plane waves
+\[ \phi(x) = \int \frac{\dd ^3 \vv{k}}{(2\pi)^3 2 \omega_k} \left( e^{-ikx}a(k) + e^{ikx}a^\dagger(k)\right)\]
+with $\omega_k \equiv \sqrt{ \vv{k}^2 + m^2}$. These solutions are fundamentally hermitian.\\
+To get a hand on $a(k)$ and $a^\dagger(k)$ we have to invert the fouriertransformation of $\phi(x)$. For this it is useful, to rewrite $e^{-ikx} = e^{-i\omega_kt}e^{i \vv{k}\vx}$ and the h.c. accordingly. Now, by integrating the field $\phi(x)$ we get
+\[ \int \dd^3 \vx e^{-i\vp\vx}\phi(t, \vx) = \frac{1}{2\omega_p}\left( a(\vp) e^{-i\omega_p t} + a^\dagger(-\vp)e^{i \omega_p t}\right)\]
+It is important to notice, that in this notation $\vp$ and $\vv{k}$ are two instances of the same thing. However, we do notice, that the integration of $\phi(x)$ on its on does not suffice to separate $a$ and $a^\dagger$, we also need the integration of the conjugate momentum
+\[ \int \dd^3 \vx e^{-i \vp \vx} \underbrace{\Pi(t, \vx)}_{\dot{\phi}(t,\vx)} = \frac{i}{2} \left( - a (\vp) e^{-i \omega_p t} + a^\dagger(- \vp) e^{i \omega_p t}\right)\]
+In the calculation of both these integrals we used
+\[ \int \dd ^3 \vx e^{i(\vv{k} - \vp)\vx} = (2\pi)^3 \delta^{(3)}(\vp - \vv{k})\]
+which in the $a^\dagger$ terms has a plus sign in the $\delta^{(3)}$ function which is why there are minus signs in the $\vp$ dependencies of $a^\dagger(-\vp)$. Now, looking at the sum of both integrations we get
+\[ a(p,t) \equiv a(p) e^{-i\omega_p t} = \int \dd^3 \vx e^{-i \vp \vx} \left( \omega_p \phi(t, \vx) + i \Pi(t, \vx)\right)\]
+and similarly for the h.c. case
+\[ a^\dagger(p,t) \equiv e^{i \omega_p t} a^\dagger(\vp) = \int \dd^3 \vx e^{i \vp \vx} ( \omega_p \phi(t, \vx) - i \Pi(t, \vx) )\]
+What we need to find out now, is, what the commutation relations for $a$ and $a^\dagger$ are:
+\[ [a(\vp), a^\dagger( \vv{k}) ] = e^{i(\omega_p - \omega _k) t} \int \dd^3 x \dd^3 y e^{-i \vp \vx} e^{ i \vv{k} \vy} \cc [ \omega_p \phi(t, \vx) + i \Pi(t, \vx), \omega_k\phi(t, \vy) - i \Pi(t, \vy)]\]
+In the commutator, only cross terms between $\phi$ and $\Pi$ have an impact, which yields
+\[ [ \omega_p \phi(t, \vx) + i \Pi(t, \vx), \omega_k\phi(t, \vy) - i \Pi(t, \vy)] = \omega_p(-i)i\delta^{(3)}(\vx - \vy) + i \omega_k ( -i \delta^{(3)}(\vx - \vy)) = \delta^{(3)} ( \omega_p + \omega_k)\]
+where the $\delta$-distribution in the second term got a minus sign, because the argument was switched around. With this, the Integration can be reduced to one variable, yielding 
+\[ \int \dd^3 \vx e^{-i ( \vp - \vv{k} ) \vx} = (2\pi)^3 \delta^{(3)}(\vp - \vv{k})\]
+Alltogether this gives
+\[ [a(\vp) , a^\dagger( \vv{k})] = e^{i(\omega_p - \omega_p)t} (2\pi)^3 \delta^{(3)}(\vp - \vv{k}) ( \omega_p + \omega_p) = (2\pi)^3 2 \omega _p \delta^{(3)}(\vp - \vv{k})\]
+In a similar calculation, the other commutator $[a(\vp), a(\vv{k})] = [a^\dagger(\vp), a^\dagger(\vv{k})] = 0$ follow.\\
+Now, if we take a look at the field $\phi(x)$ in a primed frame
+\[ \phi'(x') = \int \frac{\dd^3 \vv{k}'}{(2\pi)^3 w \omega_k'} \left( a'(k') e^{-i k'x'} + \hc\right) \soll \phi(x)\]
+must be equal to $\phi(x)$, because the Klein Gordon equation is Lorentz invariant, and thus also the field must be equivalent to its boosted $\phi'(x')$. That means, $\phi(x)$ is a scalar field.\\
+We now start from a Lorentz invariant measure $\dd ^4 k \delta( k^2 - m^2) \theta(k^0)$ which is invariant under an orthochronous Lorentz transformation, that is to say a transformation that doesnt change the sign of the $k^0$ component. Here, also $x'^\mu = \lambda^\mu_{~\nu} x^\nu$ and $k'^\mu = \Lambda^\mu_{~\nu}k^\nu$ also are Lorentz invariant. Now, any integral of a test function is $\int \dd^4 k\cc \delta(k^2 - m^2) \theta(k^0) f(k)$ where the $\delta$-function can be rewritten as
+\[ \delta\left( (k^0)^2 - \vv{k}^2 - m^2\right) = \delta\left( (k^0)^2 - \omega_k^2\right) = \frac{1}{2 |k^0|} \left( \delta( k_0 - \omega_j) + \delta( k_0 + \omega_k)\right) \]
+Now, because $k^0 > 0$ because of $\theta(k^0)$, the second term is equal to zero and therefore the integral yields
+\[ \int \frac{\dd^3 \vv{k}}{2 \omega_k} f( k^0 = \omega_k, \vv{k})\]
+This means, that this measure also is Lorentz invariant. So, $\frac{\dd^3 \vv{k}'}{2\omega_k'} = \frac{\dd^3 \vv{k}}{2 \omega_k}$ is the same, which then in turn leads to
+\[ \phi'(x') = \int \frac{ \dd^3 \vv{k}}{2 \omega_k (2\pi)^3} \left( a'(k') e^{-i k x} + \hc\right) \soll \phi(x)\]
+Thus, also $a(k)$ must be Lorentz invariant, so that $a(k) = a'(k')$. Which means, that $a(k)$ must be a Lorentz scalar.\\
+As we will need the calculated measure for many more problems in the future, we will abbreviate it as $\dd \tilde{k} \equiv \frac{\dd^3 \vv{k}}{(2\pi)^3 2 \omega_k}$.\\
+Now, the Hamiltonian and $\vp$ we get from the energy momentum tensor as derived in an eariler chapter are
+\[ \mathcal{T}^{\mu\nu} = ( \p^\mu \phi)(\p_\mu \phi) - \LL g^{\mu\nu}, ~~~p^\nu = \int \dd^3 \vx \mathcal{T}^{0\nu}\]
+and
+\[ \vp = \int \dd^3 \vx \Pi(t,x)\left(-\vn \phi(t,\vx)\right)\]
+which gives the Hamiltonian
+\[ H = \frac{1}{2} \int \dd^3 \vx \left( \dot{\phi}^2(t,\vx) + ( \vn \phi)^2 + m^2 \phi^2\right)\]
+With the field
+\[ \phi(\vx, t) = \int \dd \tilde{k} \left[ a (\vv{k}) e^{-i \omega_k t} + a^\dagger(-\vv{k}) e^{i \omega_k t} \right] e^{i \vv{k}\vx}\]
+and its derivative
+\[ \dot{\phi}(\vx, t) = \int \dd \tilde{k}\cc i \omega_k \left[ -a(\vv{k}) e^{-i \omega_k t} + a^\dagger (-\vv{k}) e^{i \omega_k t} \right] e^{i \vv{k}\vx}\]
+the Hamiltionian yields
+
+\begin{align*}
+H =& \frac{1}{2} \int \dd \tilde{k} \dd \tilde{p} \left[ - \omega_k \omega_p \left( - a(k) + a^\dagger(-k) \right)\left( -a(p) + a^\dagger(-p)\right) \right. \\
+&+ \left. ( - \vv{k} \vp + m^2) \left( a(k) + a^\dagger(-k) \right) \left( a(p) + a^\dagger(-p)\right)\right] \int \dd^3 \vx e^{i \vv{k} \vx}e^{i \vp \vx}
+\end{align*}
+where the notation $a(k) = a(\vv{k})e^{-i\omega_kt}$ and $a^\dagger(-k) = a^\dagger(-\vv{k})e^{i\omega_kt}$ was used. The last integral over $\dd^3 \vx$ is equal to $(2\pi)^3 \delta^{(3)}(\vv{k} + \vp)$ which then implies $\vv{k} = - \vp$ and $\omega_k = \omega_p = \omega$.\\
+Thus $-\vv{k}\vp + m^2 =  \vp^2 + m^2 = \omega_p^2$ and $-\omega_k \omega_p = -\omega_p^2$ yield twice the same factor for both terms in the first integral. Also the double integral at the front reduces to $\int \dd\tilde{p}\dd\tilde{k} = \int \frac{\dd\tilde{p}}{2 \omega_p (2\pi)^3}$. The $(2\pi)^3$ then cancels with the one from the last integral and the $\frac{1}{\omega_p}$ cancels with one of the now global $\omega_p^2$. All in all this reduces the Hamiltonian to
+\[H = \frac{1}{2} \int \dd\tilde{p} \frac{\omega_p}{2} \left[ a(-\vp)a^\dagger(-\vp) + a^\dagger(\vp)a(\vp)\right] = \int \dd \tilde{p} \frac{\omega_p}{2} \left[a(\vp) a^\dagger(\vp) + a^\dagger(\vp) a(\vp) \right]\]
+Here, all the time dependant phases $e^{i\omega t}$ vanish. This can further be rewritten by turning around the order of $a$ and $a^\dagger$ in the first term, such that
+\[H = \int \dd \tilde{p} \cc\omega_p \left( a^\dagger(\vp) a(\vp) + \frac{1}{2}[ a(\vp), a^\dagger(\vp) ] \right)\]
+The commutator here is equal to $[a(\vp), a^\dagger(\vp)] = (2\pi)^3 \omega_p \delta^{(3)}(0)$.
+\subsection{Annihilation and Creation Operators}
+If we take a look at the four momentum operator
+\[P^\mu = \int \dd \tilde{k} k^\mu a^\dagger(k) a(k) + \ehm Q_0^\mu\]
+with $k^\mu = (\omega_k, \vv{k})$ and $Q_0^\mu$ (?) we can show, that the $a$ and $a^\dagger$ are infact annihilation and creation operators.\\
+Therefore, lets consider the eigenstate $|k\rk$ of $P^\mu$, $P^\mu|k\rk = k^\mu|k\rk$ and now calculate
+\[ P^\mu\left( a^\dagger(p) |k\rk\right) = [ P^mu, a^\dagger(p)]|k\rk + a^\dagger(p) k^\mu|k\rk\]
+The commutator is
+\[ [P^\mu, a^\dagger(p)] = \int \dd \tilde{k}\cc k^\mu [ a^\dagger(k)a(k), a^\dagger(p)] = \int \dd \tilde{k}\cc k^\mu \left([ a^\dagger(k), a^\dagger(p)]a(k) + a^\dagger(k) [a(k), a^\dagger(p)]\right)\]
+Now, the first commutator is equal to zero and the second one is known from before, $[a(k), a^\dagger(p)] = (2\pi)^3 2 \omega_k \delta^{(3)} (\vv{k} - \vp)$, thus
+\[ [P^\mu, a^\dagger(p)] = \int \dd \tilde{k}\cc a^\dagger(k)(2\pi)^3 2 \omega_k \delta^{(3)}(\vv{k}-\vp) = p^\mu a^\dagger(p)\]
+From which follows
+\[ P^\mu \left( a^\dagger(p) |k\rk\right) = ( p + k )^\mu a^\dagger(p)\]
+So we found, that applying $a^\dagger(p)$ to a state $|n\rk$ raises the energy by $\omega_p$ and the momentum by $\vp$, which is euqivalent to adding a new particle of four momentum $p^\mu$ to the state.\\
+Similarly we get the commutator $[P^\mu, a(p)] = - p^\mu a(p)$ from is equivalent to taking away a particle of four momentum $p^\mu$ from the state.\\
+Also, there is a ground state, or vacuum state $|0\rk$ with $a(k) |0\rk = 0 ~\forall k = (\omega_k, \vv{k})$.
+
+
+\subsection{Fockspace, Hilbertspace}
+The basis of the Hilbertspace (Fockspace) is given by the zero particle state, or vacuum state $|0\rk$, which is unique with the property $a(k)|0\rk = 0~\forall k$. All the other states are build by applying the creation operator onto the vacuum state.\\
+For example, the one particle states are constructed as $a^\dagger(k_1)|0\rk = |k_1 \rk$, and the two particle states as $a^\dagger(k_1)a^\dagger(k_2)|0\rk = |k_1, k_2\rk$. This is the same as $a^\dagger(k_2)a^\dagger(k_1)|0\rk = + |k_2,k_1\rk$ because the $a^\dagger$ commute. Therefore, this is automatically Bose symmetric.\\
+In the Hilbertspace, the momentum eigenstates are normailzed as distributions, the matrix element of two one particle states is
+\[ \lk k_1 | k_2 \rk = \lk 0 | a(k_1)a^\dagger(k_2) | 0 \rk = \lk 0 | [ a(k_1), a^\dagger(k_2)] + a^\dagger(k_2) a(k_1)|0\rk\]
+In the last step, the expression between the bra-ket was rewritten with the commutator. Now the extra term vanishes, because $a(k_1)|0\rk$ is zero, and the commutator can be calculated, which leads to
+\[ \lk 0 | 0 \rk  (2\pi)^3 2 \omega_{k_1} \delta^{(3)}(\vv{k}_1 - \vv{k}_2)\]
+Note, that the ground state is normalized to $\lk 0 | 0 \rk = 1$.\\
+To nomalize a state, we have to look at a wave package, as a one particle state with a wafe function $f$:
+\[ | 1 , f\rk = \int \dd \tilde{k} f(k) |k\rk\]
+where $f(k)$ is the wave function in momentum space. The norm then is given by
+\[ \| | 1, f\rk \|^2 = \lk 1, f| 1, f\rk = \int \dd\tilde{k}_1 f^*(k_1) \dd \tilde{k}_2 f(k_2) \lk k_1 |k_2\rk = \int \dd \tilde{k}_2 | f(k_2) |^2\]
+In the last step, the just derived expression for the matrix element was used, and the $\delta$-function was evaluated, which reduced the double integral to just one. Thus, the norm is given by the quared wave function.\\
+A normalizable $n$-particle state then is
+\[ |n, F\rk = \frac{1}{\sqrt{ n! \int \dd \tilde{k}_1 \ldots \dd\tilde{k}_n | F(k_1, \ldots k_n) |^2}} \int \dd \tilde{k}_1 \ldots \dd \tilde{k}_n F(k_1, \ldots k_n) a^\dagger(k_1) \ldots a^\dagger(k_n) |0\rk\]
+The $n!$ appears, because there are $n!$ permutations of the $a^\dagger$ which all yield the same result. $F$ is without loss of generality a bose function; even if it wasnt, only the Bose symmetric part of it would contribute. $F$ is therefore symmetric under exchange of two indices.\\
+A state with $n$ particles in mode $\psi(k)$ then can be expressed as
+\[ \frac{1}{\sqrt{n!}} \left( \int \dd \tilde{k} \psi(k) a^\dagger(k) \right)^n | 0 \rk\]
+with $\int \dd \tilde{k} | \psi(k) |^2 = 1$. The expressin in the brackets is essentialy a wave package.
+\sub{Complex Klein Gordon field}
+The Lagrangian of a complex Klein Gordon field is
+\[ \LL = ( \p_\mu \phi) ^* ( \p ^\mu \phi) - m^2 \phi^* \phi \]
+from this also follows the Klein Gordon equation ($\square + m^2) \phi(x) = 0$.\\
+We can now express the two complex fields as two separate real fields:
+\[ \phi(x) = \frac{1}{\sqrt{2}} \left( \phi_1(x) + i \phi_2(x) \right)\]
+\[ \phi^*(x) = \frac{1}{\sqrt{2}} \left( \phi_1(x) - i \phi_2(x) \right)\]
+With these real fields $\phi_1$ and $\phi_2$ the Lagrangian is
+\[ \LL = \frac{1}{2} ( \p_\mu \phi_1)^2 - \frac{m^2}{2} \phi_1^2 + \frac{1}{2} (\p_\mu\phi_2)^2 - \frac{m^2}{2} \phi_2^2\]
+So we have two indepeandat, equivalent, real Klein Gordon fields of the same mass $m$. If we take a look at the canonical quantization
+\[ [ \phi_i (\vx, t), \p_0 \phi_j(\vy, t) ] = i \delta_{ij} \delta^{(3)}( \vx - \vy) \]
+the fields do commute for different indices $i$ and $j$. Thus they really are independant.\\
+In terms of creation and annihilation operators we have
+\[ \phi_i(x) = \int \dd \tilde{k} \left[ a_i(k) e^{-ikx} + a_i^\dagger(k) e^{ikx} \right]\]
+This implies, that the complex filed is
+\[ \phi(x) = \int \dd \tilde{k} \left[ \frac{1}{\sqrt{2}} \left(a_1(k) + i a_2(k)\right) e^{-ikx} + \frac{1}{\sqrt{2}} \left( a_1^\dagger(k) + i a_2^\dagger(k)\right)e^{ikx} \right]\]
+We now call the expressions in the brackets $a(k)$ and $b^\dagger(k)$:
+\[ a(k) \equiv a_1(k) + i a_2(k), ~~~ b(k) \equiv a_1(k) - i a_2(k)\]
+These operators have a more physical interpretation than the $a_i(k)$.\\
+We can now calculate the commutator
+\[ [a(k), a^\dagger(p)] = (2\pi)^3 2 \omega_k \delta^{(3)}(\vp - \vv{k})\]
+and similarly
+\[ [b(k), b^\dagger(p)] = (2\pi)^3 2 \omega_k \delta^{(3)}(\vp - \vv{k})\]
+also the mixed commutator vanishes: $[a(k), b^\dagger(k)] = 0$.\\
+The four momentum operator $P^\mu$ which has been introduced earlier
+\[ P^\mu = \int \dd \tilde{k} \cc k^\mu \left( a_1^\dagger(k) a_1(k) + a_2^\dagger(k) a_2(k)\right)\]
+can now be written with the newly defined operators
+\[ P^\mu = \int \dd \tilde{k} \cc k^\mu \left( a^\dagger(k) a(k) + b^\dagger(k) b(k) \right)\]
+There is however no real advantage of using the new operators here, it basically is the same. A real difference emerges when looking at the conserved charge. Its current is given as
+\[ j^\mu = -i:(\p^\mu \phi)\phi - \phi^\dagger(\p^\mu \phi)|\]
+where the $:$-notation just means, ordering the terms in a way, that the vacuum state is zero. The conserved charge then is
+\[ Q = \int \dd ^3 x j^0(x) = \int \dd \tilde{k} i \left( a_1^\dagger(k) a_2(k) - a_2^\dagger(k) a_1(k) \right)\]
+for the old operators. This constellation of operators describes the taking away of particle 2 with $k$ and replacing it with particle 1 with momentum $k$ and vice versa for the second term. This is not a very clear and physical interpretation. However, if we write the charge with the new operators we find
+\[  Q = \int \dd \tilde{k} \left( a^\dagger(k) a(k) - b^\dagger(k)b(k)\right)\]
+Here are no mixed terms, so this can be interpreted as $N_a- N_b$, the difference in number of particles, where $N_a = a^\dagger a$ and similarly for $N_b$. This interpretation then yields, that $a^\dagger(k)$ creates particles of charge $Q = +1$ and $b^\dagger(k)$ creates anti particles with charge $Q = -1$. The total charge $Q = N_a - N_b$ is conserved, this even holds for interacting fields, as long as we have a $U(1)$ symmetry. So, the only posibility to change $N_a$ is a pair creation and annihilation.\\
+An example of this formalism is the electric charge of $\pi^+$ and $\pi^-$ or the hyper charge or strangeness of $K^0$ and $\bar{K}^0$.
+\sub{Covariant commutation relations}
+Earlier we looked at equal time commutators, now lets take a more general approach. We first start the discussion just for real Klein Gordon fields
+\[ \phi(x) = \int \dd \tilde{k} a(k) e^{-ikx} + \int \dd \tilde{k} a^\dagger(k) e^{ikx}\]
+We now call the first term, the term for positive energy $\phi^+(x)$ and the second one, for negative energy $\phi^-(x)$. Now, the commutator for arbitrary, four dimensional $x$ and $y$ is given as
+\[ [ \phi(x), \phi(y)] = [\phi^+(x) + \phi^-(x), \phi^+(y), \phi^-(y)]=[\phi^+(x), \phi^-(y)] + [ \phi^-(x), \phi^+(y)]\]
+In the last step we used, that the remaining two commutators would vanish, because they are proportional to $[a(p),a(k)]$ or $[a^\dagger(p), a^\dagger(k)]$ which are equal to zero.  Now, as the first commutator is kinda the same as the second one, just with interchanged $x$ and $y$ we only calculate the first one
+\[ [\phi^+(x), \phi^-(y)] = \int \dd \tilde{k}_1 \dd \tilde{k}_2 e^{-ik_1x} e^{ik_2x} [a(k_1), a^\dagger(k_2)] = \int \dd \tilde{k} e^{-ik(x-y)} \equiv i \Delta^+(x-y)\]
+In the last step we again used the commutator relation $[ a(k_1), a^\dagger(k_2)] = (2\pi)^3 2 \omega_{k_1} \delta^{(3)} (\vv{k}_1 - \vv{k}_2)$. The resulting expression is called $i \Delta^+$, where $\Delta^+$ only depends on the difference $x-y$.\\
+From this we get the whole commutator
+\[ i \Delta(x-y) \equiv [ \phi(x), \phi(y)] = i \Delta^+(x-y) + i \Delta^-(x-y) = \int \dd\tilde{k} \left( e^{-ik(x-y)} - e^{ik(x-y)}\right)\]
+This can be writtes as a sine, so that
+\[ i\Delta(x) = -2 i\int \dd\tilde{k} \sin\left( k x\right)\]
+Some properties of these functions $\Delta(x)$ are
+\begin{itemize}
+\item $\Delta(x)$ is Lorentz invariant, that is to say it is only dependant on $x^2$ and the sign of $x^0$ because only they are Lorentz invariant (?).
+\item $\Delta(x-y)|_{x^0 = y^0}$ is the equal time commutator, which is zero. This implies that $\Delta(x-y) = 0$ for $(x-y)^2 <0$ because in some Lorentz frame $x'_0 = y'_0$ for the same physical point. In other words, the commutator will vanish outside of the forward and backward light cones. This is sometimes also called micro causality:\\
+Measurements of fields $\phi$ at $x$ and $y$ are independat, that is to say, they do not influence each other, for space like separations. Since the signal between $x$ and $y$ would need to exceed the speed of light.
+\end{itemize}
+The explicit form of $\Delta(x)$ is
+\[ i \Delta(x) = \frac{i}{4 \pi | \vx|} \frac{\p}{\p | \vx|} \begin{cases}
+J_0 (m \sqrt{x^2}), ~~~~~~ x^0 > |\vx|\\
+0 ,~~~~~~~~~~~~~~~~~~ - | \vx| < x^0 | |\vx| \\
+-J_0(m\sqrt{x^2}), ~~~~ x^0 < |\vx|
+\end{cases}
+\]
+With the commutator, also the vacuum expectation value of two Klein Gordon fileds is calculatable
+\[ \lk 0 | \phi(x) \phi(y) | 0 \rk = \lk 0 | \phi^+(x) \phi^-(y) | 0 \rk = \lk 0 | [\phi^+, \phi^-(y)] | 0\rk = \lk 0 | i \Delta^+(x-y) | 0  \rk \]
+In the first step we used, that every other term would vanish, because it would be equal with $a(k)$ acting on $|0\rk$. In the second step we rewrote $\phi^+(x) \phi^-(y) = [\phi^+(x), \phi^-(y)] + \phi^-(y)\phi^+(x)$. The extra term vanishes though for the same reason. Now, because $\lk 0 | 0 \rk = 1$ we get
+\[ \lk 0 | \phi(x) \phi(y) | 0 \rk = i \Delta^+ (x-y) = \int \frac{ \dd^3 \vv{k}}{(2\pi)^3 2 \omega_k} e^{-ik(x-y)}\]
+\sub{Representation in complex $k^0$ space}
+Consider the integration over all four space time components where all four components are independant. 
+\[ \int_{C^+} \frac{\dd^4 k}{(2\pi)^4} \frac{e^{-ikx}}{k^2-m^2}\]
+We are having a singularity for $k^2 = m^2$ in the integral for $k^0 = \pm \omega_k = \pm \sqrt{\vv{k}^2 +m^2}$. 
+If we now set the path of integration $C^+$ for $k^0$ to be a clockwise integraton around the singularity $\omega_k$, we can express the integral with the residue theorem
+\[ = \int \frac{dd^3 \vv{k}}{(2\pi)^4} (-2\pi i) {\rm Res}\left.\left( \frac{e^{-ikx}}{k_0^2-\omega_k^2}\right)\right|_{k^0 = \omega_k} = -i \int \frac{\dd^3 \vv{k}}{(2\pi)^32\omega_k} e^{-ikx} = \Delta^+(x)\]
+For the second step we rewrote 
+\[\frac{e^{-ikx}}{k_0^2-\omega_k^2} = \frac{e^{-ikx}}{2\omega_k}\left( \frac{1}{k^0-\omega_k}-\frac{1}{k^0+\omega_k}\right)\]
+From this we can see, that is is just a simple pole at $k^0 = \omega_k$, therefore the residue is just $\frac{e^{-ikx}}{2\omega_k}$.\\
+The same follows for 
+\[ \int_{C^-}\frac{\dd^4 k}{(2\pi)^4}\frac{e^{-ikx}}{k^2-m^2} = \Delta^-(x)\]
+where the integration $C^-$ was done around the pole at $-\omega_k$, also clockwise.
+The sum of these two, by adding the residual of both poles, leads to
+\[ \int_C \frac{\dd^4k}{(2\pi)^4} \frac{e^{-ikx}}{k^2-m^2} = \Delta(x)\]
+with $C$, the clockwise integration around both poles.
+
+\subsection{Feynman Propagator}
+Think of some simple physics process, where we put a particle at point $x$, it then moves to $x'$ and then we take it away again.
+Thus, we start from the vacuum state $|0\rk$, then apply $\phi(x)$ to inject the particle at $x$, then annihilate at $x'$ with $\phi(x')$ which returns the vacuum state:
+\[\lk 0 | \phi(x') \phi(x) | 0\rk\]
+We should, however, look at this for $x^0 < x^{\prime 0}$ to ensure the right chronological order of the demande processes, so the particles is first created and then annihilated an not vice versa. Therefore, to create a physical process we need
+\[ \begin{cases} \lk 0 | \phi(x') \phi(x) | 0 \rk, ~~~x^{\prime 0} > x^0\\
+\lk 0|\phi(x) \phi(x') | 0 \rk, ~~~ x^{\prime 0} < x^0 
+\end{cases} = \theta(x^{\prime 0} -x^0) \lk 0 | \phi(x') \phi(x) | 0 \rk + \theta(x^0 - x^{\prime 0}) \lk 0 | \phi(x) \phi(x') | 0 \rk\]
+With the time ordering operator $T$ this can be expressed as $\lk 0 | T\phi(x) \phi(x') | 0 \rk$
+The plus sign here only appears for bosons, for fermions there should be a minus sign.
+
+For $n$ bosonic fiels, we define
+\[ T \phi(x_1)\ldots \phi(x_n) = \theta(x_1^0-x-2^0)\theta(x_2^0-x_3^0)\ldots \theta(x_{n-1}^0-x_n^0) \phi(x_1)\ldots \phi(x_n) + (n^2-1)\textrm{~permutations}\]
+This corresponds to all orderings of the fields, such that the earliest $x^0$ is always first and the latest last.
+For fermions a factor $-1$ is added for odd permutations.
+For two fields this is called the Feynmanpropagator of two real Klein Gordon fields
+\[ i \Delta_F(x-y;m) = \lk 0 | T \phi(x) \phi(y) | 0 \rk\]
+Implicitly the propagator is
+\[ \Delta_F(x) = \theta(x^0) \Delta^+ + \theta(-x^0)\Delta^+(-x) = \theta(x^0) \Delta^+(x) - \theta(-x^0) \Delta^-(x)\]
+If we now look at the contour integral representation and integrate below the singularity for $k^0 = -\omega_k$ because of $\theta(-x^0)$ and above the pole at $k^0 = \omega_k$ we can claim, that the following expression holds.
+\[ \int_{C_F} \frac{ \dd^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{k^2-m^2} \soll \Delta_F(x)\]
+with $x^0 > 0$ we get $e^{-ik^0x^0} \df 0$ for $k^0 \df -i\infty$ when closing the loop at the bottom. 
+We can choose an arbitrary path as long as the poles inside the area dont change, thus, we can just integrate over a circle arund the pole $\omega_k$ which leads to $x^0 > 0: \Delta_F = \Delta^+(x)$.
+The same holds for $x^0 < 0$, here $e^{-ik^0x^0} \df 0$ for $k^0 \df i \infty$ which leads to $x^0 < 0: \Delta_F(x) = - \Delta^-(x)$. 
+The minus sign emergnes, because we integrate anti clockwise.
+Thus the claim holds.\\
+To simplify this further, we can replace $\omega_k \df \omega_k - i \eta$ so the poles at $\omega_k$ shift infinitesimally into the complex plane.
+Now the integration can be done along the real axis such that
+\[ \Delta_F(x) = \int \frac{ \dd^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{(k^0)^2 - ( \omega_k - i \eta)^2}, ~~\eta > 0\]
+As $\eta$ is a small factor, we an rewrite $-(\omega_k-i\eta)^2 = -\omega_k^2 + 2 i \eta\omega_k + \OO(\eta^2) = - \omega_k^2  +i \eps$. We introduced $\eps$ because it does not matter whether we parametrizise the change in $\omega_k$ with $\eta$ or indirectly over $\eps$.
+We then get the expression
+\[ \Delta_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4} \frac{ e^{-ikx}}{k^2 - m^2 + i \eps}\]
+We now call $(k^2 - m^2 + i \eps)^{-1}$ the Feynman propagator in momentum space.
+\sub{Relation to the Klein Gordon operator}
+the Klein Gordon operator $\square + m^2$ is related to the Delta functions in a way, that
+\[ (\square +m^2) \Delta^+(x) = \int_{C^\pm} \frac{\dd^4 k}{(2\pi)^4} \frac{ -k^2 + m^2}{k^2 - m^2} e^{-ikx} = - \int_{C^\pm} \frac{\dd^4 k}{(2\pi)^4} e^{-ikx} = 0\]
+Thus, after applying the Klein Gordon operator, the poles vanish, and thus also the integral.
+For the Feynman propagator we similarly get
+\[ ( \square + m^2) \Delta_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4}\frac{-k^2 + m^2 -i\eps}{k^2-m^2+i\eps} e^{-ikx}  = \int \frac{\dd^4 k}{(2\pi)^4} e^{-ikx} = - \delta^{(4)}(x)\]
+The $i\eps$ was able to be added because it is infinitesimally small. 
+So the Feynman propagator is actually a Greens function of the Klein Gordon operator.
+
+\section{Fermionic Case}
+Now we will do the same thing for fermions. 
+The Dirac fields in the fourier decomposition are the following 
+\[ \psi(x) = \int \frac{\dd ^3 \vp}{(2\pi)^3 2 \omega_p} \sum_\alpha \left[ c_\alpha(p) u^{(\alpha)}(p) e^{-ipx} + d_\alpha^\dagger(p) v^{(\alpha)}(p) e^{ipx}\right]\]
+\[ \bar{\psi}(x) = \int \dd \tilde{p} \sum_\alpha \left[ c_\alpha^\dagger(p)u^{(a)\dagger}(p) e^{ipx} + d_\alpha(p) v^{(\alpha)\dagger}(p) e^{-ipx}\right] \]
+The sum over $\alpha$ is the sum over the two possible polarization states.
+The generators for translations here are given as
+\[ P^\mu = : \int \dd^3\vx \mathcal{T}^{0\mu}(x) : = : \int \dd^3 x \psi^\dagger i \p^\mu \psi(x) :\]
+Here, the $:~\ldots~:$ notation stands for the normal ordering of the terms. We can rewrite the expression as
+\[ P^\mu = \int \dd \tilde{p} \sum_\alpha : \left[ c_\alpha^\dagger(p) c_\alpha(p) - d_\alpha(p) d_\alpha^\dagger(p) \right]:\]
+If we would quantize this with commutation relations, the negative energies we had with the Klein Gordon equation would reappear here. Thus we will be avoiding the Hamiltonian, which is not bounded from below due to the negative energies, and rather impose anti commutation relations, such that $:d_\alpha d_\alpha^\dagger: = - d_\alpha^\dagger d_\alpha$. From this we get
+\[ P^\mu = \int \dd \tilde{p} \cc p^\mu [ N_c + N_d]\]
+where
+\[ N_c = \sum_\alpha c_\alpha^\dagger (p) c_\alpha(p), ~~~ N_d = \sum_\alpha d_\alpha^\dagger (p) d_\alpha(p)\]
+So we do need the anticommutator relations for positive energies.\\
+The $P^\mu$ is the inifinitesimal generator of translations, that manes, the commutator $[P^\mu, \psi(x)]$ quantizes the field $\psi$. 
+This leads to $[P^\mu , \psi(x)] = -i\p_\mu \psi(x)$, the sign reproduces the Heisenberg equation 
+\[ i \hbar \frac{\p A}{\p t} = [ A , H]\]
+Here we have $[P^0, A] = - i \p_t A$ with $P^0$ exactly being the Hamiltonian.
+The same holds for the second field $ [P^\mu, \bar \psi(x) ] = i \p_\mu \bar \psi(x)$.
+Explicitly, the derivative applied on $\psi(x)$ yields:
+\[ i \p_\mu \psi(x) = \int \dd \tilde p \sum_\alpha \left( c_\alpha(p) u^{(\alpha)} (p) \cc (-p_\mu) e^{-ipx} + d_\alpha^\dagger(p) v^{(\alpha)}(p) \cc  (+p_\mu)e^{ipx} \right)\]
+And thus follow the two commutators
+\[ [P^\mu, c_\beta] = - k^\mu c_\beta(k), ~~~~ [P^\mu, d_\beta(k)] = -k^\mu d_\beta(k)]\]
+These commutator relations follow from the way basic structures of the quantum field theory and the fact that the $P^\mu$ are the generators of the inifitesimal translations.\\
+When we apply the $a$ and $b$ operators in the bosonic case onto states, we lower the energy of the state. The $c$ and $d$ operators here do the same for fermions, where we now identify $c_\alpha(k)$ and $d_\alpha(k)$ as annihilation operators.\\
+Lets now use the explicit form of $P^\mu $ to form the basic anti commutation relations. 
+For this construction of $[P^\mu, c]$ we need
+\[ [AB,c] = ABC + ACB - ACB - CAB = A\{B,C\} - \{A,C\}B\]
+Now, because the two commutation relations for $[P^\mu, c_\beta(k)]$ and $[P^\mu, d_\beta(k)]$ must hold we get the following
+\[ [P^\mu , c_{\beta}(k)] = \int \dd \tilde p \cc p^\mu \sum_\alpha \left[ c_\alpha^\dagger(p)c_\alpha(p), c_\beta(k)\right] - \left[ d_\alpha(p)d_\alpha^\dagger(p), c_\beta(k)\right] \soll -k^\mu c_\beta(k)\]
+The second commutator in the sum is zero, because $d$ and $c$ commute in any case. 
+The first commutator calculates to 
+\[ \left[ c_\alpha^\dagger(p) c_\alpha(p), c_\beta(k)\right] = c_\alpha^\dagger(p) \{c_\alpha(p), c_\beta(k)\}  \{c_\alpha^\dagger(p), c_\beta(k)\} c_\alpha(p)\]
+Now, because in the solution only a term proportinal to $c_\beta(k)$ appears and none proportional to $c^\dagger_\beta(k)$, the first term of the commutator must be zero.
+Thus follows
+\[ [P^\mu, c_\beta(k)] = - \int \dd \tilde p \cc p^\mu \sum_\alpha \{c_\alpha^\dagger(p), c_\beta(k)\} c_\alpha \soll -k^\mu c_\beta(k)\]
+This forces the anti commutator relation to have the following form to fulfill the equation
+\[ \{c_\alpha^\dagger(p), c_\beta(k)\} = (2\pi)^3 2 \omega_p \delta_{\alpha\beta} \delta^{(3)}(\vp - \vv{k}) = \{d_\alpha^\dagger(p), d_\beta(k)\}\]
+Also, $\{c_\alpha(p), c_\beta(k) = \{c_\alpha(p), d_\beta^\dagger(k)\} = \ldots = 0$.
+\subsection{Fockspace, Hilbertspace}
+The Fockspace here also is built on the vacuum state $|0 \rk$ such that $c_\alpha(k)|0\rk = 0 = d_\alpha(k)|0\rk~~\forall \alpha,\vv{k}$.\\
+The one fermion or the one anti fermion states then respectively are $c^\dagger_\alpha(k)|0\rk$ and $ d_\alpha^\dagger(k)|0 \rk$. From there on two particle states and more can be constructed, for example the state of a fermion with $k_1$ and an anti fermion with $k_2$: $c_\alpha^\dagger(k_1)d_\beta^\dagger(k_2)|0\rk$.\\
+A general state with any numer of fermions, $n$ fermions and $m$ anti fermions can be expressed. We take these states and fold them with some wave function $F$, such tht the $m+n$ particle state is 
+\[ |F\rk = \int \dd \tilde k_1 \ldots \dd \tilde k_n \dd \tilde q_1 \ldots \dd \tilde q_m \cc \sum_{\alpha_1 \ldots \beta_m}^2 F_{\alpha_1\ldots\beta_m} (k_1\ldots k_n,q_1\ldots q_m) \cc c_{\alpha_1}^\dagger(k_1)\ldots c_{\alpha_n}^\dagger(k_n) d_{\alpha_1}^\dagger(q_1)\ldots d_{\alpha_m}^\dagger(q_m)\]
+This is yet to be normalized.\\
+Now, that all the $c^\dagger$ anticommute with another, when we interchange any two $c^\dagger$ we will get a minus sign.
+Thus, only the part of $F$ which is totally antisymmetric will survive.
+So the spin $\frac{1}{2}$ staes obey the Fermi Dirac statistics. They are antisymmetric under interchange of two fermions of two anti fermions.
+Therefore we cannot build a state with two fermions in the same state because they naturally vanish.
+\sub{Normal Ordering}
+The normal ordering operator $: \ldots :$ is introduced to guarantee that the ordering of the fermionic operators as well as the bosonic operators is applied in the right order onto a vacuum state. 
+For fermions we get an additional minus sign every time we interchange two creation or annihilation operator.\\
+The normal ordering operator orders the operators in a way, that first the creation operators and then the annihilation operators are applied, and simultaneously drops the commutator terms emerging from switching two states.\\
+Some examples are
+\[ : c_\alpha(p)d_\beta^\dagger(q): = - d_\beta^\dagger(q) c_\alpha(p)\]
+\[: c c^\dagger d d^\dagger: = : c^\dagger c d^\dagger d: =- c^\dagger d^\dagger c d = d^\dagger c^\dagger c d\]
+\[c_\alpha(p) c_\beta^\dagger(q) = - c_\beta^\dagger(q) c_\alpha(p) + 2\omega_p (2\pi)^3 \delta_{\alpha\beta} \delta^{(3)}(\vp - \vv{q}) ~~\df :c_\alpha(p) c_\beta^\dagger(q): = - c_\beta^\dagger(q) c_\alpha(p)\]
+This is equivalent to setting the vacuum eigenvalue as zero.\\
+The ordered representation of $P^\mu $ then is
+\[ P^\mu = \int \dd \tilde p \cc p ^\mu \sum_\alpha (c_\alpha^\dagger c_\alpha + d^\dagger_\alpha d_\alpha)\]
+where the number density operator of the fermions and anti fermions respectively emerge as $N_c \sim c_\alpha^\dagger c_\alpha$ and $N_d \sim d_\alpha^\dagger d_\alpha$.
+
+
+\sub{Projection of $\psi(x)$ onto the creation and annihilation operators}
+We can express the creation and annihilation operators in terms of the fields 
+\[ c_\alpha(p) = \int \dd^3 \vx \cc \bar u_\alpha (p) e^{ipx} \gamma^0 \psi(x)\]
+and 
+\[ d_\alpha^\dagger(p) = \int \dd^3 \vx \cc \bar v_\alpha(p) e^{-ipx} \gamma^0 \psi(x)\]
+as this is the inverse fourier transformation.\\
+An outline of the proof is now given with $\psi(x) = \int \dd \tilde k \sum_\beta\left( c_\beta(k) e^{-ikx} u_\beta(k) + \ldots \right)$.
+The first thing to notice is, that the $\dd^3 \vx$ integral can be rewritten as
+\[ \int \dd^3 \vx \cc e^{ipx} e^{\pm ikx} = (2\pi)^3 \delta^{(3)}(\vp \pm \vv{k}) \begin{cases} e^{2i\omega_p x^0},~~~ &+ \\ 1, ~~~ &-\end{cases}\]
+Looking at the first equation we get
+\[ c_\alpha(p) \soll \frac{(2\pi)^3}{(2\pi)^3 2\omega_p} \sum_\beta \left( c_\beta(\vp) \bar u _\alpha(\beta) \gamma^0 u_\beta(p) + d^\dagger_\beta(-\vp) e^{2i\omega_p x^0} \bar u _\alpha(\vp) \gamma^0 v_\beta(-\vp)\right)\]
+Now, $ \bar u_\alpha(p) \gamma^0 u_\beta(p)$ and $\bar u_\alpha \gamma^0 v_\beta$ need to be calculated. Consider
+\[ 2 \omega_p \bar u (\vp) \gamma^0 v(-\vp) = \bar u (\vp)( \underbrace{ \omega_p \gamma^0 - \vv{\gamma} \vp}_{\slashed p} + \underbrace{ \vv{\gamma} \vp + \omega_p \gamma^0)}_{\slashed{\tilde p}}  \underbrace{v(-\vp)}_{v(\tilde p)} = \bar u (p) (m -m) v(\tilde p) = 0\]
+with $ \tilde p ^\mu = ( p^0, -\vp)$ and $\bar u (\vp) \slashed p = \bar u (\vp) m$ and $\slashed{\tilde p} f(\tilde p) = - m v(\tilde p)$.\\
+Similarly follows
+\[ \bar u _\alpha( \vp) \gamma^0 u _p(\vp) = 2 E \delta_{\alpha\beta} = 2\omega_p \delta_{\alpha\beta}\]
+Thus, the proof is done with
+\[ c_\alpha(p) = \sum_\beta c_\beta(\vp) \delta_{\alpha \beta} = c_\alpha(p)\]
+
+\subsection{Anticommutator of the fields}
+If we take a look at the fields $ \psi$ and $\psi^\dagger$ we notice the following proportinalities
+\[\psi \sim c+d^\dagger, ~~~ \psi^\dagger \sim c^\dagger + d \]
+The anti commutator $\{ \psi(x), \psi(y)\} = 0 = \{\psi^\dagger(x), \psi^\dagger(y)\}$ then actually vanisehd, beause all $ c(p)$, $ c(k)$, $d(p)$ and $d(k)$ commutators vanish.
+Thus, the only remaining non trivial cause is
+\begin{align*} 
+\{\psi_i(x), \bar \psi_j(y)\} = \int \dd \tilde p \dd \tilde k \sum_{\alpha, \beta}& \left[ \{ c_\alpha(p), c^\dagger_\beta(k) \} u_i^{(\alpha)} (p) \bar u_j^{(\beta)}(k) e^{-ipx}e^{ikx}\right. \\
+&+ \left. \{ d^\dagger_\alpha(p), d_\beta(k) \} v_i^{(\alpha)}(p)\bar v_j^{(\beta)} (k) e^{ipx} e^{-ikx} \right]
+\end{align*}
+With the two known anti commutators this leads to
+\[ \{\psi_i(x), \bar \psi_j(y)\} =  \int \dd \tilde k \left[ e^{-ik(x-y)} \sum_\alpha u^{(\alpha)}_i (k) \bar u_j^{(\alpha)}(k) + e^{ik(x-y)} \sum_\alpha v_i^{(\alpha)}(k) \bar v_j^{(\alpha)}(k) \right]\]
+where the following expressions are already known from an earlier chapter:
+\[\sum_\alpha u_i^{(\alpha)} (k) \bar u_j^{(\alpha)}(k) = (\slashed k + m)_{ij}, ~~~~~ \sum_\alpha v_i^{(\alpha)} (k) \bar v_j^{(\alpha)}(k) = ( \slashed k - m)_{ij}\]
+Summarizing, we get
+\[ \{\psi_i(x), \bar \psi_j(y)\} = (i \slashed \p_x + m)_{ij} \int \dd \tilde k \left[ e^{-ik(x-y)} - e^{ik(x-y)}\right] = (i\slashed \p_x +m )_{ij} \Delta(x-y;m)\]
+Where the $\Delta$ function from the bosonic case again emerges.\\
+We now define $ S^\pm(x) = (i \slashed \p + m) \Delta^\pm(x;m)$ with
+\[ \{ \psi^\pm(x), \bar \psi^\mp(y)\} = i S^\pm(x-y)\]
+Also
+\[ \{\psi(x), \bar \psi(y)\} = (i \slashed \p_x + m) \Delta(x-y;m) \equiv i S(x-y)\]
+As we know from the bosonic case, the $\Delta(x-y)$ is zero for $(x-y)^2 <0$ outside the forward light cone.
+From this we can calculate the euqal time anti commutators
+\[ \{\psi_i(x), \psi_j^\dagger(y)\} = \left[ ( i \slashed \p_x \gamma^0 + m\gamma^0)_{ij} \Delta(x-y)\right]_{x^0 = y^0}\]
+The term proportional to $m$ now vanishes and the partial four dimensional derivative reduces to a time derivative, yielding
+\[ \{\psi_i(x), \psi_j^\dagger(y)\} = \left( i \frac{\p}{\p x^0}\right) \delta_{ij} [\phi(x), \phi(y)]_{x^0 = y^0} = i \delta_{ij} [\dot \phi(x), \phi(y)]_{x^0 = y^0}\]
+With the definition of $\dot \phi$ from an earlier chapter we can write this as
+\[ \{\psi_i(x), \psi_j^\dagger(y)\} = i \delta_{ij} [ \Pi(x), \phi(y)]_{x^0 = y^0} = i \delta_{ij} (-i \delta^{(3)}(\vx - \vy)) = \delta_{ij} \delta^{(3)}(\vx - \vy)\]
+
+We now can write the $\Delta$ functions summarizing as
+\[ \Delta ^i(x) = \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2-m^2}\]
+and the $S$ functions as
+\[ S^i(x) = (i \slashed \p +m) \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2-m^2} = \int _{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{\slashed p + m}{p^2 - m^2} e^{-ipx}\]
+with $p^2-m^2 = (\slashed p - m ) (\slashed p + m)$ because of $\slashed p ^2 = p^2$ we can also write this as
+\[ S^i(x) = \int_{C^i} \frac{\dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{\slashed p - m}\]
+The $i$ from $C^i$ describes either the integration over $C^+$, $C^-$ or $C$ in a clockwise matter around the singularities $k^0 = \omega_k$ or respectively $k^0 = - \omega_k$ or both.
+
+\subsection{Feynman propagator of the Fermion}
+With the timeordering $T$ we can express the fermion and anti fermion state as
+\[ T \psi_i (x) \bar \psi_j(y) = \theta(x^0 - y^0) \psi_i(x) \bar \psi_j(y) - \theta(y^0 - x^0) \bar \psi_j(y) \psi_i(x) \]
+The minus sign here was introduced because of the Dirac statistics of the fermion fields, where two fermion fields get a minus sign if they are interchanged.\\
+The propagator now is defined as
+\[ i S_F(x-y) = \lk 0 | T \psi_i(x) \bar \psi_j(y) | 0 \rk = \theta(x^0-y^0) \lk 0 | \psi_i(x) \bar \psi_j(y) | 0 \rk - \theta(y^0 - x^0) \lk 0 | \bar \psi_j(y) \psi_i(x) | 0 \rk \]
+Now, because only the creation part of $\bar \psi_j | 0 \rk$ contributes we can instead write $ \bar \psi_j^- | 0 \rk$ and similarly with all others
+\[ i S_F(x-y) = \theta(x^0 - y^0) \lk 0 | \psi_i^+(x) \bar \psi_j^-(y) | 0 \rk - \theta(y^0 - x^0) \lk 0 | \psi^+_j (y) \psi_i^-(x) | 0 \rk \]
+Then we can introduce the anti commutators, because reverse ordering does not contribute when applied on $ | 0 \rk$.
+\[ i S_F(x-y) = \theta(x^0 - y^0) \lk 0 | \{ \psi_i^+(x), \bar \psi_j^-(y) \} | 0 \rk - \theta(y^0-x^0) \lk 0 | \{ \bar \psi_j^+, \psi_i^-(x)\} | 0 \rk\]
+With the anticommutators being evaluated we then get
+\[ i S_F(x-y) = \theta(x^0 - y^0) i S^+(x-y)_{ij} + \theta(y^0 - x^0) i S^-(x-y)_{ij}\]
+With $y = 0$ this yields
+\[ S_F(x) = \theta(x^0) S^+(x) - \theta(-x^0) S^-(x) = ( i \gamma^\mu \p_\mu + m) \left[ \theta (x^0) \Delta^+(x) - \theta(-x^0) \Delta^-(x)\right]\]
+We actually would have to add a term $-i \gamma^0 \left[ \delta(x^0) \Delta^+(x) + \delta(-x^0) \Delta^-(x) \right]$ because we swapped the derivative and the $\theta$ functions.
+The extra term, however can be rewritten to $\delta(x^0) \Delta(x) = \delta(x^0) \frac{1}{i} [ \phi(x), \phi(0)]$ which is the equal time commutator with the  $\delta(x^0)$ and thus vanishes.\\
+Additionaly, we can now express the fermion propagator in terms of the bosonic propagator $\Delta_F(x)$
+\[ S_F(x) = ( i \slashed \p + m) \Delta_F(x) = ( i \slashed \p + m) \int \frac{ \dd ^4 p}{(2\pi)^4} \frac{e^{-ipx}}{p^2 - m^2 + i \eps} = \int \frac{\dd ^4 p}{(2\pi)^4} e^{-ipx} \frac{ \slashed p + m}{\p^2 -m^2 + i \eps}, ~~\eps > 0\]
+
+We can now use $-(m^2 - i \eps) = -(m -i \eps')^2$ with another infinitesimally small and positive $\eps'$ such that $( \slashed p + m - i \eps')(\slashed p - m  + i \eps') = p^2 - m^2 + i \eps$ and thus write the propagator as
+\[ i S_F(x) = \int \frac{\dd^4 p}{(2\pi)^4} \frac{ i e^{-ipx}}{\slashed p - m + i \eps'} = \lk 0 | T \psi(x) \bar \psi(y) | 0 \rk\]
+This also is a Greens function of the Dirac operator $i \slashed p + m$.\\
+The physical interpretation of $i S_F(x-y)$ now for $x^0 > y^0$ is a fermion being created at $y$ and annihilated at $x$. For $y^0 > x^0$ an anti fermion is created at $x$ and annihilated at $y$. Feynmman interpreted this at first as a fermion travelling backwards in time, which from a mathematical standpoint is equal to an anti fermion travelling forward in time.
+
+\section{Discrete Symmetries}
+\subsection{Parity}
+Parity transformation flips the sign of the spacial components in minkovski space such that $x^\mu = (t, \vx) \overset{P}{\df} (t, - \vx) = x_\mu \equiv \tilde x ^\mu$ and also for a vector $V^\mu \overset{P}{\df} V_\mu$.\\
+For the irreducible representation of the Lorentz group $(m, n) \overset{P}{\df} (n,m)$ transforms this way, because the right handed components and the left handed components switch. For the Dirac field this is
+\[ \vektorz{\psi_L}{\psi_R} \overset{P}{\df} \vektorz{\psi_R(\tilde x)}{\psi_L(\tilde x} = \gamma^0 \psi(\tilde x)\]
+For the quantized case this is a unitary operator $\mathcal{P}$ with
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \gamma^0 \psi(\tilde x)\]
+Explicitly this yields
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \int \dd \tilde p \sum_\alpha \left[ \mathcal{P} c_\alpha ( \vp) \mathcal{P} ^\dagger u^{(\alpha)} (p) e^{-ipx} + \mathcal{P} d_\alpha^\dagger(\vp) \mathcal{P} v^{(\alpha)} (p) e^{ipx} \right] \soll \gamma^0 \psi(\tilde x)\]
+Then, coming from $\gamma^0 \psi(\tilde x)$ this must have the form
+\[ \gamma^0 \psi(\tilde x) = \int \dd \tilde p \sum_\alpha \left[ c_\alpha(\vp) \gamma^0 u^{(\alpha)} (p) e^{-ip \tilde x} + \ldots \right] = \int \dd \tilde p \sum_\alpha \left[ c_\alpha( - \vp) \gamma^0 u^{(\alpha)}(- \vp) e^{-ipx} + \ldots \right]\]
+where in the second step the sign of $p$ was flipped because this representation is equivalent.\\
+If we now look at this in the helicity basis $u^{(\alpha)} \df u(\vp, \lambda)$ we get
+\[ \gamma^0 u(-\vp, \lambda) = u(\vp, - \lambda) \eta(p, \lambda)\]
+with $\eta(p,\lambda)$ being a phase factor. The same follows for the anti particle states
+\[ \gamma^0 v(- \vp, \lambda) = v( \vp, - \lambda) \eta'(p, \lambda)\]
+These follow from
+\[ \slashed p \gamma^0 u(-\vp, \lambda) = ( p^0 \gamma^0 - \vp \vv{\gamma}) u(-\vp, \lambda) = \gamma^0(\gamma^0 p^0 + \vp \vv{\gamma}) u(-\vp, \lambda) = \gamma^0(\slashed{\tilde{p}} u(-\vp,\lambda)) =m \gamma^0 u(-\vp, \lambda)\]
+This follows from the Dirac equation. Also we get
+\[ \vv{\Sigma} \vp \gamma^0 u (-\vp, \lambda) = - \gamma^0 \vv{\Sigma}(-\vp) \gamma^0 u(-\vp, \lambda) = - \lambda | \vp | u ( - \vp, \lambda)\]
+where we used, that $-\vv{\Sigma}\vp \gamma^0 u(-\vp, \lambda) = \lambda | \vp | u (- \vp, \lambda)$ and $\vv{\Sigma} \sim \frac{i}{2} [\gamma^i, \gamma^j]$. Therefore the state $u(-\vp, \lambda)$ has helicity $-\lambda$ which permits the change of $\lambda \df - \lambda$ in the equations from before.
+
+Now we can write the parity transformation as
+\[ \mathcal{P} \psi(x) \mathcal{P}^\dagger = \int \dd \tilde p \sum_{\lambda = \pm} \left[ c_{-\lambda} (-\vp) \eta u(p, \lambda) e^{-ipx} + \ldots\right]\]
+now, $c_{-\lambda}(-\vp) \eta \soll \mathcal{P} c_\alpha(\vp) \mathcal{P}^\dagger$ must be the same, which leads to
+\[ \mathcal{P} c(\vp , \lambda) \mathcal{P}^\dagger = c(-\vp, -\lambda) \eta(p, \lambda)\]
+and similarly for the anti particles
+\[ \mathcal{P} d( \vp, \lambda) \mathcal{P}^\dagger = d(-\vp, -\lambda) \eta\]
+That means, if we start  with a particle with spin and momentum along an anxis, the parity transformation flips the momentum but not the spin and because the helicity is the projection of the spin onto the momentum also the helicity flips.
+
+\subsection{Charge Conjugation}
+A simple picture of charge conjugation is exchanging particles and anti particles, the straight forward definition is given with the unitary operator 
+\[ \mathcal{C} c(\vp, \lambda) \mathcal{C}^\dagger = d(\vp, \lambda)\]
+which switches the fermion operator $c$ with the anti fermion operator $d$ and vice versa.
+We can now show, that
+\[ \mathcal{C} \psi(x) \mathcal{C}^\dagger = \psi^C(x) \equiv C \bar \psi^T(x), ~~~ C = i \gamma^2 \gamma^0\]
+When multiplying $C$ onto a $n$ spinor we get $u(p, \lambda) = C \bar v ^T(p, \lambda)$.
+\subsection{Fermion Bilinears}
+Fermion bilinears are arbitrary expressions of the form $\bar \psi(x) A \psi(x)$ with $A$ being a $4 \times 4$ matrix such that $A$ can be expanded into a base that nas nice Lorentz invariant properties:
+\[A = \sum_{n= 1}^{16} a_n \Gamma^n\]
+The basis, that is to say the $\Gamma^n$ can be classified into these groups
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+$\Gamma^n = \ehm$ & $\bar \psi(x) \psi(x) = S(x)$ & scalar\\
+$\Gamma^n = \gamma^\mu$ & $\bar\psi(x) \gamma^\mu \psi(x) = V^\mu(x)$ & vector\\
+$\Gamma^n = \gamma^\mu \gamma_5$&$\bar\psi(x) \gamma^\mu \gamma_5 \psi(x) = A^\mu(x)$ & pseudo vector\\
+$\Gamma^n = \sigma^{\mu\nu} = \frac{i}{2} [\gamma^\mu, \gamma^\nu]$&$ \bar\psi \sigma^{\mu\nu} \psi = T^{\mu\nu}$& tensor\\
+$\Gamma^n = \gamma^5$&$\bar \psi \gamma^5 \psi = P(x)$& pseudo scalar\\
+\end{tabular}
+\caption{Groups of fermion bilinears}
+\end{table}
+These transform under parity transformation and charge conjugation as
+\[ \mathcal{P} \bar \psi (x) \Gamma^n \psi(x) \mathcal{P}^\dagger = \mathcal{P} \bar \psi(x)  \mathcal{P}\mathcal{P}^\dagger \Gamma^n \psi(x) \mathcal{P}^\dagger = \bar \psi(\tilde x) \gamma^0 \Gamma^n \gamma^0 \psi(\tilde x)\]
+Thus, in the parity transformation we get the new $\gamma^0 \Gamma^n \gamma^0$ as the basis of the parity transformation. For the charge conjugation follows
+\[ \mathcal{C} \bar \psi(x) \Gamma^n \psi(x) \mathcal{C}^\dagger = \mathcal C \psi^\dagger(x) C^\dagger \gamma^0 \Gamma^n \mathcal C \psi(x) \mathcal C ^\dagger = ( C \bar \psi^T)^\dagger \gamma^0 \Gamma^n C \bar \psi^T (x)\]
+We can now transpose the whole thing and change nothing as the transposition of a scalar is still the same scalar
+\[ \mathcal{C} \bar \psi(x) \Gamma^n \psi(x) \mathcal{C}^\dagger = ( \bar \psi ^* C^\dagger \gamma^0 \Gamma^n C \bar \psi ^T )^T = - \bar \psi C^\dagger \Gamma_n^T \gamma^{0T}C^* \gamma^0 \psi = \bar \psi C^{-1} \Gamma^{nT} C \psi\]
+In the last step we used, that $C^\dagger = - C = C^{-1}$. So summarizing we get $C^{-1}\Gamma^{nT}C$ as the new basis for the charge conjugation.
+
+As an example, for the pseudo scalar $P(x) = \bar \psi \gamma^5 \psi$ these new bases lead to
+\[\mathcal P P(x) \mathcal P^\dagger = \bar \psi \gamma^0 \gamma^5 \gamma^0 = - P(\tilde x)\]
+\[\mathcal C P(x) \mathcal C^\dagger = \bar \psi(x) C^{-1} \gamma^5 C \psi(x) = \bar \psi(x) \gamma^5 \psi(x) = P(x)\]
+For all the other fermion bilinears this is
+\begin{table}[H]
+\centering
+\begin{tabular}{l|rrrrr}
+&$S(x)$&$P(X)$&$V^\mu(x)$&$A^\mu(X)$&$T^{\mu\nu}(x)$\\
+\midrule
+$\mathcal P$ & $S(\tilde x)$ & $-P(\tilde x)$ & $V_\mu(\tilde x)$&$-A_\mu(\tilde x)$&$ T_{\mu\nu}(\tilde x)$\\
+$\mathcal C$&$ S(x) $&$ P(x) $&$ - V^\mu(x) $&$ A^\mu(x) $&$ - T^{\mu\nu}(x) $\\
+\end{tabular}
+\caption{Transformation properties of fermion bilinears}
+\end{table}
+
+
+
+\section{The Photon}
+For an explicit description of the photon, we have to deal with the Maxwell equations.
+We will use them in the following forms
+\[ F_{\mu\nu} = \p_\mu A_\nu - \p_\nu A_\mu\]
+we also need the electromagnetic current $j^\mu = ( \rho, \vv{j})$ with the inhomogenous equations
+\[ \p_\nu F^{\nu\mu} = j ^\mu\]
+When taking the divergence of this equation this leads to
+\[ \p_\mu j^\mu = \p_\mu \p_\nu F^{\nu\mu} = 0\]
+and this the electromagnetic current must be conserved. This is guaranteed by a global $U(1)$ symmetry.\\
+The components of the electromagnetic field tensor are the electric field and the magnetic field with
+\[ \vv{E} = - \vn \phi - \frac{\p \vv{A}}{\p t} \sim F^{0i}, ~~~ \vv{B} = \vn \times \vv{A} \sim F^{ij}\]
+The Maxwell equation in this form are easily obtained from a Lagrangian
+\[ \LL = -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} - A_\mu j^\mu\]
+However, this form of the Lagrangian is only valid if $j^\mu$ is not dependant on $A^\mu$, as in the case for the coupling with a scalar field. 
+In the coupling to charged fermions however, $j^\mu$ is $A^\mu$ dependant and thus the full Lagrangian here is given as
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \bar \psi ( i \slashed \Dd - m) \psi, ~~ \slashed \Dd = \gamma^\mu( \p_\mu + i q A_\mu)\]
+which explicitly is
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \bar \psi( i \slashed \p - m) \psi - \underbrace{q \bar \psi \gamma^\mu \psi}_{j^\mu}A_\mu\]
+Under charge conjugation $\mathcal{C} \bar \psi \gamma^\mu \mathcal{C}^\dagger = - \bar \psi \gamma^\mu \psi$.
+Then, $\LL$ is only charge invariant, if $\mathcal C A_\mu \mathcal C = - A_\mu$, thus the photon is $\mathcal C$-odd.
+\subsection{Canonical quantization}
+We have four fields $A_\mu$ and the conjugate momenta
+\[ \Pi^\mu(x) = \frac{ \p \LL}{\p \dot A_\mu} = \frac{\p}{\p \dot A_\mu} \left( - \frac{1}{2} F_{0\nu}F^{0\nu}\right) = - F^{0 \mu}, ~~~ F_{0\nu} = \dot A _\nu - \p_\nu A_0 \]
+In the second step we could reduce this to elements of $F$ with at least one index being zero, because only then the derivative with respect to $\dot A$ is non-zero.\\
+The problem here is, that $\Pi^0(x) = 0$, and therefore we do not have a conjugate momentum for the scalar potential.
+The solution for this is to fix a gauge. Everything works out for the Coulomb gauge $\vn \vv{A} = 0$. 
+It however has major drawbacks, as it is not manifestally Lorentz invariant, and also 
+\[A^0(x) \sim \int \dd ^3 \vv{y} \frac{\rho(\vv{y},t)}{| \vx - \vy|}\]
+so the scalar potential is fixed by the scalar current $\rho$ everywhere in space, which is an apparent loss of causality.\\
+Instead of the Coulomb gauge we are going to use the Lorentz gauge $\p_\mu A^\mu = 0$.
+We now add a gauge fixing term to the Lagrangian:
+\[ \LL = - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} - \frac{\lambda}{2}( \p_\mu A^\mu) ^2 - j_\mu A^\mu\]
+This additional term is going to modify the Maxwell equations. The solution to the Euler Lagrange equation here is given as
+\[\frac{\p \LL}{\p A_\mu} = \p_\nu \frac{\p \LL}{\p(\p_\nu A_\mu)} = - \p_\nu F^{\nu\mu} - \lambda \p^\mu( \p A)\]
+And thus follows
+\[ \p_\nu F^{\nu\mu} - \lambda \p^\mu( \p A) = j^\mu\]
+From $F^{\nu\mu} = \p^\nu A^\mu - \p^\mu A^\nu$ follows
+\[ \square A^\mu - (1-\lambda)\p^\mu (\p A) = j^\mu\]
+With the conservation of the current, $\p^\mu j_\mu = 0$ we get
+\[ \square \p_\mu A^\mu (1 - (1- \lambda)) = 0 = \lambda \square \p_\mu A^\mu\]
+So, $\p A = \p_\mu A^\mu$ is a free, massless Klein Gordon field.\\
+From how on, we consider a free theory, that is to say, $j^\mu = 0$. From the gauge fixing a new term emerges in the conjugate momentum
+\[ \Pi^\mu = \frac{\p \LL}{\p \dot A_\mu} = - F^{0\mu} - \lambda g_{\mu\nu} \p A, ~~~ \Pi^0 = - \lambda \p A\]
+so the zeroth component is non-zero.
+Now we can postulate canonical commutation relations
+\[ [A_\mu(x) A_\nu(y)]_{x^0 = y^0} = 0 = [ \Pi^\mu(x) \Pi^\nu(y)]_{x^0 = y^0}\]
+and the non-vanishing ones
+\[ [A_\mu(x), \Pi^\nu(y)]_{x^0=y^0} = i g_\mu^{~\nu} \delta^{(3)}(\vx - \vy)\]
+For simplicity we set $\lambda = 1$ in the following. This is called the Feynman gauge.
+We then have the equation of motion $\square A^\mu = 0$ and
+\[ \Pi^\mu = - \p_0 A^\mu + \begin{cases} p^\mu A^0 ~~~mu &= 1,2,3\\
+-\vn \vv{A} ~~~\mu &= 0\end{cases}\]
+These additional terms do not contribute in the commutation reltions, because the canonical commutation relations imply, that $[A^\mu(x), \dot A^\nu(y)]_{x^0 = y^0} = i ( - g^{\mu\nu}) \delta^{(3)}(\vx - \vy)$ and $\square A^\mu = 0$.\\
+This is analogue to $[\phi(x), \dot \phi(y)]_{x^0 = y^0} = i \delta^{(3)}(\vx - \vy)$  for the Klein Gordon case, the only differnece is the minus sign for $g^{00} = 1$ such that $[A^0(x), \dot A^0(y)] = - i \delta^{(3)}(\vx - \vy)$.\\
+Analoguosly to the Klein Gordon case this implies, the commutator at arbitrary times is
+\[ [A^\mu (x) , A^\nu(y)] = i (-g^{\mu\nu})\Delta(x-y; m = 0) = i D^{\mu\nu}(x-y)\]
+In the integral representation this is
+\[ D^{\mu\nu} = - g^{\mu\nu} \Delta(x, m = 0) = \int _C \frac{ \dd ^ 4k}{(2\pi)^4} e^{-ikx} \left( \frac{-g^{\mu\nu}}{k^2}\right)\]
+And
+\[ \left.D^\mu\nu\right.^\pm = - g^{\mu\nu} \Delta^\pm (x, m =0) = \int_{C^\pm} \frac{\dd ^4k}{(2\pi)^4} e^{-ikx} \left( \frac{-g^{\mu\nu}}{k^2}\right)\]
+The Feynman propagator thus calculates to
+\[ \lk 0 | T A^\mu(x) A^\nu(y) | 0 \rk \equiv i D_F^{\mu\nu}(x-y) = \int \frac{\dd ^4 k}{(2\pi)^4} e^{-ik(x-y)} \left( \frac{ -ig^{\mu\nu}}{k^2 + i \eps}\right)\]
+For $\lambda \neq 1 $ we have 
+\[ D^{\mu\nu}_F(x) = \int \frac{\dd ^4 k}{(2\pi)^4} e^{-ikx} \frac{ i \left( - g^{\mu\nu} + ( 1 - \frac{1}{\lambda}) \frac{k^\mu k^\nu}{k^2}\right)}{k^2 + i \eps}\]
+Which follows, because $D^{\mu\nu}_F$ is a Greens function for $\square A^\mu - ( 1-\lambda)\p^\mu ( \p_\nu A^\nu) = j^\mu$, that is to say, for $\lambda = 1$ it is a Greens function for $\square A^\mu$.
+
+\subsection{Gupta Bleuler construction}
+The explicit form of the potential is
+\[ A^\mu (x) = \int \dd \tilde k \sum_{r = 0}^3 \left[ a_r(k) \eps^\mu_r(k) e^{-ikx} + a_r^\dagger(k) \eps_r^\mu e^{ikx}\right]\]
+where $r$ are the four possible polarizations. As the mass is zero, we also have $ \omega_k = | \vv{k} |$.
+We now choose a time like direction $n^\mu$ with normalization $n\cc n = 1$ such that for $ r = 0$ $\eps_{r = 0}^\mu(k) = n^\mu$ is given.\\
+Then we choose the physical polarizations $r = 1,2$ purpendicular to the time direction and the momentum direction in the $\perp (n,k)$ plane.
+So we get $\eps_r(k)\cc n = 0$ for $r = 1,2$ and we also require, that in general $\eps_r(k) \eps_s^*(k) = - \delta_{rs}$ for $r = 1,2$.
+The minus sign is needed, because they both are space like vectors.\\
+Now, we choose $\eps_3$ in the $(k,n)$ plane, purpendicular to $\eps_0 = n$.
+So what we need is $\eps_3(k) \cc n = 0$ and $(\eps_3(k))^2 = -1$. Those two conditions can  be combined to
+\[\eps_3^\mu = \frac{ k^\mu}{k \cc n} - n^\mu\]
+Summarizing, $\eps_1$ and $\eps_2$ are called transverse polarizations and $\eps_0$ is called the scalar polarization and $\eps_3$ is called the longitudinal polarization. The transverse polarizations will correspond to the physical photons. Because $\eps_0^\mu$ is the only time like vector, and this $(\eps_0(k))^2 = 1$ we can summarize the orthogonality relation to
+\[ \eps_r(k) \eps_s^* (k) = g_{rs}\]
+In a specific situation where the momentum goes along the $z$-axis which always can be reached by a boost and a consecutive rotation. In this example, the frame with $n^\mu = (1,0,0,0)$ and $k^\mu = k_0(1, 0,0,1)$ is given. Then follows $\eps_0 = (1,0,0,0)$, $\eps_1 = (0,1,0,0)$, $\eps_2 = (0,0,1,0)$ and $\eps_3 = (0,0,0,1)$.
+These polarization vectors do have a completeness relation
+\[ \sum_{r = 0}^3 g_{rr} \eps_r^\mu(k) \eps_r^\nu(k) = g^{\mu\nu}\]
+This equation will also hold for an arbitrary timelike vector $n^\mu$ and corresponding $\eps_r$.\\
+if we sum onver the physical polarizations only, we get
+\[ \sum_{r=1}^2 \eps_r^\mu(k) \eps_r^\nu(k) = - g^{\mu\nu} + \eps_0^\mu \eps_0 ^\nu - \eps_3^\mu \eps_3^\nu = - g^{\mu\nu} + n^\mu n^\nu - \left( \frac{k^\mu}{k\cc n} - n^\mu\right)\left( \frac{k^\nu}{k\cc n} - n^\nu\right)\]
+Here we used the original definitions of $\eps_0$ and $\eps_3$. Now, the $n^\mu n^\nu$ cancels and thus we get
+\[ \sum_{r=1}^2 \eps_r^\mu(k) \eps_r^\nu(k) = - g^{\mu\nu} + \frac{k^\mu n^\nu + k^\nu n^\mu}{k \cc n} - \frac{k^\mu k^\nu}{(k \cc n)^2}\]
+
+Now we can take a look at the commutaton relations for the components of the vector potential at equal times
+\[ [ A^\mu(x), \dot A ^\nu(y)]_{x^0 = y^0} = i (-g^{\mu\nu}) \delta^{(3)}( \vx - \vy)\]
+This immediately translates into the commutation relation
+\[ [ a_r(k), a_s^\dagger(k')] = (-g_{rs}) 2 k^0 ( 2\pi)^3 \delta^{(3)}(\vv{k} - \vv{k}')\]
+The tensor $g_{rs}$ is of course $-1$ for $r = s = 1,2,3$  and $1$ for $r = s = 0$. So with the additional minus sign we have the wrong sign for $r = s = 0$ as compared to the relation for the Klein Gordon fields.\\
+If we now take a look at the Hamiltonian, from the first principle this is guven by
+\[ H = : \int \dd ^3 x \left[ \Pi^\mu (x) \dot A_\mu(x) - \LL \right]:\]
+With the definition of $\Pi^\mu$ this becomes
+\[ H = :\int d^3 x \cc \frac{1}{2} \left[ \sum_{i = 1}^3 \left( (\dot A_i)^2 + (\vn A_i)^2 \right) - (\dot A_0)^2 - (\vn A_0)^2 \right] :\]
+The spacial terms behave similar to the scalar field $\phi$, but the time like terms do still have the wrong sign. For the scalar fields, we found, that we could write this Hamiltonian with creation and annihilation operators. Here, this translates to
+\[ H = \int \dd \tilde k \cc k^0 \left[ \sum_{r = 1}^3 a_r^\dagger(l) a_r(k) - a_0^\dagger(l) a_0(k) \right]\]
+Generalizing, the four momentum operator has the same form
+\[ P^\mu = \int \dd \tilde k \cc k^\mu \left[ \sum_{r = 1}^3 a_r^\dagger(k) a_r(k) - a_0^\dagger(k) a_0(k)\right]\]
+In comparison to the scalar fields this of course has the additional $a_0^\dagger a_0$ term.\\
+Because of the minus sign in the commutation relations $a_0^\dagger a_0 = -N$ euqals minus the number operator, so the minus sign cancels in the end. Thus 
+\[ [ P^\mu , a_r^\dagger(k)] = k^\mu a_r^\dagger(k)~~\forall r\]
+What we see here is, that the $a_r^\dagger$ creates partiles of positive energies and $H$ is positive definite, because $a\dagger a$ is positive and $a_0^\dagger a_0$ is negative. With this we can construct a Fock space analogously as we have done before.
+\sub{Fock space for photons}
+We construct the vacuum state $| 0 \rk$ with $a_r (k) | 0 \rk = 0$ $\forall r, k$. The one photon state then is $|k, r\rk \equiv a_r^\dagger(k) | 0 \rk$ and so on for the multiple photon states.
+We have one problem though, namely the state $a_0^\dagger(k) | 0 \rk = | k, r = 0\rk$.\\
+For the norm of this with a test function $| F, 0 \rk = \int \dd \tilde k \cc F(k) a_0^\dagger(k) | 0 \rk$. We need
+\[ \lk 0 | a_0(k_1) a_0^\dagger(k_2) | 0 \rk = \lk 0 | [ a_0 (k_1) , a_0 ^\dagger(k_2) ] | \rk = - 2 k_1^0 (2\pi)^3 \delta^{(3)}(\vv{k}_1 - \vv{k}_2)\]
+And thus, if we insert it in the norm $F$ we get
+\[ \parallel | F, r = 0\rk \parallel ^2 = - \int \dd \tilde k | F(k)| ^2 \]
+So the norm square is negative, so scalar photons have negative norm and we therefore loose the probability interpretation.\\
+However, we know, the physical photon does only have two polarizations. So the physical space will only take in half of the whole Fock space. So we are working on a too large vector space. The physical stuff is only taking place on a sub space.
+We have to put in new conditions to desribe the physica states.\\
+We now define the physical states $| \psi \rk$ such that those with $\p_\mu A^{\mu +}(x) | \psi\rk = 0$. This implies, that if we take matrix elements of the wohle divergence of $A^\mu$ we get zero which is called a weak Lorentz gauge condition:
+\[ \lk \psi_1 | \p_\mu A^\mu(x) | \psi_2\rk = \lk \psi_1 | \p_\mu A^{\mu -} + \p_\mu A^{\mu +} | 0 \rk = 0\]
+We can simplify this with
+\[ \p_\mu A^{\mu +} (x) = \int \dd \tilde k \cc e^{-ikx} \left[ ( - ik \cc n) \left( a_0(k) - a_3(k) \right) \right] \]
+from $k \cc n = k \cc \eps_0 = - k \eps_3$ the minus sign emergerges. Also, $a_1$ and $a_2$ cannot appear in this equation, because they are orthogonal to $k$.\\
+So also for each fourier component $\p_\mu A^{\mu +} (k) | \psi \rk = 0$ must hold and thus follows
+\[ ( a_3(k) - a_0(k) ) | \psi \rk = 0\]
+Which is just another way of writing the physical state condition. 
+\sub{Matrix elements of observable states}
+ Lets look at a typical matrix element of an observable state, for example
+ \[ \lk \psi_1 | P^\mu | \psi_2 \rk = \lk \psi_1 | \int \dd \tilde k \cc k^\mu \left[ \sum_{r = 1}^3 a_r^\dagger(k) a_r(k) - a_0^\dagger(k) a_0(k) \right] | \psi_2 \rk\]
+ With the phyiscal state condition we can replace the $a_0$ with $a_3$ and it thus cancels. So we get
+ \[ \lk \psi_1 | P^\mu | \psi_2 \rk = \sum_{r = 1}^2 \lk \psi_1 | \int \dd \tilde k \cc k^\mu a_r^\dagger (k) a_r(k) | \psi_2\rk\]
+ So only the physical polarizations contribute to the observables.\\
+The physical states also have a positive norm. This gets visible if we consider a vacuum $| \phi \rk $ with $H | \phi \rk = 0$, so 
+\[  | \phi \rk = \sum_{n = 0}^\infty c_n | \phi_n\rk\]
+where $| \phi_n\rk$ is the eigenstate of the number operator
+\[ N = \int \dd \tilde k \left[ a_3^\dagger(k) a_3(k) - a_0^\dagger(k) a_0(k) \right]\]
+And $N | \phi_n \rk = n | \phi_n \rk$, where different $| \phi_n\rk$ are orthogonal.\\
+Then we get 
+\[\lk \phi_n | N | \phi_n \rk = n \lk \phi_n | \phi_n \rk = \lk \phi_n | \int \dd \tilde k \left[ a_3^\dagger a_3 - a_0 ^\dagger a_0 \right] | \phi_n \rk = 0\]
+So, $| \phi_n \rk $ has zero norm, so the only non zero norm $\lk \phi_n | \phi_n \rk$ can appear for $n = 0$ such that
+\[ \lk \phi | \phi \rk = \sum_n | c_n|^2 \lk \phi_n | \phi_n \rk = \sum_n | c_n|^2 \delta_{0n} \lk 0 | 0 \rk = | c_0 |^2\]
+
+ 
